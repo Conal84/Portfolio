@@ -1,0 +1,27 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Conal's Portfolio</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#portfolioNav"
+    aria-controls="portfolioNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="portfolioNav">
+    <div class="navbar-nav">
+      {% if 'username' in session %}
+      <a class="nav-item nav-link" href="#">Home</a>
+      <a class="nav-item nav-link" href="#">Log Out</a>
+      {% else %}
+      <a class="nav-item nav-link" href="#">Home</a>
+      <a class="nav-item nav-link" href="#">Skills</a>
+      <a class="nav-item nav-link" href="#">Portfolio</a>
+      <a class="nav-item nav-link" href="#">Contact</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
