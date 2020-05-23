@@ -15,11 +15,12 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
-def hello():
-    return "Hello world!!!"
+@app.route('/index')
+def index():
+    return render_template("pages/index.html")
 
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
-        port=int(os.environ.get('PORT')),
-        debug=True)
+            port=int(os.environ.get('PORT')),
+            debug=True)
