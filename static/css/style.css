@@ -1,4 +1,43 @@
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* font-family: 'Open Sans', sans-serif;
 font-family: 'Raleway', sans-serif; */
+
+/* Html */
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/* Colors */
+
+/* Navbar */
+.navbar{
+    font-size: 2rem;
+}
+
+.navbar-brand{
+    font-size: 2rem;
+}
+
+/* Footer */
+#footer-container{
+    height: 5rem;
+    background-color: #0066cc;
+}
+
+#social-links{
+    text-align: right;
+    margin: 0;
+}
+
+#social-links li {
+    display: inline;
+}
+
+#social-links i {
+    font-size: 3rem;
+    margin-top: 1rem;
+    color: #ffffff;
+}
