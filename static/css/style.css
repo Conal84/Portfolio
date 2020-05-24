@@ -21,6 +21,44 @@ html{
     font-size: 2rem;
 }
 
+/* Skills-section */
+#skills-container{
+    margin-top: 180px;
+    text-align: center;
+    font-family: tahoma;
+}
+
+#skills-container .round{
+    min-height: 255px;
+    margin-top: 30px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#skills-container .round strong{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    transform: translate(-50%);
+    font-size: 40px;
+    color: #212121;
+    font-weight: 100;
+}
+
+#skills-container span{
+    display: block;
+    color: #999;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+#skills-container span i{
+    color: #ff5c5c;
+    font-size: 22px;
+    margin-right: 7px;
+}
+
 /* Footer */
 #footer-container{
     height: 5rem;
