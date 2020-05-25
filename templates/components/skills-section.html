@@ -1,21 +1,20 @@
 <section class="container-fluid" id="skills-container">
   <div class="row">
-    <h1>Skills Section</h1>
+    <div class="col-12">
+      <h1>Skills Section</h1>
+    </div>
     {% for skill in skills %}
-    <div class="col-md-4">
+    <div class="col-4">
       <div
         class="round"
         data-value="{{skill.percent}}"
-        data-size="200"
+        data-size="100"
         data-thickness="12"
       >
-        <strong></strong>
-        <span
-          ><i class="{{skill.skill_icon}}"></i>
-          {{skill.skill_name}}
-        </span>
+        <i class="{{skill.skill_icon}}"></i>
+        <span>{{skill.skill_name}}</span>
       </div>
-      {% endfor %}
     </div>
+    {% endfor %}
   </div>
 </section>
