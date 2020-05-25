@@ -29,18 +29,24 @@ html{
 #skills-container .round{
     margin-top: 20px;
     margin-bottom: 20px;
+    position: relative;
 }
 
-/* #skills-container .round strong{
+#skills-container .round strong{
     position: absolute;
     top: 50%;
     left: 50%;
     margin-top: -50px;
     transform: translate(-50%);
-    font-size: 40px;
+    font-size: 25px;
     color: #212121;
     font-weight: 100;
-} */
+}
+
+#circle-info{
+    margin-top: 20px;
+    text-align: center;
+}
 
 #skills-container span{
     color: #999;
