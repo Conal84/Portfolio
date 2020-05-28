@@ -62,6 +62,11 @@ html{
     margin-right: 7px;
 }
 
+/* Portfolio-section */
+#portfolio-section h1{
+    text-align: center;
+}
+
 /* Footer */
 #footer-container{
     height: 5rem;

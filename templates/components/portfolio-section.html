@@ -1,12 +1,14 @@
 <section class="container-fluid" id="portfolio-section">
   <div class="row">
-    <div class="col">
+    <div class="col-12">
       <h1>Portfolio Section</h1>
     </div>
     {% for project in projects %}
-    <div class="col-12">
-    
+    <div class="col-6">
+      <h2>{{project.project_name}}</h2>
+      <div>{{project.description}}</div>
+      <a class="btn btn-primary" href="{{project.link}}" target="_blank" rel="noopener" role="button">Learn More</a>
     </div>
     {% endfor %}
-    </div>
+  </div>
 </section>
