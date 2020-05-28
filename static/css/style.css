@@ -67,6 +67,11 @@ html{
     text-align: center;
 }
 
+/* Contact-section */
+#contact-section h1{
+    text-align: center;
+}
+
 /* Footer */
 #footer-container{
     height: 5rem;
