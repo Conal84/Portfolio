@@ -3,6 +3,103 @@
     <div class="col-12">
       <h1>Contact Section</h1>
     </div>
+    <div class="col-12">
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#contactModal"
+        id="contact-btn"
+      >
+        Contact Me
+      </button>
 
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="contactModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="contactModal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">
+                Contact Me
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="row">
+                  <div class="col">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="First name"
+                    />
+                  </div>
+                  <div class="col">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Last name"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="Subject">Subject</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Subject"
+                    placeholder="A Project to take over the world!!!!"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="emailAddress">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="emailAddress"
+                    placeholder="name@example.com"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="textArea">Your project idea or message</label>
+                  <textarea
+                    class="form-control"
+                    id="textArea"
+                    rows="3"
+                  ></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
