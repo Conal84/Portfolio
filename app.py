@@ -22,6 +22,13 @@ def index():
                            projects=mongo.db.Projects.find())
 
 
+@app.route('/project/<ObjectId>')
+def project():
+    return render_template("pages/project.html",
+                           skills=mongo.db.Skills.find(),
+                           projects=mongo.db.Projects.find())
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
