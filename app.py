@@ -22,11 +22,10 @@ def index():
                            projects=mongo.db.Projects.find())
 
 
-@app.route('/project/<ObjectId>')
-def project():
-    return render_template("pages/project.html",
-                           skills=mongo.db.Skills.find(),
-                           projects=mongo.db.Projects.find())
+@app.route('/project/<project_id>')
+def project(project_id):
+    the_project = mongo.db.Projects.find_one({"_id": ObjectId(project_id)})
+    return render_template("pages/project.html", project=the_project)
 
 
 if __name__ == '__main__':

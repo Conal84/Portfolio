@@ -9,7 +9,7 @@
         <div>{{project.description}}</div>
         <a
           class="btn btn-primary"
-          href="{{url_for('project')}}"
+          href="{{url_for('project', project_id=project._id)}}"
           target="_blank"
           rel="noopener"
           role="button"
