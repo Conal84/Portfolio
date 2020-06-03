@@ -92,3 +92,10 @@ html{
     margin-top: 1rem;
     color: #ffffff;
 }
+
+/* Project.html */
+.project_image img{
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+}

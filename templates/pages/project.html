@@ -1,17 +1,27 @@
 {% extends 'layout/base.html' %}{% block content %}
 
 <section class="container-fluid" id="skills-container">
-  <div class="row">
-    <div class="col-12">
-      <h1>{{project.project_name}}</h1>
-    </div>
-      <div class="col-6">
-        {{project.description}}
-      </div>
-      <div class="col-6">
-        {{project.project_image}}
-    </div>
-  </div>
+	<div class="row">
+		<div class="col-12">
+			<h1>{{project.project_name}}</h1>
+		</div>
+		<div class="col-3">
+			{{project.description}}
+		</div>
+		<div class="col-9 project_image">
+			<img src="{{project.project_image}}">
+        </div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<a class="btn btn-primary" href="{{project.link}}" target="_blank" rel="noopener"
+					role="button">Website</a>
+			</div>
+			<div class="col-6">
+				<a class="btn btn-primary" href="{{project.git_link}}" target="_blank" rel="noopener"
+					role="button">GitHub</a>
+			</div>
+		</div>
 </section>
 
 {% include 'layout/footer.html' %} {% endblock %}
