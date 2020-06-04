@@ -5,12 +5,12 @@
 		<div id="carouselProjects" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-                {% for project_image in project %}
-					<img src="{{project_image.image1}}" class="d-block w-100" alt="...">
+                {% for image in images %}
+					<img src="{{image}}" class="d-block w-100" alt="...">
     </div>
-					<div class="carousel-item">
+					<!-- <div class="carousel-item">
 						<img src="{{project.project_image.image2}}" class="d-block w-100" alt="...">
-    </div>
+    </div> -->
 						<!-- <div class="carousel-item">
 							<img src="..." class="d-block w-100" alt="...">
     </div> -->
