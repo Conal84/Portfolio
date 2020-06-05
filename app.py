@@ -25,8 +25,8 @@ def index():
 @app.route('/project/<project_id>')
 def project(project_id):
     the_project = mongo.db.Projects.find_one({"_id": ObjectId(project_id)})
-    project_images = the_project.find_one({"project_image":Object})
-    return render_template("pages/project.html", project=the_project, images=project_images)
+    return render_template("pages/project.html",
+                           project=the_project, images=the_project["images"])
 
 
 if __name__ == '__main__':
