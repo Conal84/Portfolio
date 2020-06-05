@@ -2,45 +2,48 @@
 
 <section class="container-fluid" id="skills-container">
   <div class="row">
-    <div id="carouselProjects" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        {% for image in images %}
-        <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
-          <img src="{{image}}" class="d-block w-100" alt="..." />
-        </div>
-        {% endfor %}
+    <div class="col-12 col-md-6">
+      <div>
+        <h1>{{project.project_name}}</h1>
       </div>
-      <a
-        class="carousel-control-prev"
-        href="#carouselProjects"
-        role="button"
-        data-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a
-        class="carousel-control-next"
-        href="#carouselProjects"
-        role="button"
-        data-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+      <div>
+        {{project.description}}
+      </div>
     </div>
-    <!-- <div class="col-12 project_image">
-						<img src="{{project.project_image}}">
-        </div> -->
-    <div class="col-12">
-      <h1>{{project.project_name}}</h1>
-    </div>
-    <div class="col-12">
-      {{project.description}}
+    <div class="col-12 col-md-6">
+      <div id="carouselProjects" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          {% for image in images %}
+          <div
+            class="carousel-item {% if loop.index == 1 %} active {% endif %}"
+          >
+            <img src="{{image}}" class="d-block w-100" alt="..." />
+          </div>
+          {% endfor %}
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselProjects"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselProjects"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-12">
+    <div class="col-6">
       <a
         class="btn btn-primary"
         href="{{project.link}}"
@@ -49,6 +52,8 @@
         role="button"
         >View Site</a
       >
+    </div>
+    <div class="col-6">
       <a
         class="btn btn-primary"
         href="{{project.git_link}}"
