@@ -1,16 +1,16 @@
 <section class="container-fluid" id="portfolio-section">
   <div class="row">
     <div class="col-12">
-      <h1>Portfolio Section</h1>
+      <h1 class="animate__animated animate__slideInLeft">Portfolio Section</h1>
     </div>
-    <div class="row">
+    <div class="row image-row">
       {% for project in projects %}
-      <div class="col-sm-6">
+      <div class="col-sm-6 image-col">
         <div class="card text-center">
           <img src="{{project.images[0]}}" class="card-img" alt="..." />
           <div class="card-img-overlay">
-            <h5 class="card-title">{{project.project_name}}</h5>
-            <p class="card-text">
+            <h5 class="card-title animate__slideInDown">{{project.project_name}}</h5>
+            <p class="card-text animate__slideInUp">
               {{project.description}}
             </p>
             <a

@@ -63,16 +63,35 @@ html{
 }
 
 /* Portfolio-section */
+#portfolio-section h1{
+    text-align: center;
+}
+
+.image-row{
+    height: 30rem;
+    padding: 0 5rem;
+    margin: 0;
+    overflow: hidden;
+}
+
+.image-col{
+    padding: 0;
+}
+.card{
+    border: 0;
+}
+
 .card > *:not(.card-img-overlay){
     transition: opacity 1s;
     transition-timing-function: ease;
 }
 
 .card:hover > *:not(.card-img-overlay){
-    opacity: 0.5;
+    opacity: 0.2;
 }
 
 .card-img-overlay{
+    padding-top: 12rem;
     opacity: 0;
     transition: opacity 1s;
     transition-timing-function: ease;
