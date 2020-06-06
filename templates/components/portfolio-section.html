@@ -3,19 +3,27 @@
     <div class="col-12">
       <h1>Portfolio Section</h1>
     </div>
+    <div class="row">
       {% for project in projects %}
-      <div class="col-6 text-center">
-        <h2>{{project.project_name}}</h2>
-        <div>{{project.description}}</div>
-        <a
-          class="btn btn-primary"
-          href="{{url_for('project', project_id=project._id)}}"
-          target="_blank"
-          rel="noopener"
-          role="button"
-          >Learn More</a
-        >
+      <div class="col-sm-6">
+        <div class="card text-center">
+          <img src="{{project.images[0]}}" class="card-img" alt="..." />
+          <div class="card-img-overlay">
+            <h5 class="card-title">{{project.project_name}}</h5>
+            <p class="card-text">
+              {{project.description}}
+            </p>
+            <a
+              href="{{url_for('project', project_id=project._id)}}"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary"
+              >More</a
+            >
+          </div>
+        </div>
       </div>
       {% endfor %}
+    </div>
   </div>
 </section>
