@@ -63,8 +63,23 @@ html{
 }
 
 /* Portfolio-section */
-#portfolio-section h1{
-    text-align: center;
+.card > *:not(.card-img-overlay){
+    transition: opacity 1s;
+    transition-timing-function: ease;
+}
+
+.card:hover > *:not(.card-img-overlay){
+    opacity: 0.5;
+}
+
+.card-img-overlay{
+    opacity: 0;
+    transition: opacity 1s;
+    transition-timing-function: ease;
+}
+
+.card-img-overlay:hover{
+    opacity: 1;
 }
 
 /* Contact-section */
