@@ -101,6 +101,14 @@ html{
     opacity: 1;
 }
 
+.card-title{
+    position: relative;
+}
+
+.card-title:hover{
+    animation: movedown 3s;
+}
+
 /* Contact-section */
 #contact-section h1{
     text-align: center;
@@ -132,4 +140,10 @@ html{
     height: 60rem;
     width: 100%;
     overflow: hidden;
+}
+
+/* Keyframes */
+@keyframes movedown{
+    0%  {top: -100px;}
+    100% {top: 0px;}
 }
