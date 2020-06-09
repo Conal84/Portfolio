@@ -86,12 +86,42 @@ html{
     transition-timing-function: ease;
 }
 
+.card-title{
+    position: relative;
+    top: 0;
+    transition: top ease 1s;
+}
+
+.card:hover .card-title{
+    top: 100px;
+}
+
+.card-text{
+    position: relative;
+    top: 0;
+    transition: top ease 1s;
+}
+
+.card:hover .card-text{
+    top: 100px;
+}
+
+.project-btn{
+    position: relative;
+    top: 200px;
+    transition: top ease 1s;
+}
+
+.card:hover .project-btn{
+    top: 120px;
+}
+
 .card:hover > *:not(.card-img-overlay){
-    opacity: 0.2;
+    opacity: 0.3;
 }
 
 .card-img-overlay{
-    padding-top: 12rem;
+    /* padding-top: 12rem; */
     opacity: 0;
     transition: opacity 1s;
     transition-timing-function: ease;
@@ -101,12 +131,11 @@ html{
     opacity: 1;
 }
 
-.card-title{
-    position: relative;
-}
 
-.card-title:hover{
-    animation: movedown 3s;
+
+@keyframes movedown{
+    0%  {top: -100px;}
+    100% {top: 0px;}
 }
 
 /* Contact-section */
@@ -143,7 +172,3 @@ html{
 }
 
 /* Keyframes */
-@keyframes movedown{
-    0%  {top: -100px;}
-    100% {top: 0px;}
-}
