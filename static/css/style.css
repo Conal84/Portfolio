@@ -10,15 +10,44 @@ html{
     scroll-behavior: smooth;
 }
 
+/* Body */
+
+/* Headings */
+.main-head{
+    font-size: 2.5rem;
+    text-decoration: underline;
+}
+
 /* Colors */
+.color-white{
+    color: #fcfcfc;
+}
+
+.color-grey{
+    color: #a39ba8;
+}
+
+.color-yellow{
+    color: #fcfc62;
+}
+
+.color-green{
+    color: #a5ffd6;
+}
+
+.color-black{
+    color: #423E3b;
+}
+
 
 /* Navbar */
 .navbar{
-    font-size: 2rem;
+    font-size: 1.75rem;
+    border-bottom: 2px solid #fcfc62;
 }
 
-.navbar-brand{
-    font-size: 2rem;
+.nav-link{
+    color: #fcfcfc;
 }
 
 /* Skills-section */
