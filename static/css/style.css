@@ -17,6 +17,7 @@ html{
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     text-decoration: underline;
+    text-align: center;
 }
 
 /* Colors */
@@ -51,10 +52,6 @@ html{
 }
 
 /* Skills-section */
-#skills-container h1{
-    text-align: center;
-}
-
 #skills-container .round{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -70,30 +67,29 @@ html{
     transform: translate(-50%);
     font-size: 2.5rem;
     color: #000;
-    font-family: open-sans;
-    font-weight: 600;
+    font-family: sans-serif;
+    font-weight: 400;
 }
 
 #circle-info{
     margin-top: 20px;
-    /* text-align: center; */
 }
 
 #skills-container span{
-    color: #999;
+    color: #423E3b;
     font-size: 17px;
     margin-top: 10px;
 }
 
 #skills-container i{
-    color: #ff5c5c;
+    color: #a5ffd6;
     font-size: 22px;
     margin-right: 7px;
 }
 
 /* Portfolio-section */
-#portfolio-section h1{
-    text-align: center;
+#portfolio-section{
+    background-color: #a5ffd6;
 }
 
 .image-row{
@@ -113,6 +109,20 @@ html{
 .project-card > *:not(.card-img-overlay){
     transition: opacity 1s;
     transition-timing-function: ease;
+}
+
+.project-card:hover > *:not(.card-img-overlay){
+    opacity: 0.2;
+}
+
+.card-img-overlay{
+    opacity: 0;
+    transition: opacity 1s;
+    transition-timing-function: ease;
+}
+
+.card-img-overlay:hover{
+    opacity: 1;
 }
 
 .project-card-title{
@@ -143,20 +153,6 @@ html{
 
 .project-card:hover .project-btn{
     top: 120px;
-}
-
-.project-card:hover > *:not(.card-img-overlay){
-    opacity: 0.3;
-}
-
-.card-img-overlay{
-    opacity: 0;
-    transition: opacity 1s;
-    transition-timing-function: ease;
-}
-
-.card-img-overlay:hover{
-    opacity: 1;
 }
 
 /* Contact-section */
@@ -191,5 +187,3 @@ html{
     width: 100%;
     overflow: hidden;
 }
-
-/* Keyframes */
