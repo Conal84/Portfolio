@@ -77,32 +77,32 @@ html{
 .image-col{
     padding: 0;
 }
-.card{
+.project-card{
     border: 0;
 }
 
-.card > *:not(.card-img-overlay){
+.project-card > *:not(.card-img-overlay){
     transition: opacity 1s;
     transition-timing-function: ease;
 }
 
-.card-title{
+.project-card-title{
     position: relative;
     top: 0;
     transition: top ease 1s;
 }
 
-.card:hover .card-title{
+.project-card:hover .project-card-title{
     top: 100px;
 }
 
-.card-text{
+.project-card-text{
     position: relative;
     top: 0;
     transition: top ease 1s;
 }
 
-.card:hover .card-text{
+.project-card:hover .project-card-text{
     top: 100px;
 }
 
@@ -112,16 +112,15 @@ html{
     transition: top ease 1s;
 }
 
-.card:hover .project-btn{
+.project-card:hover .project-btn{
     top: 120px;
 }
 
-.card:hover > *:not(.card-img-overlay){
+.project-card:hover > *:not(.card-img-overlay){
     opacity: 0.3;
 }
 
 .card-img-overlay{
-    /* padding-top: 12rem; */
     opacity: 0;
     transition: opacity 1s;
     transition-timing-function: ease;
@@ -129,13 +128,6 @@ html{
 
 .card-img-overlay:hover{
     opacity: 1;
-}
-
-
-
-@keyframes movedown{
-    0%  {top: -100px;}
-    100% {top: 0px;}
 }
 
 /* Contact-section */
