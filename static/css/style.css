@@ -15,9 +15,9 @@ html{
 /* Headings */
 .main-head{
     font-family: 'Raleway', sans-serif;
-    font-weight: 700;
     text-decoration: underline;
     text-align: center;
+    padding: 2rem 0;
 }
 
 /* Buttons */
@@ -160,8 +160,12 @@ html{
 }
 
 /* Contact-section */
-#contact-section h1{
-    text-align: center;
+#contact-section{
+    background-color: #1478a3;
+}
+
+.contact-row{
+    padding-bottom: 4rem;
 }
 
 /* Footer */
