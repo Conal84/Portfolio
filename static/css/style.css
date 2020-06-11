@@ -20,31 +20,20 @@ html{
     text-align: center;
 }
 
-/* Colors */
-.color-white{
-    color: #fcfcfc;
-}
-
-.color-grey{
-    color: #a39ba8;
-}
-
-.color-yellow{
-    color: #fcfc62;
-}
-
-.color-green{
-    color: #a5ffd6;
-}
-
-.color-black{
-    color: #423E3b;
+/* Buttons */
+.btn-primary{
+    font-family: 'Open Sans', sans-serif;
+    /* font-weight: bold; */
+    border-radius: 5px;
+    background: #2aabe4;
+    border: 1px solid #ffcd24;
 }
 
 /* Navbar */
 .navbar{
     font-size: 1.75rem;
-    border-bottom: 2px solid #fcfc62;
+    border-bottom: 2px solid #ffcd24;
+    background-color: #33393d;
 }
 
 .nav-link{
@@ -52,6 +41,11 @@ html{
 }
 
 /* Skills-section */
+#skills-container{
+    background-color: #fbfcff;
+}
+
+
 #skills-container .round{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -66,7 +60,6 @@ html{
     margin-top: -35px;
     transform: translate(-50%);
     font-size: 2.5rem;
-    color: #000;
     font-family: sans-serif;
     font-weight: 400;
 }
@@ -76,20 +69,19 @@ html{
 }
 
 #skills-container span{
-    color: #423E3b;
     font-size: 17px;
     margin-top: 10px;
 }
 
 #skills-container i{
-    color: #a5ffd6;
+    color: #2aabe4;
     font-size: 22px;
     margin-right: 7px;
 }
 
 /* Portfolio-section */
 #portfolio-section{
-    background-color: #a5ffd6;
+    background-color: #eaecec;
 }
 
 .image-row{
@@ -163,7 +155,7 @@ html{
 /* Footer */
 #footer-container{
     height: 5rem;
-    background-color: #0066cc;
+    background-color: #33393d;
 }
 
 #social-links{
@@ -178,7 +170,7 @@ html{
 #social-links i {
     font-size: 3rem;
     margin-top: 1rem;
-    color: #ffffff;
+    color: #fbfcff;
 }
 
 /* Project.html */
