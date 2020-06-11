@@ -168,6 +168,10 @@ html{
     padding-bottom: 4rem;
 }
 
+.contact-heading{
+    color: #fff;
+}
+
 /* Footer */
 #footer-container{
     height: 5rem;
