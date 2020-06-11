@@ -7,9 +7,7 @@
       <div class="card text-center">
         <div class="card-body">
           <p class="card-text">
-            If you have a project you would like to discuss or you want to learn
-            more about any of my projects feel free to get in touch using this
-            link
+            Discuss your new project or learn more about my projects
           </p>
           <!-- Button trigger modal -->
           <div class="text-center">
@@ -39,21 +37,13 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalCenterTitle">
+              <h5 class="modal-title">
                 Contact Me
               </h5>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
             </div>
             <div class="modal-body">
               <form id="contact-form">
-                <div class="row">
+                <div class="row modal-row">
                   <div class="col">
                     <label for="firstName">First Name</label>
                     <input
@@ -102,12 +92,12 @@
                     name="message"
                   ></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary modal-btn-send">
                   Send
                 </button>
                 <button
                   type="button"
-                  class="btn btn-secondary"
+                  class="btn modal-btn-close"
                   data-dismiss="modal"
                 >
                   Close

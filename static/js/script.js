@@ -1,6 +1,6 @@
 function Circle(el) {
   $(el)
-    .circleProgress({ fill: { color: "#2aabe4" } })
+    .circleProgress({ fill: { color: "#ffcd24" } })
     .on("circle-animation-progress", function (event, progress, stepValue) {
       $(this)
         .find("strong")
