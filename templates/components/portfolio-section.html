@@ -1,11 +1,11 @@
 <section class="container-fluid" id="portfolio-section">
-  <div class="row">
+  <div class="row" id="portfolio-row">
     <div class="col-12">
       <h1 class="main-head">Projects</h1>
     </div>
     <div class="row image-row">
       {% for project in projects %}
-      <div class="col-sm-6 image-col">
+      <div class="col-sm-4 image-col">
         <div class="card text-center project-card">
           <img src="{{project.images[0]}}" class="card-img" alt="..." />
           <div class="card-img-overlay">

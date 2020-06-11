@@ -107,18 +107,25 @@ html{
     background-color: #eaecec;
 }
 
+#portfolio-row{
+    padding-bottom: 5rem;
+}
+
 .image-row{
-    height: 30rem;
-    padding: 0 5rem;
+    height: 200px;
+    padding: 0 1rem;
     margin: 0;
     overflow: hidden;
 }
 
 .image-col{
     padding: 0;
+    /* height: 160px; */
 }
+
 .project-card{
     border: 0;
+    height: 100%;
 }
 
 .project-card > *:not(.card-img-overlay){
@@ -162,6 +169,12 @@ html{
 
 .project-card:hover .project-card-text{
     top: 100px;
+}
+
+.card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Contact-section */
