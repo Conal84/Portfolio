@@ -1,13 +1,35 @@
 {% extends 'layout/base.html' %}{% block content %}
 
 <section class="container-fluid" id="skills-container">
-  <div class="row project-row align-items-center">
-    <div class="col-12 col-md-6 project-text-col">
+  <div class="row project-row">
+    <div class="col-12 col-md-6">
       <div>
         <h1 class="main-head">{{project.project_name}}</h1>
       </div>
       <div class="std-text project-longtext">
         {{project.long_text}}
+      </div>
+      <div class="link-btns">
+        <span class="d-none d-md-inline">
+          <a
+            class="btn btn-primary link-btn"
+            href="{{project.link}}"
+            target="_blank"
+            rel="noopener"
+            role="button"
+            >View Site</a
+          >
+        </span>
+        <span class="d-none d-md-inline">
+          <a
+            class="btn btn-primary link-btn"
+            href="{{project.git_link}}"
+            target="_blank"
+            rel="noopener"
+            role="button"
+            >GitHub</a
+          >
+        </span>
       </div>
     </div>
     <div class="col-12 col-md-6">
@@ -50,7 +72,7 @@
         </a>
       </div>
     </div>
-    <div class="col-6 links-col">
+    <div class="col-6 links-col d-md-none">
       <span>
         <a
           class="btn btn-primary link-btn"
@@ -62,7 +84,7 @@
         >
       </span>
     </div>
-    <div class="col-6 links-col">
+    <div class="col-6 links-col d-md-none">
       <span>
         <a
           class="btn btn-primary link-btn"
@@ -73,7 +95,6 @@
           >GitHub</a
         >
       </span>
-    </div>
     </div>
   </div>
 </section>
