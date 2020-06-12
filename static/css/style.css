@@ -12,6 +12,12 @@ html{
 
 /* Body */
 
+/* Text */
+.std-text{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+}
+
 /* Headings */
 .main-head{
     font-family: 'Raleway', sans-serif;
@@ -189,11 +195,6 @@ html{
     color: #fff;
 }
 
-.card-text{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.5rem;
-}
-
 /* Modal */
 .modal-header{
     border-bottom: 2px solid #ffcd24;
@@ -258,8 +259,37 @@ html{
 }
 
 /* Project.html */
-.project_image img{
-    height: 60rem;
+.project-row{
+    padding: 0 1rem;
+    margin: 0;
+}
+
+.project-longtext{
+    text-align: center;
+}
+
+#carousel-projects{
+    padding: 2rem 0;
+}
+
+.carousel-image{
+    height: 100%;
     width: 100%;
-    overflow: hidden;
+    object-fit: cover;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffcd24' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffcd24' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+.links-col{
+    text-align: center;
+}
+
+.link-btn{
+    margin: 1rem;
 }

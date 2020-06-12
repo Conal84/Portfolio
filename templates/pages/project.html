@@ -1,29 +1,38 @@
 {% extends 'layout/base.html' %}{% block content %}
 
 <section class="container-fluid" id="skills-container">
-  <div class="row">
-    <div class="col-12 col-md-6">
+  <div class="row project-row align-items-center">
+    <div class="col-12 col-md-6 project-text-col">
       <div>
         <h1 class="main-head">{{project.project_name}}</h1>
       </div>
-      <div class="project-longtext">
+      <div class="std-text project-longtext">
         {{project.long_text}}
       </div>
     </div>
     <div class="col-12 col-md-6">
-      <div id="carouselProjects" class="carousel slide" data-ride="carousel">
+      <div
+        id="carousel-projects"
+        class="carousel slide"
+        data-ride="carousel"
+        data-interval="false"
+      >
         <div class="carousel-inner">
           {% for image in images %}
           <div
             class="carousel-item {% if loop.index == 1 %} active {% endif %}"
           >
-            <img src="{{image}}" class="d-block w-100 carousel-image" alt="..." />
+            <img
+              src="{{image}}"
+              class="d-block w-100 carousel-image"
+              alt="..."
+            />
           </div>
           {% endfor %}
         </div>
         <a
           class="carousel-control-prev"
-          href="#carouselProjects"
+          href="#carousel-projects"
           role="button"
           data-slide="prev"
         >
@@ -32,7 +41,7 @@
         </a>
         <a
           class="carousel-control-next"
-          href="#carouselProjects"
+          href="#carousel-projects"
           role="button"
           data-slide="next"
         >
@@ -41,27 +50,30 @@
         </a>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <a
-        class="btn btn-primary"
-        href="{{project.link}}"
-        target="_blank"
-        rel="noopener"
-        role="button"
-        >View Site</a
-      >
+    <div class="col-6 links-col">
+      <span>
+        <a
+          class="btn btn-primary link-btn"
+          href="{{project.link}}"
+          target="_blank"
+          rel="noopener"
+          role="button"
+          >View Site</a
+        >
+      </span>
     </div>
-    <div class="col-6">
-      <a
-        class="btn btn-primary"
-        href="{{project.git_link}}"
-        target="_blank"
-        rel="noopener"
-        role="button"
-        >GitHub</a
-      >
+    <div class="col-6 links-col">
+      <span>
+        <a
+          class="btn btn-primary link-btn"
+          href="{{project.git_link}}"
+          target="_blank"
+          rel="noopener"
+          role="button"
+          >GitHub</a
+        >
+      </span>
+    </div>
     </div>
   </div>
 </section>
