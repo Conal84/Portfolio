@@ -121,7 +121,13 @@ html{
     height: 200px;
     padding: 0 1rem;
     margin: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
+}
+
+.card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .image-col{
@@ -174,12 +180,6 @@ html{
 
 .project-card:hover .project-card-text{
     top: 50px;
-}
-
-.card-img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 /* Contact-section */
@@ -268,20 +268,29 @@ html{
     text-align: center;
 }
 
+.carousel-container{
+    width: 70vh;
+    height: auto;
+}
+
 #carousel-projects{
     padding: 2rem 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.carousel{
-    width: 500px;
-    height: 400px;
-}
+/* .carousel-inner > .carousel-item > img{
+    margin:auto;
+    width:100%;
+    height: 60vh;
+} */
 
-.carousel-image{
+/* .carousel-image{
     height: 100%;
     width: 100%;
     object-fit: cover;
-}
+} */
 
 .carousel-control-prev-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffcd24' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
