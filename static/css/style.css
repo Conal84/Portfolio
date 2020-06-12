@@ -272,6 +272,11 @@ html{
     padding: 2rem 0;
 }
 
+.carousel{
+    width: 500px;
+    height: 400px;
+}
+
 .carousel-image{
     height: 100%;
     width: 100%;
