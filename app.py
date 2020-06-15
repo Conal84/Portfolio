@@ -44,10 +44,12 @@ def project(project_id):
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        flash('Login requested for user {}'.format(
-            form.username.data))
-        return redirect('/index')
-    return render_template('pages/login.html', title='Sign In', form=form)
+        user = mongo.db.Admin.find_one({'username': request.form['username']})
+        if request.form['password'] == user['password']:
+            session['username'] = request.form['username']
+            return redirect('/index')
+        return render_template('pages/login.html', title='Log In', form=form)
+    return render_template('pages/login.html', title='Log In', form=form)
 
 
 if __name__ == '__main__':
