@@ -3,7 +3,7 @@ from flask import Flask, render_template, flash, redirect, request, url_for, ses
 from flask_pymongo import PyMongo
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import DataRequired, EqualTo
+from wtforms.validators import InputRequired, EqualTo, ValidationError
 from bson.objectid import ObjectId
 from markupsafe import escape
 from os import path
@@ -19,9 +19,23 @@ app.secret_key = os.environ.get('SECRET_KEY')
 mongo = PyMongo(app)
 
 
+def check_user(form, field):
+    user = mongo.db.Admin.find_one({'username': request.form['username']})
+    if field.data != user:
+        raise ValidationError('Username incorrect')
+
+
+def check_pass(form, field):
+    pswrd = mongo.db.Admin.find_one({'password': request.form['password']})
+    if field.data != pswrd:
+        raise ValidationError('Password incorrect')
+
+
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    username = StringField('Username', validators=[
+        InputRequired(), check_user])
+    password = PasswordField('Password', validators=[
+        InputRequired(), check_pass])
     submit = SubmitField('Sign In')
 
 
@@ -44,11 +58,8 @@ def project(project_id):
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        user = mongo.db.Admin.find_one({'username': request.form['username']})
-        if request.form['password'] == user['password']:
-            session['username'] = request.form['username']
-            return redirect('/index')
-        return render_template('pages/login.html', title='Log In', form=form)
+        session['username'] = request.form['username']
+        return redirect('/index')
     return render_template('pages/login.html', title='Log In', form=form)
 
 
