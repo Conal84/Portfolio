@@ -19,9 +19,9 @@ mongo = PyMongo(app)
 
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[
+    username = StringField('username', validators=[
         InputRequired(), EqualTo('user', message='Username is incorrect')])
-    password = PasswordField('Password', validators=[
+    password = PasswordField('password', validators=[
         InputRequired(), EqualTo('pswrd', message='Password is incorrect')])
     submit = SubmitField('Sign In')
     user = os.environ.get('USER')
@@ -48,7 +48,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         session['username'] = request.form['username']
-        return redirect('/index')
+        return redirect(url_for('index'))
     return render_template('pages/login.html', title='Log In', form=form)
 
 
