@@ -3,7 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import InputRequired, EqualTo
+from wtforms.validators import InputRequired, ValidationError
 from bson.objectid import ObjectId
 from os import path
 if path.exists("env.py"):
@@ -19,13 +19,20 @@ mongo = PyMongo(app)
 
 
 class LoginForm(FlaskForm):
-    username = StringField('username', validators=[
-        InputRequired(), EqualTo('user', message='Username is incorrect')])
-    password = PasswordField('password', validators=[
-        InputRequired(), EqualTo('pswrd', message='Password is incorrect')])
+    username = StringField('Username', [InputRequired()])
+    users = mongo.db.Users.find()
+
+    def validate_username(self, field):
+        if field.data != os.environ.get('USER'):
+            raise ValidationError('Incorrect username')
+
+    password = PasswordField('Password', [InputRequired()])
+
+    def validate_password(self, field):
+        if field.data != os.environ.get('PASSWORD'):
+            raise ValidationError('Incorrect password')
+
     submit = SubmitField('Sign In')
-    user = os.environ.get('USER')
-    pswrd = os.environ.get('PASSWORD')
 
 
 @app.route('/')
