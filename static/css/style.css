@@ -192,6 +192,10 @@ html{
     top: 50px;
 }
 
+#add-project{
+    font-size: 10rem;
+}
+
 /* Contact-section */
 #contact-section{
     background-color: #1478a3;
