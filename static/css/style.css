@@ -108,6 +108,16 @@ html{
     margin-right: 7px;
 }
 
+#add-skill.fas.fa-plus-circle{
+    font-size: 10rem;
+    margin-top: 2rem;
+    color: #ffcd24;
+}
+
+#add-skill-btn{
+    margin-top: 2rem;
+}
+
 /* Portfolio-section */
 #portfolio-section{
     background-color: #eaecec;
