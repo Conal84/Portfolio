@@ -9,10 +9,18 @@
         <div class="card text-center project-card">
           <img src="{{project.images[0]}}" class="card-img" alt="..." />
           <div class="card-img-overlay">
-            <h5 class="card-title project-card-title">{{project.project_name}}</h5>
+            <h5 class="card-title project-card-title">
+              {{project.project_name}}
+            </h5>
             <p class="card-text project-card-text">
               {{project.description}}
             </p>
+            {% if 'username' in session %}
+            <div>
+              <a class="btn btn-secondary" href="#" role="button">Edit</a>
+              <a class="btn btn-secondary" href="#" role="button">Delete</a>
+            </div>
+            {% else %}
             <a
               href="{{url_for('project', project_id=project._id)}}"
               target="_blank"
@@ -20,6 +28,7 @@
               class="btn btn-primary project-btn btn-lg"
               >Visit Site</a
             >
+            {% endif %}
           </div>
         </div>
       </div>

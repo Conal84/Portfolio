@@ -1,5 +1,13 @@
 {% extends 'layout/base.html' %}{% block content %}
 
+{% if 'username' in session %}
+{% include 'components/skills-section.html' %}
+
+{% include 'components/portfolio-section.html' %}
+
+{% include 'layout/footer.html' %}
+
+{% else %}
 {% include 'components/skills-section.html' %}
 
 {% include 'components/portfolio-section.html' %}
@@ -7,5 +15,6 @@
 {% include 'components/contact-section.html' %}
 
 {% include 'layout/footer.html' %}
+{% endif %}
 
 {% endblock %}
