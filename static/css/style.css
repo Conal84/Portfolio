@@ -131,7 +131,6 @@ html{
     height: 200px;
     padding: 0 1rem;
     margin: 0;
-    /* overflow: hidden; */
 }
 
 .card-img{
@@ -194,6 +193,10 @@ html{
 
 #add-project{
     font-size: 10rem;
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    color: #ffcd24;
 }
 
 /* Contact-section */
