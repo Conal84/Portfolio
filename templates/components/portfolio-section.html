@@ -32,7 +32,22 @@
           </div>
         </div>
       </div>
-      {% endfor %}
+          {% endfor %} {% if 'username' in session %}
+    <div class="col-12 col-md-4 image-col">
+        <div class="card text-center project-card">
+          <i class="fas fa-plus card-img" alt="..."></i>
+          <div class="card-img-overlay">
+            <h5 class="card-title project-card-title">
+              Add a new project
+            </h5>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary project-btn btn-lg"
+              >Add</a
+            >
+    {% endif %}
     </div>
   </div>
 </section>
