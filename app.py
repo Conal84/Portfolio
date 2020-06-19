@@ -20,16 +20,20 @@ mongo = PyMongo(app)
 
 class LoginForm(FlaskForm):
     username = StringField('Username', [InputRequired()])
-    users = mongo.db.Users.find()
+
+    def find_details(self, users):
+        for user in users:
+            self.req_username = user['username']
+            self.req_password = user['password']
 
     def validate_username(self, field):
-        if field.data != os.environ.get('USER'):
+        if field.data != self.req_username:
             raise ValidationError('Incorrect username')
 
     password = PasswordField('Password', [InputRequired()])
 
     def validate_password(self, field):
-        if field.data != os.environ.get('PASSWORD'):
+        if field.data != self.req_password:
             raise ValidationError('Incorrect password')
 
     submit = SubmitField('Sign In')
@@ -52,7 +56,9 @@ def project(project_id):
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    users = mongo.db.Users.find()
     form = LoginForm()
+    form.find_details(users)
     if form.validate_on_submit():
         session['username'] = request.form['username']
         return redirect(url_for('index'))
