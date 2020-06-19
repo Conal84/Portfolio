@@ -65,6 +65,12 @@ def login():
     return render_template('pages/login.html', title='Log In', form=form)
 
 
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('index'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
