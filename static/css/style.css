@@ -44,6 +44,17 @@ html{
     border: 1px solid #ffcd24;
 }
 
+.btn-secondary{
+    background-color: #1478a3;
+    border: 1px solid #1478a3;
+}
+
+.btn-secondary:hover{
+    opacity: 0.8;
+    background-color: #1478a3;
+    border: 1px solid #1478a3;
+}
+
 .project-btn{
     position: relative;
     top: 200px;
@@ -57,6 +68,10 @@ html{
 
 .project-card:hover .project-btn{
     top: 50px;
+}
+
+#add-skill-btn{
+    margin-top: 3rem;
 }
 
 /* Navbar */
@@ -112,10 +127,6 @@ html{
     font-size: 10rem;
     margin-top: 2rem;
     color: #ffcd24;
-}
-
-#add-skill-btn{
-    margin-top: 2rem;
 }
 
 /* Portfolio-section */
