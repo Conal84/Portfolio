@@ -29,13 +29,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.0/circle-progress.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
     <script src="{{url_for('static', filename='js/script.js')}}"></script>
-    <script>
+    <!-- <script>
       // On delete skill modal show extract info from data attribute and assign it to modal href
       $("#deleteSkillModal").on("show.bs.modal", function (event) {
         var button = $(event.relatedTarget);
-        var skill = button.data("skill_id");
+        var skill = button.data("this_skill");
         document.getElementById("modal-delete-skill").href = "{{url_for('delete_skill', skill_id=skill)}}";
       });
-    </script>
+    </script> -->
   </body>
 </html>
