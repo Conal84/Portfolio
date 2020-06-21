@@ -77,6 +77,18 @@ def delete_skill(skill_id):
     return redirect(url_for('index'))
 
 
+@app.route('/edit_skill/<skill_id>', methods=['POST'])
+def edit_skill(skill_id):
+    skills = mongo.db.Skills
+    skills.update({'_id': ObjectId(skill_id)},
+    {
+        'skill_name': request.form.get('skill_name'),
+        'percent': request.form.get('percent'),
+        'skill_icon': request.form.get('skill_icon')
+    })
+    return redirect(url_for('index'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
