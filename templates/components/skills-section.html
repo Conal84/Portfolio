@@ -92,7 +92,31 @@
             </h5>
           </div>
           <div class="modal-body">
-            Are you sure you want to delete this skill?
+                <form action="" method="post" novalidate>
+        {{ edit_form.hidden_tag() }}
+        <p>
+            {{ edit_form.skill_name.label }}<br>
+            {{ edit_form.skill_name(size=32) }}
+            {% for error in form.username.errors %}
+            <div style="color: red;">{{ error }}</div>
+            {% endfor %}
+        </p>
+        <p>
+            {{ edit_form.percent.label }}<br>
+            {{ edit_form.percent(size=32) }}
+            {% for error in form.password.errors %}
+            <div style="color: red;">{{ error }}</div>
+            {% endfor %}
+        </p>
+        <p>
+            {{ edit_form.skill_icon.label }}<br>
+            {{ edit_form.skill_icon(size=32) }}
+            {% for error in form.password.errors %}
+            <div style="color: red;">{{ error }}</div>
+            {% endfor %}
+        </p>
+        <p>{{ edit_form.submit() }}</p>
+    </form>
           </div>
           <div class="modal-footer">
             <button
