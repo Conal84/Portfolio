@@ -89,12 +89,13 @@ def delete_skill(skill_id):
 @app.route('/edit_skill/<skill_id>', methods=['POST'])
 def edit_skill(skill_id):
     skills = mongo.db.Skills
+    edit_form = EditForm()
     skills.update({'_id': ObjectId(skill_id)},
-    {
-        'skill_name': request.form.get('skill_name'),
-        'percent': request.form.get('percent'),
-        'skill_icon': request.form.get('skill_icon')
-    })
+                  {
+                    'skill_name': request.form.get('skill_name'),
+                    'percent': request.form.get('percent'),
+                    'skill_icon': request.form.get('skill_icon')
+                    })
     return redirect(url_for('index'))
 
 
