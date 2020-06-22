@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, IntegerField
 from wtforms.validators import InputRequired, ValidationError
 from bson.objectid import ObjectId
 from os import path
@@ -20,6 +20,8 @@ mongo = PyMongo(app)
 
 class LoginForm(FlaskForm):
     username = StringField('Username', [InputRequired()])
+    password = PasswordField('Password', [InputRequired()])
+    submit = SubmitField('Sign In')
 
     def find_details(self, users):
         for user in users:
@@ -30,13 +32,20 @@ class LoginForm(FlaskForm):
         if field.data != self.req_username:
             raise ValidationError('Incorrect username')
 
-    password = PasswordField('Password', [InputRequired()])
-
     def validate_password(self, field):
         if field.data != self.req_password:
             raise ValidationError('Incorrect password')
 
-    submit = SubmitField('Sign In')
+
+class EditForm(FlaskForm):
+    skill_name = StringField('Skill Name', [InputRequired()])
+    percent = IntegerField('Skill Percentage', [InputRequired()])
+    skill_icon = StringField('Skill Icon', [InputRequired()])
+    submit = SubmitField('Submit')
+
+    def validate_percent(self, field):
+        if field.data < 0 or field.data > 100:
+            raise ValidationError('Value must be between 0 and 100')
 
 
 @app.route('/')
