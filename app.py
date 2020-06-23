@@ -69,6 +69,7 @@ def login():
     users = mongo.db.Users.find()
     form = LoginForm()
     form.find_details(users)
+
     if form.validate_on_submit():
         session['username'] = request.form['username']
         return redirect(url_for('index'))
@@ -87,13 +88,17 @@ def delete_skill(skill_id):
     return redirect(url_for('index'))
 
 
-@app.route('/edit_skill/<skill_id>/<form>', methods=['POST'])
-def edit_skill(skill_id, form):
+@app.route('/show_skill/<skill_id>')
+def show_skill(skill_id):
+    the_skill = mongo.db.Skills.find_one({'_id': ObjectId(skill_id)})
+    form = EditForm()
+    return render_template('pages/show-skill.html', skill=the_skill, form=form)
+
+
+@app.route('/edit_skill/<skill_id>', methods=['POST'])
+def edit_skill(skill_id):
     skills = mongo.db.Skills
     the_skill = skills.find_one({'_id': ObjectId(skill_id)})
-    form.skill_name = the_skill.skill_name
-    form.percent = the_skill.percent
-    form.skill_icon = the_skill.skill_icon
 
     if form.validate_on_submit():
         skills.update({'_id': ObjectId(skill_id)},
