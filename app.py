@@ -53,7 +53,8 @@ class EditForm(FlaskForm):
 def index():
     return render_template("pages/index.html",
                            skills=mongo.db.Skills.find(),
-                           projects=mongo.db.Projects.find())
+                           projects=mongo.db.Projects.find(),
+                           form=EditForm())
 
 
 @app.route('/project/<project_id>')
@@ -89,7 +90,11 @@ def delete_skill(skill_id):
 @app.route('/edit_skill/<skill_id>', methods=['POST'])
 def edit_skill(skill_id):
     skills = mongo.db.Skills
-    edit_form = EditForm()
+    the_skill = skills.find_one({'_id': ObjectId(skill_id)})
+    edit_form.skill_name = the_skill.skill_name
+    edit_form.percent = the_skill.percent
+    edit_form.skill_icon = the_skill.skill_icon
+
     if edit_form.validate_on_submit():
         skills.update({'_id': ObjectId(skill_id)},
                       {
