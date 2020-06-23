@@ -87,15 +87,15 @@ def delete_skill(skill_id):
     return redirect(url_for('index'))
 
 
-@app.route('/edit_skill/<skill_id>', methods=['POST'])
-def edit_skill(skill_id):
+@app.route('/edit_skill/<skill_id>/<form>', methods=['POST'])
+def edit_skill(skill_id, form):
     skills = mongo.db.Skills
     the_skill = skills.find_one({'_id': ObjectId(skill_id)})
-    edit_form.skill_name = the_skill.skill_name
-    edit_form.percent = the_skill.percent
-    edit_form.skill_icon = the_skill.skill_icon
+    form.skill_name = the_skill.skill_name
+    form.percent = the_skill.percent
+    form.skill_icon = the_skill.skill_icon
 
-    if edit_form.validate_on_submit():
+    if form.validate_on_submit():
         skills.update({'_id': ObjectId(skill_id)},
                       {
             'skill_name': request.form.get('skill_name'),
@@ -103,7 +103,7 @@ def edit_skill(skill_id):
             'skill_icon': request.form.get('skill_icon')
         })
         return redirect(url_for('index'))
-    return render_template('pages/index.html', title='Edit', form=edit_form)
+    return render_template('pages/index.html')
 
 
 if __name__ == '__main__':
