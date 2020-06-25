@@ -38,7 +38,7 @@ class LoginForm(FlaskForm):
 
 
 class EditForm(FlaskForm):
-    skill_name = StringField('Skill Name', [InputRequired()])
+    skill_name = StringField('Skill Name', [InputRequired()], default="MySkill")
     percent = IntegerField('Skill Percentage', [InputRequired()])
     skill_icon = StringField('Skill Icon', [InputRequired()])
     submit = SubmitField('Submit')
@@ -100,6 +100,10 @@ def edit_skill(skill_id):
     skills = mongo.db.Skills
     the_skill = skills.find_one({'_id': ObjectId(skill_id)})
 
+    form = EditForm(percent=50)
+    form.skill_name.data = 'John'
+    form.skill_icon.data = the_skill.skill_icon
+
     if form.validate_on_submit():
         skills.update({'_id': ObjectId(skill_id)},
                       {
@@ -108,7 +112,7 @@ def edit_skill(skill_id):
             'skill_icon': request.form.get('skill_icon')
         })
         return redirect(url_for('index'))
-    return render_template('pages/index.html')
+    return render_template('pages/index.html', skills=skills, form=form)
 
 
 if __name__ == '__main__':
