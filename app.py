@@ -3,7 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, IntegerField
-from wtforms.validators import InputRequired, ValidationError
+from wtforms.validators import InputRequired, ValidationError, NumberRange
 from bson.objectid import ObjectId
 from os import path
 if path.exists("env.py"):
@@ -39,13 +39,9 @@ class LoginForm(FlaskForm):
 
 class EditForm(FlaskForm):
     skill_name = StringField('Skill Name', [InputRequired()])
-    percent = IntegerField('Skill Percentage', [InputRequired()])
+    percent = IntegerField('Skill Percentage', [InputRequired(), NumberRange(min=0, max=100, message="Value must be between 0 and 100")])
     skill_icon = StringField('Skill Icon', [InputRequired()])
     submit = SubmitField('Submit')
-
-    def validate_percent(self, field):
-        if field.data < 0 or field.data > 100:
-            raise ValidationError('Value must be between 0 and 100')
 
 
 @app.route('/')
@@ -101,7 +97,7 @@ def show_skill(skill_id):
         skills.update({'_id': ObjectId(skill_id)},
                       {
             'skill_name': request.form.get('skill_name'),
-            'percent': request.form.get('percent'),
+            'percent': int(request.form.get('percent')),
             'skill_icon': request.form.get('skill_icon')
         })
         return redirect(url_for('index'))
