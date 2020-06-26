@@ -101,6 +101,7 @@ def edit_skill(skill_id):
     the_skill = skills.find_one({'_id': ObjectId(skill_id)})
 
     form = EditForm()
+    form.percent.default = 50
 
     if form.validate_on_submit():
         skills.update({'_id': ObjectId(skill_id)},
