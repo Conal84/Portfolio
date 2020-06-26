@@ -93,6 +93,9 @@ def show_skill(skill_id):
     skills = mongo.db.Skills
     the_skill = mongo.db.Skills.find_one({'_id': ObjectId(skill_id)})
     form = EditForm()
+    form.skill_name.data = the_skill['skill_name']
+    form.percent.data = the_skill['percent']
+    form.skill_icon.data = the_skill['skill_icon']
 
     if form.validate_on_submit():
         skills.update({'_id': ObjectId(skill_id)},
