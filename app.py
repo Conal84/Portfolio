@@ -39,7 +39,7 @@ class LoginForm(FlaskForm):
 
 class EditForm(FlaskForm):
     skill_name = StringField('Skill Name', [InputRequired()])
-    percent = IntegerField('Skill Percentage', [InputRequired()])
+    percent = IntegerField('Skill Percentage', [InputRequired(), NumberRange(min=0, max=100)])
     skill_icon = StringField('Skill Icon', [InputRequired()])
     submit = SubmitField('Submit')
 
