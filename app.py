@@ -39,7 +39,7 @@ class LoginForm(FlaskForm):
 
 class EditForm(FlaskForm):
     skill_name = StringField('Skill Name', [InputRequired()])
-    percent = IntegerField('Skill Percentage', [InputRequired(), NumberRange(min=0, max=100, message="Value must be between 0 and 100")])
+    percent = IntegerField('Skill Percentage', [InputRequired()])
     skill_icon = StringField('Skill Icon', [InputRequired()])
     submit = SubmitField('Submit')
 
@@ -90,7 +90,7 @@ def show_skill(skill_id):
     the_skill = mongo.db.Skills.find_one({'_id': ObjectId(skill_id)})
     form = EditForm()
     form.skill_name.data = the_skill['skill_name']
-    form.percent.data = the_skill['percent']
+    form.percent.data = int(the_skill['percent'])
     form.skill_icon.data = the_skill['skill_icon']
 
     if form.validate_on_submit():
