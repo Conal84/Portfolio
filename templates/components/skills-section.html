@@ -20,9 +20,7 @@
           <a
             type="button"
             class="btn btn-secondary"
-            data-toggle="modal"
-            data-target="#editSkillModal{{skill.skill_name}}"
-            href="{{url_for('edit_skill', skill_id=skill._id)}}"
+            href="{{url_for('show_skill', skill_id=skill._id)}}"
           >
             Edit
           </a>
@@ -77,7 +75,7 @@
       </div>
     </div>
     <!-- Edit Skill Modal -->
-    <div
+    <!-- <div
       class="modal fade"
       id="editSkillModal{{skill.skill_name}}"
       tabindex="-1"
@@ -94,28 +92,28 @@
           </div>
           <div class="modal-body">
             <form action="" method="post" novalidate>
-                {{ form.hidden_tag() }}
-                <p>
-                    {{ form.skill_name.label }}<br>
-                    {{ form.skill_name(size=32) }}
-                    {% for error in form.skill_name.errors %}
-                    <div style="color: red;">{{ error }}</div>
-                    {% endfor %}
-                </p>
-                <p>
-                    {{ form.percent.label }}<br>
-                    {{ form.percent(size=32) }}
-                    {% for error in form.percent.errors %}
-                    <div style="color: red;">{{ error }}</div>
-                    {% endfor %}
-                </p>
-                <p>
-                    {{ form.skill_icon.label }}<br>
-                    {{ form.skill_icon(size=32) }}
-                    {% for error in form.skill_icon.errors %}
-                    <div style="color: red;">{{ error }}</div>
-                    {% endfor %}
-                </p>
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <label for="skill-name">Skill Name</label>
+                {{ form.skill_name (class="form-control", id="skill-name", type="text", placeholder={{skill.skill_name}}) }}
+                {% for error in form.skill_name.errors %}
+                <p style="color: red;">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label for="percent">Percent</label>
+                {{ form.percent (class="form-control", id="percent", type="text", placeholder={{skill.percent}}) }}
+                {% for error in form.percent.errors %}
+                <p style="color: red;">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label for="skill-icon">Skill Icon</label>
+                {{ form.skill_icon (class="form-control", id="skill-icon", type="text", placeholder={{skill.skill_icon}}) }}
+                {% for error in form.skill_icon.errors %}
+                <p style="color: red;">{{ error }}</p>
+                {% endfor %}
+            </div>
                 <p>{{ form.submit() }}</p>
             </form>
           </div>
@@ -137,7 +135,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     {% endfor %} {% if 'username' in session %}
     <div class="col-4 text-center">
       <i class="fas fa-plus-circle" id="add-skill"></i>

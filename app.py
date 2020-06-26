@@ -38,7 +38,7 @@ class LoginForm(FlaskForm):
 
 
 class EditForm(FlaskForm):
-    skill_name = StringField('Skill Name', [InputRequired()], default="MySkill")
+    skill_name = StringField('Skill Name', [InputRequired()])
     percent = IntegerField('Skill Percentage', [InputRequired()])
     skill_icon = StringField('Skill Icon', [InputRequired()])
     submit = SubmitField('Submit')
@@ -88,20 +88,17 @@ def delete_skill(skill_id):
     return redirect(url_for('index'))
 
 
-@app.route('/show_skill/<skill_id>')
+@app.route('/show_skill/<skill_id>', methods=['GET', 'POST'])
 def show_skill(skill_id):
     the_skill = mongo.db.Skills.find_one({'_id': ObjectId(skill_id)})
     form = EditForm()
     return render_template('pages/show-skill.html', skill=the_skill, form=form)
 
 
-@app.route('/edit_skill/<skill_id>', methods=['POST'])
+@app.route('/edit_skill/<skill_id>', methods=['GET', 'POST'])
 def edit_skill(skill_id):
     skills = mongo.db.Skills
-    the_skill = skills.find_one({'_id': ObjectId(skill_id)})
-
     form = EditForm()
-    form.percent.default = 50
 
     if form.validate_on_submit():
         skills.update({'_id': ObjectId(skill_id)},
