@@ -74,68 +74,6 @@
         </div>
       </div>
     </div>
-    <!-- Edit Skill Modal -->
-    <!-- <div
-      class="modal fade"
-      id="editSkillModal{{skill.skill_name}}"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="editSkillModal"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="editSkillModalTitle">
-              Edit Skill
-            </h5>
-          </div>
-          <div class="modal-body">
-            <form action="" method="post" novalidate>
-            {{ form.hidden_tag() }}
-            <div class="form-group">
-                <label for="skill-name">Skill Name</label>
-                {{ form.skill_name (class="form-control", id="skill-name", type="text", placeholder={{skill.skill_name}}) }}
-                {% for error in form.skill_name.errors %}
-                <p style="color: red;">{{ error }}</p>
-                {% endfor %}
-            </div>
-            <div class="form-group">
-                <label for="percent">Percent</label>
-                {{ form.percent (class="form-control", id="percent", type="text", placeholder={{skill.percent}}) }}
-                {% for error in form.percent.errors %}
-                <p style="color: red;">{{ error }}</p>
-                {% endfor %}
-            </div>
-            <div class="form-group">
-                <label for="skill-icon">Skill Icon</label>
-                {{ form.skill_icon (class="form-control", id="skill-icon", type="text", placeholder={{skill.skill_icon}}) }}
-                {% for error in form.skill_icon.errors %}
-                <p style="color: red;">{{ error }}</p>
-                {% endfor %}
-            </div>
-                <p>{{ form.submit() }}</p>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn modal-btn-close"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-            <a
-              class="btn modal-btn-delete"
-              id="modal-edit-skill"
-              href="{{url_for('edit_skill', skill_id=skill._id)}}"
-              role="button"
-              >Update</a
-            >
-          </div>
-        </div>
-      </div>
-    </div> -->
     {% endfor %} {% if 'username' in session %}
     <div class="col-4 text-center">
       <i class="fas fa-plus-circle" id="add-skill"></i>
