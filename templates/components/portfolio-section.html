@@ -18,7 +18,14 @@
             {% if 'username' in session %}
             <div>
               <a class="btn btn-secondary project-btn" href="#" role="button">Edit</a>
-              <a class="btn btn-secondary project-btn" href="#" role="button">Delete</a>
+            <button
+            type="button"
+            class="btn btn-secondary"
+            data-toggle="modal"
+            data-target="#deleteProjectModal{{project.project_name}}"
+          >
+            Delete
+          </button>
             </div>
             {% else %}
             <a
@@ -32,6 +39,44 @@
           </div>
         </div>
       </div>
+      <!-- Delete Project Modal -->
+    <div
+      class="modal fade"
+      id="deleteProjectModal{{project.project_name}}}"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="deleteProjectModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteProjectModalTitle">
+              Delete Project
+            </h5>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete this project?
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn modal-btn-close"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <a
+              class="btn modal-btn-delete"
+              id="modal-delete-skill"
+              href="{{url_for('delete_project', project_id=project._id)}}"
+              role="button"
+              >Delete</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
           {% endfor %} {% if 'username' in session %}
     <div class="col-12 col-md-4 image-col">
         <div class="card text-center project-card">

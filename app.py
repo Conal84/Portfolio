@@ -91,7 +91,7 @@ def show_skill(skill_id):
     the_skill = mongo.db.Skills.find_one({'_id': ObjectId(skill_id)})
     form = EditForm()
     form.skill_name.data = the_skill['skill_name']
-    # form.percent.default = the_skill['percent']
+    # form.percent.data = the_skill['percent']
     form.skill_icon.data = the_skill['skill_icon']
 
     if form.validate_on_submit():
@@ -119,6 +119,12 @@ def add_skill():
             })
         return redirect(url_for('index'))
     return render_template('pages/add-skill.html', form=form)
+
+
+@app.route('/delete_project/<project_id>')
+def delete_project(project_id):
+    mongo.db.Projects.remove({'_id': ObjectId(project_id)})
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
