@@ -105,6 +105,22 @@ def show_skill(skill_id):
     return render_template('pages/show-skill.html', skill=the_skill, form=form)
 
 
+@app.route('/add_skill', methods=['GET', 'POST'])
+def add_skill():
+    skills = mongo.db.Skills
+    form = EditForm()
+
+    if form.validate_on_submit():
+        skills.insert(
+            {
+                'skill_name': request.form.get('skill_name'),
+                'percent': float(request.form.get('percent')),
+                'skill_icon': request.form.get('skill_icon')
+            })
+        return redirect(url_for('index'))
+    return render_template('pages/add-skill.html', form=form)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),

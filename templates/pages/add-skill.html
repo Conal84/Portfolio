@@ -1,0 +1,30 @@
+{% extends 'layout/base.html' %}{% block content %}
+
+    <h1>Add Skill</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.skill_name.label }}<br>
+            {{ form.skill_name(size=32) }}
+            {% for error in form.skill_name.errors %}
+            <div style="color: red;">{{ error }}</div>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.percent.label }}<br>
+            {{ form.percent(size=32) }}
+            {% for error in form.percent.errors %}
+            <div style="color: red;">{{ error }}</div>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.skill_icon.label }}<br>
+            {{ form.skill_icon(size=32) }}
+            {% for error in form.skill_icon.errors %}
+            <div style="color: red;">{{ error }}</div>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+{% include 'layout/footer.html' %} {% endblock %}
