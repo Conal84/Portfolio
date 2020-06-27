@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, IntegerField
+from wtforms import StringField, PasswordField, SubmitField, IntegerField, DecimalField
 from wtforms.validators import InputRequired, ValidationError, NumberRange
 from bson.objectid import ObjectId
 from os import path
@@ -39,7 +39,8 @@ class LoginForm(FlaskForm):
 
 class EditForm(FlaskForm):
     skill_name = StringField('Skill Name', [InputRequired()])
-    percent = IntegerField('Skill Percentage', [InputRequired(), NumberRange(min=0, max=100)])
+    percent = DecimalField('Skill Percentage', [
+                           InputRequired(), NumberRange(min=0.01, max=1.0)])
     skill_icon = StringField('Skill Icon', [InputRequired()])
     submit = SubmitField('Submit')
 
@@ -90,14 +91,14 @@ def show_skill(skill_id):
     the_skill = mongo.db.Skills.find_one({'_id': ObjectId(skill_id)})
     form = EditForm()
     form.skill_name.data = the_skill['skill_name']
-    form.percent.data = int(the_skill['percent'])
+    # form.percent.default = the_skill['percent']
     form.skill_icon.data = the_skill['skill_icon']
 
     if form.validate_on_submit():
         skills.update({'_id': ObjectId(skill_id)},
                       {
             'skill_name': request.form.get('skill_name'),
-            'percent': int(request.form.get('percent')),
+            'percent': float(request.form.get('percent')),
             'skill_icon': request.form.get('skill_icon')
         })
         return redirect(url_for('index'))
