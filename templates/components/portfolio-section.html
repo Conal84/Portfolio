@@ -16,7 +16,7 @@
           </p>
           {% if 'username' in session %}
           <div>
-            <a class="btn btn-secondary project-btn" href="#" role="button"
+            <a class="btn btn-secondary project-btn" href="{{url_for('edit_project', project_id=project._id)}}" role="button"
               >Edit</a
             >
             <button

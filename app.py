@@ -55,6 +55,7 @@ class ProjectForm(FlaskForm):
     carousel_image3 = StringField('Carousel image 3', [InputRequired()])
     website_link = StringField('Website link', [InputRequired()])
     git_link = StringField('Github link', [InputRequired()])
+    submit = SubmitField('Submit')
 
 
 @app.route('/')
