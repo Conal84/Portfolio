@@ -23,7 +23,7 @@
               type="button"
               class="btn btn-secondary project-btn"
               data-toggle="modal"
-              data-target="#deleteProjectModal{{project.project_name}}"
+              data-target="#deleteProjectModal{{project._id}}"
             >
               Delete
             </button>
@@ -43,10 +43,10 @@
     <!-- Delete Project Modal -->
     <div
       class="modal fade"
-      id="deleteProjectModal{{project.project_name}}"
+      id="deleteProjectModal{{project._id}}"
       tabindex="-1"
       role="dialog"
-      aria-labelledby="deleteProjectModal"
+      aria-labelledby="deleteProjectModalTitle"
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered" role="document">

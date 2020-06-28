@@ -28,7 +28,7 @@
             type="button"
             class="btn btn-secondary"
             data-toggle="modal"
-            data-target="#deleteSkillModal{{skill.skill_name}}"
+            data-target="#deleteSkillModal{{skill._id}}"
           >
             Delete
           </button>
@@ -39,7 +39,7 @@
     <!-- Delete Skill Modal -->
     <div
       class="modal fade"
-      id="deleteSkillModal{{skill.skill_name}}"
+      id="deleteSkillModal{{skill._id}}"
       tabindex="-1"
       role="dialog"
       aria-labelledby="deleteSkillModal"
@@ -65,7 +65,6 @@
             </button>
             <a
               class="btn modal-btn-delete"
-              id="modal-delete-skill"
               href="{{url_for('delete_skill', skill_id=skill._id)}}"
               role="button"
               >Delete</a

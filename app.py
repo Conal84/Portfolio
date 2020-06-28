@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, IntegerField, DecimalField
+from wtforms import StringField, PasswordField, SubmitField, DecimalField
 from wtforms.validators import InputRequired, ValidationError, NumberRange
 from bson.objectid import ObjectId
 from os import path
@@ -51,7 +51,8 @@ def index():
     return render_template("pages/index.html",
                            skills=mongo.db.Skills.find(),
                            projects=mongo.db.Projects.find(),
-                           form=EditForm())
+                           form=EditForm()) 
+                        #    remove form
 
 
 @app.route('/project/<project_id>')
