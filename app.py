@@ -138,6 +138,29 @@ def delete_project(project_id):
     return redirect(url_for('index'))
 
 
+@app.route('/edit_project/<project_id>', methods=['GET', 'POST'])
+def edit_project(project_id):
+    projects = mongo.db.Projects
+    the_project = mongo.db.Projects.find_one({'_id': ObjectId(project_id)})
+    form = ProjectForm()
+    form.project_name.data = the_project['project_name']
+    form.short_text.data = the_project['short_text']
+    form.long_text.data = the_project['long_text']
+
+    if form.validate_on_submit():
+        projects.update({'_id': ObjectId(project_id)},
+                        {
+            'project_name': request.form.get('project_name'),
+            'short_text': request.form.get('short_text'),
+            'long_text': request.form.get('long_text'),
+            'index_image': request.form.get('index_image'),
+            'website_link': request.form.get('website_link'),
+            'git_link': request.form.get('git_link')
+        })
+        return redirect(url_for('index'))
+    return render_template('pages/edit-project.html', project=the_project, form=form)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
