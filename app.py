@@ -37,7 +37,7 @@ class LoginForm(FlaskForm):
             raise ValidationError('Incorrect password')
 
 
-class EditForm(FlaskForm):
+class SkillForm(FlaskForm):
     skill_name = StringField('Skill Name', [InputRequired()])
     percent = DecimalField('Skill Percentage', [
                            InputRequired(), NumberRange(min=0.01, max=1.0)])
@@ -101,7 +101,7 @@ def delete_skill(skill_id):
 def edit_skill(skill_id):
     skills = mongo.db.Skills
     the_skill = mongo.db.Skills.find_one({'_id': ObjectId(skill_id)})
-    form = EditForm()
+    form = SkillForm()
     form.skill_name.data = the_skill['skill_name']
     # form.percent.data = the_skill['percent']
     form.skill_icon.data = the_skill['skill_icon']
@@ -120,7 +120,7 @@ def edit_skill(skill_id):
 @app.route('/add_skill', methods=['GET', 'POST'])
 def add_skill():
     skills = mongo.db.Skills
-    form = EditForm()
+    form = SkillForm()
 
     if form.validate_on_submit():
         skills.insert(

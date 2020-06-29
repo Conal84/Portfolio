@@ -1,52 +1,55 @@
 {% extends 'layout/base.html' %}{% block content %}
-
-    <h1>Add Project</h1>
-    <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.project_name.label }}<br>
-            {{ form.project_name(size=32) }}
-            {% for error in form.project_name.errors %}
-            <div style="color: red;">{{ error }}</div>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.short_text.label }}<br>
-            {{ form.short_text(size=32) }}
-            {% for error in form.short_text.errors %}
-            <div style="color: red;">{{ error }}</div>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.long_text.label }}<br>
-            {{ form.long_text(size=32) }}
-            {% for error in form.long_text.errors %}
-            <div style="color: red;">{{ error }}</div>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.index_image.label }}<br>
-            {{ form.index_image(size=32) }}
-            {% for error in form.index_image.errors %}
-            <div style="color: red;">{{ error }}</div>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.website_link.label }}<br>
-            {{ form.website_link(size=32) }}
-            {% for error in form.website_link.errors %}
-            <div style="color: red;">{{ error }}</div>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.git_link.label }}<br>
-            {{ form.git_link(size=32) }}
-            {% for error in form.git_link.errors %}
-            <div style="color: red;">{{ error }}</div>
-            {% endfor %}
-        </p>
-        <span>{{ form.submit() }}</span>
-        <a class="btn modal-btn-close" href="{{url_for('index')}}" role="button">Cancel</a>
-    </form>
+    <div class="card w-50 mx-auto">
+        <div class="card-body">
+            <h2 class="card-title">Add Project</h2>
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.project_name.label }}<br>
+                    {{ form.project_name(size=32) }}
+                    {% for error in form.project_name.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.short_text.label }}<br>
+                    {{ form.short_text(size=32) }}
+                    {% for error in form.short_text.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.long_text.label }}<br>
+                    {{ form.long_text(size=64) }}
+                    {% for error in form.long_text.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.index_image.label }}<br>
+                    {{ form.index_image(size=32) }}
+                    {% for error in form.index_image.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.website_link.label }}<br>
+                    {{ form.website_link(size=32) }}
+                    {% for error in form.website_link.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.git_link.label }}<br>
+                    {{ form.git_link(size=32) }}
+                    {% for error in form.git_link.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                <span>{{ form.submit() }}</span>
+                <a class="btn modal-btn-close" href="{{url_for('index')}}" role="button">Cancel</a>
+            </form>
+        </div>
+    </div>
 
 {% include 'layout/footer.html' %} {% endblock %}
