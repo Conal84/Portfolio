@@ -24,7 +24,8 @@
             <div style="color: red;">{{ error }}</div>
             {% endfor %}
         </p>
-        <p>{{ form.submit() }}</p>
+        <span>{{ form.submit() }}</span>
+        <a class="btn modal-btn-close" href="{{url_for('index')}}" role="button">Cancel</a>
     </form>
 
 {% include 'layout/footer.html' %} {% endblock %}

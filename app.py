@@ -162,6 +162,25 @@ def edit_project(project_id):
     return render_template('pages/edit-project.html', project=the_project, form=form)
 
 
+@app.route('/add_project', methods=['GET', 'POST'])
+def add_project():
+    projects = mongo.db.Projects
+    form = ProjectForm()
+
+    if form.validate_on_submit():
+        projects.insert(
+            {
+                'project_name': request.form.get('project_name'),
+                'short_text': request.form.get('short_text'),
+                'long_text': request.form.get('long_text'),
+                'index_image': request.form.get('index_image'),
+                'website_link': request.form.get('website_link'),
+                'git_link': request.form.get('git_link')
+            })
+        return redirect(url_for('index'))
+    return render_template('pages/add-project.html', form=form)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
