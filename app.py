@@ -97,8 +97,8 @@ def delete_skill(skill_id):
     return redirect(url_for('index'))
 
 
-@app.route('/show_skill/<skill_id>', methods=['GET', 'POST'])
-def show_skill(skill_id):
+@app.route('/edit_skill/<skill_id>', methods=['GET', 'POST'])
+def edit_skill(skill_id):
     skills = mongo.db.Skills
     the_skill = mongo.db.Skills.find_one({'_id': ObjectId(skill_id)})
     form = EditForm()
@@ -114,7 +114,7 @@ def show_skill(skill_id):
             'skill_icon': request.form.get('skill_icon')
         })
         return redirect(url_for('index'))
-    return render_template('pages/show-skill.html', skill=the_skill, form=form)
+    return render_template('pages/edit-skill.html', skill=the_skill, form=form)
 
 
 @app.route('/add_skill', methods=['GET', 'POST'])
