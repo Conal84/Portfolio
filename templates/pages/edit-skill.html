@@ -1,31 +1,37 @@
 {% extends 'layout/base.html' %}{% block content %}
-
-    <h1>Edit Skill</h1>
-    <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.skill_name.label }}<br>
-            {{ form.skill_name(size=32) }}
-            {% for error in form.skill_name.errors %}
-            <div style="color: red;">{{ error }}</div>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.percent.label }}<br>
-            {{ form.percent(size=32) }}
-            {% for error in form.percent.errors %}
-            <div style="color: red;">{{ error }}</div>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.skill_icon.label }}<br>
-            {{ form.skill_icon(size=32) }}
-            {% for error in form.skill_icon.errors %}
-            <div style="color: red;">{{ error }}</div>
-            {% endfor %}
-        </p>
-        <span>{{ form.submit() }}</span>
-        <a class="btn modal-btn-close" href="{{url_for('index')}}" role="button">Cancel</a>
-    </form>
-
+<div class="row editadd-row">
+	<div class="col editadd-col">
+		<div class="card text-center form-text mx-auto editadd-card">
+			<div class="card-body">
+				<h2 class="card-title sub-head">Edit Skill</h2>
+				<form action="" method="post" novalidate>
+					{{ form.hidden_tag() }}
+					<p>
+						{{ form.skill_name.label }}<br>
+                    {{ form.skill_name(size=50) }}
+                    {% for error in form.skill_name.errors %}
+						<span style="color: red;">{{ error }}</span>
+						{% endfor %}
+					</p>
+					<p>
+						{{ form.percent.label }}<br>
+                    {{ form.percent(size=50) }}
+                    {% for error in form.percent.errors %}
+						<span style="color: red;">{{ error }}</span>
+						{% endfor %}
+					</p>
+					<p>
+						{{ form.skill_icon.label }}<br>
+                    {{ form.skill_icon(size=50) }}
+                    {% for error in form.skill_icon.errors %}
+						<span style="color: red;">{{ error }}</span>
+						{% endfor %}
+					</p>
+					<span>{{ form.submit(class_="btn-submit") }}</span>
+					<a class="btn modal-btn-close" href="{{url_for('index')}}" role="button">Cancel</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
 {% include 'layout/footer.html' %} {% endblock %}
