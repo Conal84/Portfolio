@@ -18,6 +18,11 @@ html{
     font-size: 1.5rem;
 }
 
+.form-text{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25rem;
+}
+
 /* Headings */
 .main-head{
     font-family: 'Raleway', sans-serif;
