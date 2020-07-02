@@ -38,26 +38,8 @@ html{
     text-align: center;
     padding: 1rem 0;
 }
-}
 
 /* Buttons */
-.btn-primary{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.75rem;
-    color: #fff;
-    padding: 1rem 3rem;
-    border-radius: 5px;
-    background-color: #ffcd24;
-    border: 1px solid #ffcd24;
-    transition: opacity 0.5s, background-color 0.5s, border 1px solid #ffcd24;
-}
-
-.btn-primary:hover{
-    opacity: 0.8;
-    background-color: #ffcd24;
-    border: 1px solid #ffcd24;
-}
-
 .btn-secondary{
     background-color: #1478a3;
     border: 1px solid #1478a3;
@@ -107,11 +89,6 @@ html{
     border: 1px solid #ffcd24;  
 }
 
-.modal-btn-send{
-    font-size: 1.25rem;
-    padding: 5px 1rem;
-}
-
 .modal-btn-close{
     font-size: 1.25rem;
     color: #fff;
@@ -156,18 +133,18 @@ html{
 }
 
 /* Skills-section */
-#skills-container{
+#skills-section{
     background-color: #fbfcff;
 }
 
-#skills-container .round{
+#skills-section .round{
     margin-top: 20px;
     margin-bottom: 20px;
     position: relative;
     text-align: center;
 }
 
-#skills-container .round strong{
+#skills-section .round strong{
     position: absolute;
     top: 50%;
     right: 35%;
@@ -182,12 +159,12 @@ html{
     margin-top: 20px;
 }
 
-#skills-container span{
+#skills-section span{
     font-size: 17px;
     margin-top: 10px;
 }
 
-#skills-container i{
+#skills-section i{
     color: #1478a3;
     font-size: 22px;
     margin-right: 7px;
