@@ -320,6 +320,8 @@ html{
 #footer-container{
     height: 5rem;
     background-color: #33393d;
+    position: fixed;
+    bottom: 0;
 }
 
 #social-links{
@@ -393,12 +395,20 @@ html{
 }
 
 /* Editadd pages */
+.editadd-container{
+    height: 100vh;
+    overflow: hidden;
+}
+
 .editadd-row{
     background-color: #eaecec;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .editadd-col{
-    padding: 3rem 0;
+    overflow: hidden;
 }
 
 .editadd-card{
