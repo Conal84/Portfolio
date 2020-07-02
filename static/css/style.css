@@ -137,6 +137,13 @@ html{
     background-color: #fbfcff;
 }
 
+#skills-scroll {
+    display: block;
+    position: relative;
+    top: -45px;
+    visibility: hidden;
+}
+
 #skills-section .round{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -179,6 +186,13 @@ html{
 /* Portfolio-section */
 #portfolio-section{
     background-color: #eaecec;
+}
+
+#portfolio-scroll {
+    display: block;
+    position: relative;
+    top: -45px;
+    visibility: hidden;
 }
 
 #portfolio-row{
@@ -260,6 +274,13 @@ html{
 /* Contact-section */
 #contact-section{
     background-color: #1478a3;
+}
+
+#contact-scroll {
+    display: block;
+    position: relative;
+    top: -45px;
+    visibility: hidden;
 }
 
 .contact-row{
