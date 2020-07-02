@@ -74,6 +74,22 @@ html{
     margin-top: 3rem;
 }
 
+.btn-submit{
+    font-size: 1.25rem;
+    color: #fff;
+    padding: 5px 1rem;
+    border-radius: 5px;
+    background-color: #ffcd24;
+    transition: opacity 0.5s, background-color 0.5s, border 1px solid #ffcd24;
+}
+
+.btn-submit:hover{
+    opacity: 0.8;
+    color: #fff;
+    background-color: #ffcd24;
+    border: 1px solid #ffcd24;  
+}
+
 /* Navbar */
 .navbar{
     font-size: 1.75rem;
@@ -356,3 +372,18 @@ html{
 .link-btn{
     margin: 1rem;
 }
+
+/* Editadd pages */
+.editadd-row{
+    background-color: #eaecec;
+}
+
+.editadd-col{
+    padding: 3rem 0;
+}
+
+.editadd-card{
+    border-color: #ffcd24;
+    width: 35vw;
+}
+
