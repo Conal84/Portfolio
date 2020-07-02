@@ -132,6 +132,10 @@ html{
     color: #fcfcfc;
 }
 
+.nav-link:hover{
+    color: #ffcd24;
+}
+
 /* Skills-section */
 #skills-section{
     background-color: #fbfcff;
