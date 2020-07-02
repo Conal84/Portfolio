@@ -26,6 +26,15 @@ html{
     padding: 2rem 0;
 }
 
+.sub-head{
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    text-decoration: underline;
+    text-align: center;
+    padding: 1rem 0;
+}
+}
+
 /* Buttons */
 .btn-primary{
     font-family: 'Open Sans', sans-serif;
@@ -76,9 +85,12 @@ html{
 
 .btn-submit{
     font-size: 1.25rem;
+    font-family: 'Open Sans', sans-serif;
     color: #fff;
     padding: 5px 1rem;
     border-radius: 5px;
+    border-style: none;
+    border: 1px solid #ffcd24;
     background-color: #ffcd24;
     transition: opacity 0.5s, background-color 0.5s, border 1px solid #ffcd24;
 }
@@ -88,6 +100,43 @@ html{
     color: #fff;
     background-color: #ffcd24;
     border: 1px solid #ffcd24;  
+}
+
+.modal-btn-send{
+    font-size: 1.25rem;
+    padding: 5px 1rem;
+}
+
+.modal-btn-close{
+    font-size: 1.25rem;
+    color: #fff;
+    padding: 5px 1rem;
+    border-radius: 5px;
+    background-color: #33393d;
+    transition: opacity 0.5s, background-color 0.5s, border 1px solid #33393d;
+}
+
+.modal-btn-close:hover{
+    opacity: 0.8;
+    color: #fff;
+    background-color: #33393d;
+    border: 1px solid #33393d;  
+}
+
+.modal-btn-delete{
+    font-size: 1.25rem;
+    color: #fff;
+    padding: 5px 1rem;
+    border-radius: 5px;
+    background-color: #dc3545;
+    transition: opacity 0.5s, background-color 0.5s, border 1px solid #dc3545;
+}
+
+.modal-btn-delete:hover{
+    opacity: 0.8;
+    color: #fff;
+    background-color: #dc3545;
+    border: 1px solid #dc3545;  
 }
 
 /* Navbar */
@@ -258,43 +307,6 @@ html{
 
 .modal-row{
     padding-bottom: 1rem;
-}
-
-.modal-btn-send{
-    font-size: 1.25rem;
-    padding: 5px 1rem;
-}
-
-.modal-btn-close{
-    font-size: 1.25rem;
-    color: #fff;
-    padding: 5px 1rem;
-    border-radius: 5px;
-    background-color: #33393d;
-    transition: opacity 0.5s, background-color 0.5s, border 1px solid #33393d;
-}
-
-.modal-btn-close:hover{
-    opacity: 0.8;
-    color: #fff;
-    background-color: #33393d;
-    border: 1px solid #33393d;  
-}
-
-.modal-btn-delete{
-    font-size: 1.25rem;
-    color: #fff;
-    padding: 5px 1rem;
-    border-radius: 5px;
-    background-color: #dc3545;
-    transition: opacity 0.5s, background-color 0.5s, border 1px solid #dc3545;
-}
-
-.modal-btn-delete:hover{
-    opacity: 0.8;
-    color: #fff;
-    background-color: #dc3545;
-    border: 1px solid #dc3545;  
 }
 
 /* Footer */
