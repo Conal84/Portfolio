@@ -3,7 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, DecimalField, TextAreaField
-from wtforms.validators import InputRequired, ValidationError, NumberRange
+from wtforms.validators import InputRequired, ValidationError, NumberRange, Length
 from bson.objectid import ObjectId
 from os import path
 if path.exists("env.py"):
@@ -47,8 +47,8 @@ class SkillForm(FlaskForm):
 
 class ProjectForm(FlaskForm):
     project_name = StringField('Project Name', [InputRequired()])
-    short_text = StringField('Short text', [InputRequired()])
-    long_text = TextAreaField('Long Text', [InputRequired()])
+    short_text = StringField('Short text', [InputRequired(), Length(max=50)])
+    long_text = TextAreaField('Long Text', [InputRequired(), Length(max=400)])
     index_image = StringField('Index image', [InputRequired()])
     carousel_image1 = StringField('Carousel image 1', [InputRequired()])
     carousel_image2 = StringField('Carousel image 2', [InputRequired()])
