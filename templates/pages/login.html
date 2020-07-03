@@ -1,5 +1,5 @@
 {% extends 'layout/base.html' %}{% block content %}
-<div class="row editadd-row no-gutters">
+<div class="row skill-row no-gutters">
 	<div class="col editadd-col">
 		<div class="card text-center form-text mx-auto editadd-card">
 			<div class="card-body">
@@ -10,14 +10,14 @@
 						{{ form.username.label }}<br>
                     {{ form.username(size=50) }}
                     {% for error in form.username.errors %}
-						<span style="color: red;">{{ error }}</span>
+						<span class="form-error">{{ error }}</span>
 						{% endfor %}
 					</p>
 					<p>
 						{{ form.password.label }}<br>
                     {{ form.password(size=50) }}
                     {% for error in form.password.errors %}
-						<span style="color: red;">{{ error }}</span>
+						<span class="form-error">{{ error }}</span>
 						{% endfor %}
 					</p>
 					<span>{{ form.submit(class_="btn-submit") }}</span>

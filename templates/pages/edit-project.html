@@ -1,7 +1,7 @@
 {% extends 'layout/base.html' %}{% block content %}
-<div class="row editadd-row no-gutters">
+<div class="row pr-row no-gutters">
 	<div class="col editadd-col">
-		<div class="card text-center form-text mx-auto editadd-card">
+		<div class="card text-center form-text mx-auto editadd-card pr-card">
 			<div class="card-body">
 				<h2 class="card-title sub-head">Edit Project</h2>
 				<form action="" method="post" novalidate>
@@ -10,42 +10,42 @@
 						{{ form.project_name.label }}<br>
                     {{ form.project_name(size=50) }}
                     {% for error in form.project_name.errors %}
-						<span style="color: red;">{{ error }}</span>
+						<span class="form-error">{{ error }}</span>
 						{% endfor %}
 					</p>
 					<p>
 						{{ form.short_text.label }}<br>
                     {{ form.short_text(size=50) }}
                     {% for error in form.short_text.errors %}
-						<span style="color: red;">{{ error }}</span>
+						<span class="form-error">{{ error }}</span>
 						{% endfor %}
 					</p>
 					<p>
 						{{ form.long_text.label }}<br>
                     {{ form.long_text(cols="48", rows="10") }}
                     {% for error in form.long_text.errors %}
-						<span style="color: red;">{{ error }}</span>
+						<span class="form-error">{{ error }}</span>
 						{% endfor %}
 					</p>
 					<p>
 						{{ form.index_image.label }}<br>
                     {{ form.index_image(size=50) }}
                     {% for error in form.index_image.errors %}
-						<span style="color: red;">{{ error }}</span>
+						<span class="form-error">{{ error }}</span>
 						{% endfor %}
 					</p>
 					<p>
 						{{ form.website_link.label }}<br>
                     {{ form.website_link(size=50) }}
                     {% for error in form.website_link.errors %}
-						<span style="color: red;">{{ error }}</span>
+						<span class="form-error">{{ error }}</span>
 						{% endfor %}
 					</p>
 					<p>
 						{{ form.git_link.label }}<br>
                     {{ form.git_link(size=50) }}
                     {% for error in form.git_link.errors %}
-						<span style="color: red;">{{ error }}</span>
+						<span class="form-error">{{ error }}</span>
 						{% endfor %}
 					</p>
 					<span>{{ form.submit(class_="btn-submit") }}</span>

@@ -1,3 +1,4 @@
+// Function to animate skills progress circle
 function Circle(el) {
   $(el)
     .circleProgress({ fill: { color: "#ffcd24" } })
@@ -8,12 +9,15 @@ function Circle(el) {
     });
 }
 
+// Circle function call
 Circle(".round");
 
+// Initialise emailjs
 (function () {
   emailjs.init("user_E43Rn5N9bcNkea4Jd11HC");
 })();
 
+// On form submit send email via emailjs
 window.onload = function () {
   document
     .getElementById("contact-form")
@@ -22,3 +26,10 @@ window.onload = function () {
       emailjs.sendForm("contact_service", "contact_form", this);
     });
 };
+
+// On successful form submit close the modal
+$("#contact-form").submit(function(){
+    // event.preventDefault();
+    $("#contactModal").modal('hide');
+    return false;
+});

@@ -123,6 +123,7 @@ html{
 
 /* Navbar */
 .navbar{
+    height: 5rem;
     font-size: 1.75rem;
     border-bottom: 2px solid #ffcd24;
     background-color: #33393d;
@@ -320,8 +321,6 @@ html{
 #footer-container{
     height: 5rem;
     background-color: #33393d;
-    position: fixed;
-    bottom: 0;
 }
 
 #social-links{
@@ -395,14 +394,15 @@ html{
 }
 
 /* Editadd pages */
-.editadd-container{
-    height: 100vh;
-    overflow: hidden;
+.skill-row{
+    background-color: #eaecec;
+    height: calc(100vh - 10rem);
+    justify-content: center;
+    align-items: center;
 }
 
-.editadd-row{
+.pr-row{
     background-color: #eaecec;
-    height: 100vh;
     justify-content: center;
     align-items: center;
 }
@@ -414,5 +414,13 @@ html{
 .editadd-card{
     border-color: #ffcd24;
     width: 35vw;
+}
+
+.pr-card{
+    margin: 5rem 0;
+}
+
+.form-error{
+    color: #dc3545;
 }
 

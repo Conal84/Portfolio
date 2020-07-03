@@ -52,6 +52,7 @@
                       class="form-control"
                       id="firstName"
                       name="firstName"
+                      required
                     />
                   </div>
                   <div class="col">
@@ -61,6 +62,7 @@
                       class="form-control"
                       id="lastName"
                       name="lastName"
+                      required
                     />
                   </div>
                 </div>
@@ -70,8 +72,8 @@
                     type="text"
                     class="form-control"
                     id="Subject"
-                    placeholder="A Project to take over the world!!!!"
                     name="Subject"
+                    required
                   />
                 </div>
                 <div class="form-group">
@@ -82,6 +84,7 @@
                     id="emailAddress"
                     placeholder="name@example.com"
                     name="emailAddress"
+                    required
                   />
                 </div>
                 <div class="form-group">
@@ -91,9 +94,10 @@
                     id="message"
                     rows="3"
                     name="message"
+                    required
                   ></textarea>
                 </div>
-                <button type="submit" class="btn btn-submit">
+                <button type="submit" class="btn btn-submit" id="modal-submit">
                   Send
                 </button>
                 <button
