@@ -29,7 +29,11 @@ window.onload = function () {
 
 // On successful form submit close the modal
 $("#contact-form").submit(function(){
-    // event.preventDefault();
     $("#contactModal").modal('hide');
+    // $(".toast").toast('show');
     return false;
+});
+
+$(document).ready(function(){
+    $("#email-toast").toast('show');
 });

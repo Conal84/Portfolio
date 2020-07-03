@@ -296,6 +296,19 @@ html{
     color: #fff;
 }
 
+.toast{
+    /* position: absolute;
+    top: 50%;
+    right: 50%; */
+    display: block;
+    margin: auto;
+    width: 20%;
+    min-height: 100px;
+    color: #000;
+    text-align: center;
+    border: 2px solid #ffcd24;
+}
+
 /* Modal */
 .modal-header{
     border-bottom: 2px solid #ffcd24;
