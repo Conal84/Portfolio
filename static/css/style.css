@@ -319,6 +319,9 @@ html{
 
 #thumb-confirm{
     display: none;
+    padding-left: 1rem;
+    color: #1478a3;
+    font-size: 1.5rem;
 }
 
 /* Footer */
