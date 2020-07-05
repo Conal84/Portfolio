@@ -27,9 +27,11 @@ window.onload = function () {
     });
 };
 
-// On successful form submit close the modal
+// On successful form submit remove hide-me class to show email confirmation, then close modal
 $("#contact-form").submit(function(){
-    $("#contactModal").modal('hide');
-    $("#email-toast").toast('show');
-    return false;
+    $("#thumb-confirm").show();
+    setTimeout(function() { 
+        $('#contactModal').modal('hide');
+        $("#thumb-confirm").hide();
+    }, 3000);
 });

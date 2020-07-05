@@ -296,18 +296,6 @@ html{
     color: #fff;
 }
 
-.toast{
-    /* position: relative;
-    bottom: 100px; */
-    display: block;
-    margin: auto;
-    width: 20%;
-    min-height: 100px;
-    color: #000;
-    text-align: center;
-    border: 2px solid #ffcd24;
-}
-
 /* Modal */
 .modal-header{
     border-bottom: 2px solid #ffcd24;
@@ -327,6 +315,10 @@ html{
 
 .modal-row{
     padding-bottom: 1rem;
+}
+
+#thumb-confirm{
+    display: none;
 }
 
 /* Footer */
