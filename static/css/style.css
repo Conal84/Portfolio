@@ -353,7 +353,9 @@ html{
 }
 
 .project-longtext{
-    text-align: center;
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 0 4rem 0 2rem;
 }
 
 .carousel-container{
