@@ -49,10 +49,10 @@ class ProjectForm(FlaskForm):
     project_name = StringField('Project Name', [InputRequired()])
     short_text = StringField('Short text', [InputRequired(), Length(max=50)])
     long_text = TextAreaField('Long Text', [InputRequired(), Length(max=400)])
-    index_image = StringField('Index image', [InputRequired()])
-    carousel_image1 = StringField('Carousel image 1', [InputRequired()])
-    carousel_image2 = StringField('Carousel image 2', [InputRequired()])
-    carousel_image3 = StringField('Carousel image 3', [InputRequired()])
+    image1 = StringField('Portfolio image & Carousel image 1', [InputRequired()])
+    image2 = StringField('Carousel image 2', [InputRequired()])
+    image3 = StringField('Carousel image 3')
+    image4 = StringField('Carousel image 4')
     website_link = StringField('Website link', [InputRequired()])
     git_link = StringField('Github link', [InputRequired()])
     submit = SubmitField('Submit')
@@ -103,7 +103,6 @@ def edit_skill(skill_id):
     the_skill = mongo.db.Skills.find_one({'_id': ObjectId(skill_id)})
     form = SkillForm()
     form.skill_name.data = the_skill['skill_name']
-    # form.percent.data = the_skill['percent']
     form.skill_icon.data = the_skill['skill_icon']
 
     if form.validate_on_submit():
@@ -154,7 +153,10 @@ def edit_project(project_id):
             'project_name': request.form.get('project_name'),
             'short_text': request.form.get('short_text'),
             'long_text': request.form.get('long_text'),
-            'index_image': request.form.get('index_image'),
+            'images[0]': request.form.get('image1'),
+            'images[1]': request.form.get('image2'),
+            'images[2]': request.form.get('image3'),
+            'images[3]': request.form.get('image4'),
             'website_link': request.form.get('website_link'),
             'git_link': request.form.get('git_link')
         })
@@ -173,7 +175,10 @@ def add_project():
                 'project_name': request.form.get('project_name'),
                 'short_text': request.form.get('short_text'),
                 'long_text': request.form.get('long_text'),
-                'index_image': request.form.get('index_image'),
+                'images[0]': request.form.get('image1'),
+                'images[1]': request.form.get('image2'),
+                'images[2]': request.form.get('image3'),
+                'images[3]': request.form.get('image4'),
                 'website_link': request.form.get('website_link'),
                 'git_link': request.form.get('git_link')
             })

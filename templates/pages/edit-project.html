@@ -1,58 +1,79 @@
 {% extends 'layout/base.html' %}{% block content %}
 <div class="row pr-row no-gutters">
-	<div class="col editadd-col">
-		<div class="card text-center form-text mx-auto editadd-card pr-card">
-			<div class="card-body">
-				<h2 class="card-title sub-head">Edit Project</h2>
-				<form action="" method="post" novalidate>
-					{{ form.hidden_tag() }}
-					<p>
-						{{ form.project_name.label }}<br>
-                    {{ form.project_name(size=50) }}
-                    {% for error in form.project_name.errors %}
-						<span class="form-error">{{ error }}</span>
-						{% endfor %}
-					</p>
-					<p>
-						{{ form.short_text.label }}<br>
-                    {{ form.short_text(size=50) }}
-                    {% for error in form.short_text.errors %}
-						<span class="form-error">{{ error }}</span>
-						{% endfor %}
-					</p>
-					<p>
-						{{ form.long_text.label }}<br>
-                    {{ form.long_text(cols="48", rows="10") }}
-                    {% for error in form.long_text.errors %}
-						<span class="form-error">{{ error }}</span>
-						{% endfor %}
-					</p>
-					<p>
-						{{ form.index_image.label }}<br>
-                    {{ form.index_image(size=50) }}
-                    {% for error in form.index_image.errors %}
-						<span class="form-error">{{ error }}</span>
-						{% endfor %}
-					</p>
-					<p>
-						{{ form.website_link.label }}<br>
-                    {{ form.website_link(size=50) }}
-                    {% for error in form.website_link.errors %}
-						<span class="form-error">{{ error }}</span>
-						{% endfor %}
-					</p>
-					<p>
-						{{ form.git_link.label }}<br>
-                    {{ form.git_link(size=50) }}
-                    {% for error in form.git_link.errors %}
-						<span class="form-error">{{ error }}</span>
-						{% endfor %}
-					</p>
-					<span>{{ form.submit(class_="btn-submit") }}</span>
-					<a class="btn modal-btn-close" href="{{url_for('index')}}" role="button">Cancel</a>
-				</form>
-			</div>
-		</div>
-	</div>
+  <div class="col editadd-col">
+    <div class="card text-center form-text mx-auto editadd-card pr-card">
+      <div class="card-body">
+        <h2 class="card-title sub-head">Edit Project</h2>
+        <form action="" method="post" novalidate>
+          {{ form.hidden_tag() }}
+          <p>
+            {{ form.project_name.label }}<br />
+            {{ form.project_name(size=50) }} {% for error in
+            form.project_name.errors %}
+            <span class="form-error">{{ error }}</span>
+            {% endfor %}
+          </p>
+          <p>
+            {{ form.short_text.label }}<br />
+            {{ form.short_text(size=50) }} {% for error in
+            form.short_text.errors %}
+            <span class="form-error">{{ error }}</span>
+            {% endfor %}
+          </p>
+          <p>
+            {{ form.long_text.label }}<br />
+            {{ form.long_text(cols="48", rows="10") }} {% for error in
+            form.long_text.errors %}
+            <span class="form-error">{{ error }}</span>
+            {% endfor %}
+          </p>
+          <p>
+            {{ form.image1.label }}<br />
+            {{ form.image1(size=50) }} {% for error in form.image1.errors %}
+            <span class="form-error">{{ error }}</span>
+            {% endfor %}
+          </p>
+          <p>
+            {{ form.image2.label }}<br />
+            {{ form.image2(size=50) }} {% for error in form.image2.errors %}
+            <span class="form-error">{{ error }}</span>
+            {% endfor %}
+          </p>
+          <p>
+            {{ form.image3.label }}<br />
+            {{ form.image3(size=50) }} {% for error in form.image3.errors %}
+            <span class="form-error">{{ error }}</span>
+            {% endfor %}
+          </p>
+          <p>
+            {{ form.image4.label }}<br />
+            {{ form.image4(size=50) }} {% for error in form.image4.errors %}
+            <span class="form-error">{{ error }}</span>
+            {% endfor %}
+          </p>
+          <p>
+            {{ form.website_link.label }}<br />
+            {{ form.website_link(size=50) }} {% for error in
+            form.website_link.errors %}
+            <span class="form-error">{{ error }}</span>
+            {% endfor %}
+          </p>
+          <p>
+            {{ form.git_link.label }}<br />
+            {{ form.git_link(size=50) }} {% for error in form.git_link.errors %}
+            <span class="form-error">{{ error }}</span>
+            {% endfor %}
+          </p>
+          <span>{{ form.submit(class_="btn-submit") }}</span>
+          <a
+            class="btn modal-btn-close"
+            href="{{url_for('index')}}"
+            role="button"
+            >Cancel</a
+          >
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 {% include 'layout/footer.html' %} {% endblock %}
