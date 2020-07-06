@@ -350,6 +350,7 @@ html{
 .project-row{
     padding: 0 1rem;
     margin: 0;
+    height: calc(100vh - 10rem);
 }
 
 .project-longtext{
@@ -369,18 +370,6 @@ html{
     height: 100%;
     object-fit: cover;
 }
-
-/* .carousel-inner > .carousel-item > img{
-    margin:auto;
-    width:100%;
-    height: 60vh;
-} */
-
-/* .carousel-image{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-} */
 
 .carousel-control-prev-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffcd24' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
