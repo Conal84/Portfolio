@@ -1,6 +1,8 @@
 {% extends 'layout/base.html' %}{% block content %}
 
 {% if 'username' in session %}
+{% include 'components/canvas.html' %}
+
 {% include 'components/skills-section.html' %}
 
 {% include 'components/portfolio-section.html' %}
@@ -8,6 +10,8 @@
 {% include 'layout/footer.html' %}
 
 {% else %}
+{% include 'components/canvas.html' %}
+
 {% include 'components/skills-section.html' %}
 
 {% include 'components/portfolio-section.html' %}

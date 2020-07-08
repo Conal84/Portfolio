@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    
   // Function to animate skills progress circle
   function Circle(el) {
     $(el)
@@ -13,6 +12,13 @@ $(document).ready(function () {
 
   // Circle function call
   Circle(".round");
+
+  // Canvas
+//   let heroCanvas = $("#hero");
+  let heroCanvas = document.getElementById("hero");
+  heroCanvas.width = window.innerWidth;
+  heroCanvas.height = window.innerHeight;
+  let cont = heroCanvas.getContext("2d");
 
   // Initialise emailjs
   (function () {

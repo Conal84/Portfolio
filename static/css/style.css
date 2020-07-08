@@ -11,6 +11,15 @@ html{
 }
 
 /* Body */
+body{
+    margin: 0;
+}
+
+/* Canvas */
+#hero{
+    border: 1px solid #000;
+    background: red;
+}
 
 /* Text */
 .std-text{
