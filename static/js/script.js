@@ -14,11 +14,10 @@ $(document).ready(function () {
   Circle(".round");
 
   // Canvas
-//   let heroCanvas = $("#hero");
-  let heroCanvas = document.getElementById("hero");
-  heroCanvas.width = window.innerWidth;
-  heroCanvas.height = window.innerHeight;
-  let cont = heroCanvas.getContext("2d");
+  let canv = document.getElementById("hero");
+  canv.width = window.innerWidth;
+  canv.height = window.innerHeight;
+  let ctx = canv.getContext("2d");
 
   // Initialise emailjs
   (function () {
