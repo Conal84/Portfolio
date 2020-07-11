@@ -16,8 +16,14 @@ $(document).ready(function () {
   // Canvas
   let canv = document.getElementById("hero");
   canv.width = window.innerWidth;
-  canv.height = window.innerHeight;
-  let ctx = canv.getContext("2d");
+  canv.height = window.innerHeight  - $('.navbar').height();
+  let c = canv.getContext("2d");
+
+  c.beginPath();
+  c.moveTo(0,0);
+  c.lineTo(500,500);
+
+  c.stroke();
 
   // Initialise emailjs
   (function () {
