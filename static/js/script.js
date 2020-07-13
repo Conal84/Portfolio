@@ -48,14 +48,22 @@ $(document).ready(function () {
     };
   }
 
-  let particle = new Particle(200, 200, 3, 3, 50);
+  let particleArray = [];
+
+  for (let i = 0; i < 50; i++) {
+    let radius = 30;
+    let x = Math.random() * (canv.width - radius * 2) + radius;
+    let y = Math.random() * (canv.height - radius * 2) + radius;
+    let dx = (Math.random() - 0.5) * 8;
+    let dy = (Math.random() - 0.5) * 8;
+    particleArray.push(new Particle(x, y, dx, dy, radius));
+  }
 
   function animate() {
     requestAnimationFrame(animate);
     c.clearRect(0, 0, canv.width, canv.height);
 
-    particle.update();
-
+    particleArray.forEach((particle) => particle.update());
   }
 
   animate();
