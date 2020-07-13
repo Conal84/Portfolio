@@ -16,14 +16,49 @@ $(document).ready(function () {
   // Canvas
   let canv = document.getElementById("hero");
   canv.width = window.innerWidth;
-  canv.height = window.innerHeight  - $('.navbar').height();
+  canv.height = window.innerHeight - $(".navbar").height();
   let c = canv.getContext("2d");
 
-  c.beginPath();
-  c.moveTo(0,0);
-  c.lineTo(500,500);
+  function Particle(x, y, dx, dy, radius) {
+    this.x = x;
+    this.y = y;
+    this.dx = dx;
+    this.dy = dy;
+    this.radius = radius;
 
-  c.stroke();
+    this.draw = function () {
+      c.beginPath();
+      c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+      c.strokeStyle = "blue";
+      c.stroke();
+    };
+
+    this.update = function () {
+      if (this.x + this.radius > canv.width || this.x - this.radius < 0) {
+        this.dx = -this.dx;
+      }
+
+      if (this.y + this.radius > canv.height || this.y - this.radius < 0) {
+        this.dy = -this.dy;
+      }
+      this.x += this.dx;
+      this.y += this.dy;
+
+      this.draw();
+    };
+  }
+
+  let particle = new Particle(200, 200, 3, 3, 50);
+
+  function animate() {
+    requestAnimationFrame(animate);
+    c.clearRect(0, 0, canv.width, canv.height);
+
+    particle.update();
+
+  }
+
+  animate();
 
   // Initialise emailjs
   (function () {
