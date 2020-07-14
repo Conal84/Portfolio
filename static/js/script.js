@@ -19,44 +19,50 @@ $(document).ready(function () {
   canv.height = window.innerHeight - $(".navbar").height();
   let c = canv.getContext("2d");
 
-  function Particle(x, y, dx, dy, radius) {
+  function Particle(x, y, dx, dy, radius, dr) {
     this.x = x;
     this.y = y;
     this.dx = dx;
     this.dy = dy;
     this.radius = radius;
-
-    this.draw = function () {
-      c.beginPath();
-      c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-      c.strokeStyle = "blue";
-      c.stroke();
-    };
-
-    this.update = function () {
-      if (this.x + this.radius > canv.width || this.x - this.radius < 0) {
-        this.dx = -this.dx;
-      }
-
-      if (this.y + this.radius > canv.height || this.y - this.radius < 0) {
-        this.dy = -this.dy;
-      }
-      this.x += this.dx;
-      this.y += this.dy;
-
-      this.draw();
-    };
+    this.dr = dr;
   }
+
+  Particle.prototype.draw = function () {
+    c.beginPath();
+    c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+    c.strokeStyle = "#f5f5f5";
+    c.fillStyle = "rgba(245, 245, 245, 0.5";
+    c.fill();
+    c.stroke();
+  };
+
+  Particle.prototype.update = function () {
+    this.draw();
+
+    if (this.x + this.radius > canv.width || this.x - this.radius < 0) {
+      this.dx = -this.dx;
+    }
+
+    if (this.y + this.radius > canv.height || this.y - this.radius < 0) {
+      this.dy = -this.dy;
+    }
+    this.x += this.dx;
+    this.y += this.dy;
+    this.r += this.dr;
+  };
 
   let particleArray = [];
 
-  for (let i = 0; i < 50; i++) {
-    let radius = 30;
-    let x = Math.random() * (canv.width - radius * 2) + radius;
-    let y = Math.random() * (canv.height - radius * 2) + radius;
-    let dx = (Math.random() - 0.5) * 8;
-    let dy = (Math.random() - 0.5) * 8;
-    particleArray.push(new Particle(x, y, dx, dy, radius));
+  function initParticles() {
+    for (let i = 0; i < 50; i++) {
+      let radius = 30;
+      let x = Math.random() * (canv.width - radius * 2) + radius;
+      let y = Math.random() * (canv.height - radius * 2) + radius;
+      let dx = (Math.random() - 0.5) * 8;
+      let dy = (Math.random() - 0.5) * 8;
+      particleArray.push(new Particle(x, y, dx, dy, radius));
+    }
   }
 
   function animate() {
@@ -66,6 +72,7 @@ $(document).ready(function () {
     particleArray.forEach((particle) => particle.update());
   }
 
+  initParticles();
   animate();
 
   // Initialise emailjs
