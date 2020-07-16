@@ -17,8 +17,9 @@ body{
 
 /* Canvas */
 #hero{
-    border: 1px solid #000;
-    background: #191970;
+    /* background: #191970; */
+    background-image: radial-gradient(#3e6e7a,#32a66c,#191d1e);
+    /* filter: blur(2px); */
 }
 
 /* Text */

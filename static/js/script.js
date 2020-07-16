@@ -18,6 +18,7 @@ $(document).ready(function () {
   canv.width = window.innerWidth;
   canv.height = window.innerHeight - $(".navbar").height();
   let c = canv.getContext("2d");
+  c.globalAlpha = 0.4;
 
   function Particle(minRadius, maxRadius) {
     this.dx = Math.random() - 0.5;
@@ -25,7 +26,9 @@ $(document).ready(function () {
     this.dr = 0.05;
     this.minRadius = minRadius;
     this.maxRadius = maxRadius;
-    this.radius = Math.round(Math.random() * (this.maxRadius - this.minRadius + 1) + this.minRadius);
+    this.radius = Math.round(
+      Math.random() * (this.maxRadius - this.minRadius + 1) + this.minRadius
+    );
     this.deltaOpacity = 1 / (this.maxRadius - this.minRadius);
     this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
     this.x = Math.random() * (canv.width - this.radius * 2) + this.radius;
@@ -69,11 +72,16 @@ $(document).ready(function () {
       let maxRadius = 50;
       particleArray.push(new Particle(minRadius, maxRadius));
     }
-    // for (let i = 0; i < 10; i++) {
-    //   let minRadius = 20;
-    //   let maxRadius = 40;
-    //   particleArray.push(new Particle(minRadius, maxRadius));
-    // }
+    for (let i = 0; i < 10; i++) {
+      let minRadius = 20;
+      let maxRadius = 40;
+      particleArray.push(new Particle(minRadius, maxRadius));
+    }
+    for (let i = 0; i < 20; i++) {
+      let minRadius = 5;
+      let maxRadius = 15;
+      particleArray.push(new Particle(minRadius, maxRadius));
+    }
     console.log(particleArray);
   }
 
