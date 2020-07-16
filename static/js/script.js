@@ -19,27 +19,28 @@ $(document).ready(function () {
   canv.height = window.innerHeight - $(".navbar").height();
   let c = canv.getContext("2d");
 
-  function Particle(x, y, dx, dy, radius, dr) {
-    this.x = x;
-    this.y = y;
-    this.dx = dx;
-    this.dy = dy;
-    this.radius = radius;
-    this.dr = dr;
+  function Particle(minRadius, maxRadius) {
+    this.dx = Math.random() - 0.5;
+    this.dy = Math.random() - 0.5;
+    this.dr = 0.5;
+    this.minRadius = minRadius;
+    this.maxRadius = maxRadius;
+    this.radius = Math.floor((Math.random() * (this.maxRadius - this.minRadius)) + this.minRadius);
+    this.x = Math.random() * (canv.width - this.radius * 2) + this.radius;
+    this.y = Math.random() * (canv.height - this.radius * 2) + this.radius;
   }
 
   Particle.prototype.draw = function () {
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-    c.strokeStyle = "#f5f5f5";
-    c.fillStyle = "rgba(245, 245, 245, 0.5";
+    // c.strokeStyle = "#f5f5f5";
+    c.fillStyle = "rgba(245, 245, 245, 0.5)";
     c.fill();
-    c.stroke();
+    // c.stroke();
   };
 
   Particle.prototype.update = function () {
     this.draw();
-
     if (this.x + this.radius > canv.width || this.x - this.radius < 0) {
       this.dx = -this.dx;
     }
@@ -47,22 +48,24 @@ $(document).ready(function () {
     if (this.y + this.radius > canv.height || this.y - this.radius < 0) {
       this.dy = -this.dy;
     }
+
+    if (this.radius > this.maxRadius || this.radius < this.minRadius) {
+      this.dr = -this.dr;
+    }
     this.x += this.dx;
     this.y += this.dy;
-    this.r += this.dr;
+    this.radius += this.dr;
   };
 
   let particleArray = [];
 
   function initParticles() {
-    for (let i = 0; i < 50; i++) {
-      let radius = 30;
-      let x = Math.random() * (canv.width - radius * 2) + radius;
-      let y = Math.random() * (canv.height - radius * 2) + radius;
-      let dx = (Math.random() - 0.5) * 8;
-      let dy = (Math.random() - 0.5) * 8;
-      particleArray.push(new Particle(x, y, dx, dy, radius));
+    for (let i = 0; i < 20; i++) {
+      let minRadius = 10;
+      let maxRadius = 40;
+      particleArray.push(new Particle(minRadius, maxRadius));
     }
+    console.log(particleArray)
   }
 
   function animate() {
