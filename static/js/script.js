@@ -22,10 +22,12 @@ $(document).ready(function () {
   function Particle(minRadius, maxRadius) {
     this.dx = Math.random() - 0.5;
     this.dy = Math.random() - 0.5;
-    this.dr = 0.5;
+    this.dr = 0.05;
     this.minRadius = minRadius;
     this.maxRadius = maxRadius;
-    this.radius = Math.floor((Math.random() * (this.maxRadius - this.minRadius)) + this.minRadius);
+    this.radius = Math.round(Math.random() * (this.maxRadius - this.minRadius + 1) + this.minRadius);
+    this.deltaOpacity = 1 / (this.maxRadius - this.minRadius);
+    this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
     this.x = Math.random() * (canv.width - this.radius * 2) + this.radius;
     this.y = Math.random() * (canv.height - this.radius * 2) + this.radius;
   }
@@ -34,7 +36,7 @@ $(document).ready(function () {
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
     // c.strokeStyle = "#f5f5f5";
-    c.fillStyle = "rgba(245, 245, 245, 0.5)";
+    c.fillStyle = `rgba(245, 245, 245, ${this.currentOpacity})`;
     c.fill();
     // c.stroke();
   };
@@ -52,9 +54,11 @@ $(document).ready(function () {
     if (this.radius > this.maxRadius || this.radius < this.minRadius) {
       this.dr = -this.dr;
     }
+
     this.x += this.dx;
     this.y += this.dy;
     this.radius += this.dr;
+    this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
   };
 
   let particleArray = [];
@@ -62,10 +66,15 @@ $(document).ready(function () {
   function initParticles() {
     for (let i = 0; i < 20; i++) {
       let minRadius = 10;
-      let maxRadius = 40;
+      let maxRadius = 50;
       particleArray.push(new Particle(minRadius, maxRadius));
     }
-    console.log(particleArray)
+    // for (let i = 0; i < 10; i++) {
+    //   let minRadius = 20;
+    //   let maxRadius = 40;
+    //   particleArray.push(new Particle(minRadius, maxRadius));
+    // }
+    console.log(particleArray);
   }
 
   function animate() {
