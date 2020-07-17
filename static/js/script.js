@@ -38,10 +38,8 @@ $(document).ready(function () {
   Particle.prototype.draw = function () {
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-    // c.strokeStyle = "#f5f5f5";
     c.fillStyle = `rgba(245, 245, 245, ${this.currentOpacity})`;
     c.fill();
-    // c.stroke();
   };
 
   Particle.prototype.update = function () {
@@ -64,12 +62,40 @@ $(document).ready(function () {
     this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
   };
 
+  class SmallParticle {
+    constructor(radius) {
+      this.radius = radius;
+      this.x = Math.random() * (canv.width - this.radius * 2) + this.radius;
+      this.y = Math.random() * (canv.height - this.radius * 2) + this.radius;
+      this.dx = Math.random() - 0.5;
+      this.dy = Math.random() - 0.5;
+    }
+    draw() {
+      c.beginPath();
+      c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+      c.strokeStyle = "#f5f5f5";
+      c.stroke();
+    }
+    update() {
+      this.draw();
+      if (this.x + this.radius > canv.width || this.x - this.radius < 0) {
+        this.dx = -this.dx;
+      }
+
+      if (this.y + this.radius > canv.height || this.y - this.radius < 0) {
+        this.dy = -this.dy;
+      }
+      this.x += this.dx;
+      this.y += this.dy;
+    }
+  }
+
   let particleArray = [];
 
   function initParticles() {
     for (let i = 0; i < 20; i++) {
       let minRadius = 10;
-      let maxRadius = 50;
+      let maxRadius = 40;
       particleArray.push(new Particle(minRadius, maxRadius));
     }
     for (let i = 0; i < 10; i++) {
@@ -77,12 +103,10 @@ $(document).ready(function () {
       let maxRadius = 40;
       particleArray.push(new Particle(minRadius, maxRadius));
     }
-    for (let i = 0; i < 20; i++) {
-      let minRadius = 5;
-      let maxRadius = 15;
-      particleArray.push(new Particle(minRadius, maxRadius));
+    for (let i = 0; i < 40; i++) {
+      let radius = 3;
+      particleArray.push(new SmallParticle(radius));
     }
-    console.log(particleArray);
   }
 
   function animate() {
