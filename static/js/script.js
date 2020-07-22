@@ -20,48 +20,91 @@ $(document).ready(function () {
   let c = canv.getContext("2d");
   c.globalAlpha = 0.4;
 
-  function Particle(minRadius, maxRadius) {
-    this.dx = Math.random() - 0.5;
-    this.dy = Math.random() - 0.5;
-    this.dr = 0.05;
-    this.minRadius = minRadius;
-    this.maxRadius = maxRadius;
-    this.radius = Math.round(
-      Math.random() * (this.maxRadius - this.minRadius + 1) + this.minRadius
-    );
-    this.deltaOpacity = 1 / (this.maxRadius - this.minRadius);
-    this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
-    this.x = Math.random() * (canv.width - this.radius * 2) + this.radius;
-    this.y = Math.random() * (canv.height - this.radius * 2) + this.radius;
+  class Particle {
+    constructor(minRadius, maxRadius) {
+      this.dx = Math.random() - 0.5;
+      this.dy = Math.random() - 0.5;
+      this.dr = 0.05;
+      this.minRadius = minRadius;
+      this.maxRadius = maxRadius;
+      this.radius = Math.round(
+        Math.random() * (this.maxRadius - this.minRadius + 1) + this.minRadius
+      );
+      this.deltaOpacity = 1 / (this.maxRadius - this.minRadius);
+      this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
+      this.x = Math.random() * (canv.width - this.radius * 2) + this.radius;
+      this.y = Math.random() * (canv.height - this.radius * 2) + this.radius;
+    }
+    draw() {
+      c.beginPath();
+      c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+      c.fillStyle = `rgba(245, 245, 245, ${this.currentOpacity})`;
+      c.fill();
+    }
+    update() {
+      this.draw();
+      if (this.x + this.radius > canv.width || this.x - this.radius < 0) {
+        this.dx = -this.dx;
+      }
+
+      if (this.y + this.radius > canv.height || this.y - this.radius < 0) {
+        this.dy = -this.dy;
+      }
+
+      if (this.radius > this.maxRadius || this.radius < this.minRadius) {
+        this.dr = -this.dr;
+      }
+
+      this.x += this.dx;
+      this.y += this.dy;
+      this.radius += this.dr;
+      this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
+    }
   }
 
-  Particle.prototype.draw = function () {
-    c.beginPath();
-    c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-    c.fillStyle = `rgba(245, 245, 245, ${this.currentOpacity})`;
-    c.fill();
-  };
+//   function Particle(minRadius, maxRadius) {
+//     this.dx = Math.random() - 0.5;
+//     this.dy = Math.random() - 0.5;
+//     this.dr = 0.05;
+//     this.minRadius = minRadius;
+//     this.maxRadius = maxRadius;
+//     this.radius = Math.round(
+//       Math.random() * (this.maxRadius - this.minRadius + 1) + this.minRadius
+//     );
+//     this.deltaOpacity = 1 / (this.maxRadius - this.minRadius);
+//     this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
+//     this.x = Math.random() * (canv.width - this.radius * 2) + this.radius;
+//     this.y = Math.random() * (canv.height - this.radius * 2) + this.radius;
+//   }
 
-  Particle.prototype.update = function () {
-    this.draw();
-    if (this.x + this.radius > canv.width || this.x - this.radius < 0) {
-      this.dx = -this.dx;
-    }
+//   Particle.prototype.draw = function () {
+//     c.beginPath();
+//     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+//     c.fillStyle = `rgba(245, 245, 245, ${this.currentOpacity})`;
+//     c.fill();
+//   };
 
-    if (this.y + this.radius > canv.height || this.y - this.radius < 0) {
-      this.dy = -this.dy;
-    }
+//   Particle.prototype.update = function () {
+//     this.draw();
+//     if (this.x + this.radius > canv.width || this.x - this.radius < 0) {
+//       this.dx = -this.dx;
+//     }
 
-    if (this.radius > this.maxRadius || this.radius < this.minRadius) {
-      this.dr = -this.dr;
-    }
+//     if (this.y + this.radius > canv.height || this.y - this.radius < 0) {
+//       this.dy = -this.dy;
+//     }
 
-    this.x += this.dx;
-    this.y += this.dy;
-    this.radius += this.dr;
-    this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
-  };
+//     if (this.radius > this.maxRadius || this.radius < this.minRadius) {
+//       this.dr = -this.dr;
+//     }
 
+//     this.x += this.dx;
+//     this.y += this.dy;
+//     this.radius += this.dr;
+//     this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
+//   };
+
+  // A class to create small particles on the canvas
   class SmallParticle {
     constructor(radius) {
       this.radius = radius;
@@ -70,12 +113,14 @@ $(document).ready(function () {
       this.dx = Math.random() - 0.5;
       this.dy = Math.random() - 0.5;
     }
+    // Method to draw a circle
     draw() {
       c.beginPath();
       c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
       c.strokeStyle = "#f5f5f5";
       c.stroke();
     }
+    // Method to update the circle
     update() {
       this.draw();
       if (this.x + this.radius > canv.width || this.x - this.radius < 0) {
@@ -90,8 +135,10 @@ $(document).ready(function () {
     }
   }
 
+  // Array to store particle objects
   let particleArray = [];
 
+  // Function to create Particles and push them into the particleArray
   function initParticles() {
     for (let i = 0; i < 20; i++) {
       let minRadius = 10;
@@ -108,7 +155,8 @@ $(document).ready(function () {
       particleArray.push(new SmallParticle(radius));
     }
   }
-
+  
+  // Function to animate Particles by clearing the canvas and updating Particles
   function animate() {
     requestAnimationFrame(animate);
     c.clearRect(0, 0, canv.width, canv.height);

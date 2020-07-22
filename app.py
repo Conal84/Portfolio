@@ -1,11 +1,11 @@
+from os import path
+from bson.objectid import ObjectId
 import os
 from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, DecimalField, TextAreaField
 from wtforms.validators import InputRequired, ValidationError, NumberRange, Length
-from bson.objectid import ObjectId
-from os import path
 if path.exists("env.py"):
     import env
 
@@ -49,7 +49,8 @@ class ProjectForm(FlaskForm):
     project_name = StringField('Project Name', [InputRequired()])
     short_text = StringField('Short text', [InputRequired(), Length(max=50)])
     long_text = TextAreaField('Long Text', [InputRequired(), Length(max=400)])
-    image1 = StringField('Portfolio image & Carousel image 1', [InputRequired()])
+    image1 = StringField(
+        'Portfolio image & Carousel image 1', [InputRequired()])
     image2 = StringField('Carousel image 2', [InputRequired()])
     image3 = StringField('Carousel image 3')
     image4 = StringField('Carousel image 4')
