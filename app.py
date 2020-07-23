@@ -9,17 +9,18 @@ from wtforms.validators import InputRequired, ValidationError, NumberRange, Leng
 if path.exists("env.py"):
     import env
 
-app = Flask(__name__)
 
+# App configuration
+app = Flask(__name__)
 app.config['MONGO_DBNAME'] = 'Portfolio'
 app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
 app.secret_key = os.environ.get('SECRET_KEY')
-
 mongo = PyMongo(app)
 
 
 # Form class to be used on Login page
 class LoginForm(FlaskForm):
+    # Form field definitions
     username = StringField('Username', [InputRequired()])
     password = PasswordField('Password', [InputRequired()])
     submit = SubmitField('Sign In')
@@ -43,6 +44,7 @@ class LoginForm(FlaskForm):
 
 # Form class to be used on add-skill and edit-skill pages
 class SkillForm(FlaskForm):
+    # Form field definitions
     skill_name = StringField('Skill Name', [InputRequired()])
     percent = DecimalField('Skill Percentage', [
                            InputRequired(), NumberRange(min=0.01, max=1.0)])
@@ -52,6 +54,7 @@ class SkillForm(FlaskForm):
 
 # Form class to be used on add-project and edit-project pages
 class ProjectForm(FlaskForm):
+    # Form field definitions
     project_name = StringField('Project Name', [InputRequired()])
     short_text = StringField('Short text', [InputRequired(), Length(max=50)])
     long_text = TextAreaField('Long Text', [InputRequired(), Length(max=400)])
@@ -89,13 +92,14 @@ def login():
     form = LoginForm()
     form.find_details(users)
 
+    # If login form is validated set the username as session variable
     if form.validate_on_submit():
         session['username'] = request.form['username']
         return redirect(url_for('index'))
     return render_template('pages/login.html', title='Log In', form=form)
 
 
-# Route to redirect to index page after successful logout
+# Route to remove session variable and redirect to index page
 @app.route('/logout')
 def logout():
     session.pop('username', None)
@@ -118,6 +122,7 @@ def edit_skill(skill_id):
     form.skill_name.data = the_skill['skill_name']
     form.skill_icon.data = the_skill['skill_icon']
 
+    # If skill form is validated update the database with form data
     if form.validate_on_submit():
         skills.update({'_id': ObjectId(skill_id)},
                       {
@@ -135,6 +140,7 @@ def add_skill():
     skills = mongo.db.Skills
     form = SkillForm()
 
+    # If skill form is validated add form data to database
     if form.validate_on_submit():
         skills.insert(
             {
@@ -163,6 +169,7 @@ def edit_project(project_id):
     form.short_text.data = the_project['short_text']
     form.long_text.data = the_project['long_text']
 
+    # If project form is validated update the database with form data
     if form.validate_on_submit():
         projects.update({'_id': ObjectId(project_id)},
                         {
@@ -186,6 +193,7 @@ def add_project():
     projects = mongo.db.Projects
     form = ProjectForm()
 
+    # If project form is validated add form data to the database
     if form.validate_on_submit():
         projects.insert(
             {
