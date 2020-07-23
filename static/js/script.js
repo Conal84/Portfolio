@@ -15,10 +15,8 @@ $(document).ready(function () {
 
   // Canvas
   let canv = document.getElementById("hero");
-//   canv.width = window.innerWidth;
-  let heightRatio = 0.4;
-//   canv.height = window.innerHeight - $(".navbar").height();
-  canv.height = canv.width * heightRatio;
+  canv.width = window.innerWidth;
+  canv.height = window.innerHeight - $(".navbar").height();
   let c = canv.getContext("2d");
   c.globalAlpha = 0.4;
 
