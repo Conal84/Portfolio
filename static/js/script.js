@@ -15,11 +15,14 @@ $(document).ready(function () {
 
   // Canvas
   let canv = document.getElementById("hero");
-  canv.width = window.innerWidth;
-  canv.height = window.innerHeight - $(".navbar").height();
+//   canv.width = window.innerWidth;
+  let heightRatio = 0.4;
+//   canv.height = window.innerHeight - $(".navbar").height();
+  canv.height = canv.width * heightRatio;
   let c = canv.getContext("2d");
   c.globalAlpha = 0.4;
 
+  // A class to create particles on the canvas
   class Particle {
     constructor(minRadius, maxRadius) {
       this.dx = Math.random() - 0.5;
@@ -35,12 +38,14 @@ $(document).ready(function () {
       this.x = Math.random() * (canv.width - this.radius * 2) + this.radius;
       this.y = Math.random() * (canv.height - this.radius * 2) + this.radius;
     }
+    // Method to draw a circle
     draw() {
       c.beginPath();
       c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
       c.fillStyle = `rgba(245, 245, 245, ${this.currentOpacity})`;
       c.fill();
     }
+    // Method to update the circle
     update() {
       this.draw();
       if (this.x + this.radius > canv.width || this.x - this.radius < 0) {
@@ -160,7 +165,7 @@ $(document).ready(function () {
   function animate() {
     requestAnimationFrame(animate);
     c.clearRect(0, 0, canv.width, canv.height);
-
+    // For each particle in the array call the update function
     particleArray.forEach((particle) => particle.update());
   }
 
