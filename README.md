@@ -93,22 +93,19 @@ Information will be grouped in 4 key areas;
 * Contact - provides an easy method to send me a direct email
 
 ### Surface
-I want the colors used on the site to mimic the colors of the gig background image and to provide the user with the feel of being at a gig venue.
-The perspective of the image provides the user with the sense of being in the crowd at a gig.
-An opaque overlay has been used on the full background image to add to the venue feeling.
+I want the colors used on the site to grab the users attention without being too acute.
 
 The primary colours for the website are black and a contrasting white to dispay information in the results section.
 A secondary blue highlight color #0066cc has then been used to make key elements stand out on the page and to grab the attention of the user.
 These primary and secondary colors mirror the colors of the gig full background image.
 
-I have used Lato font throughout the website as it has a simplistic style.
-I have used Roboto font for the main page heading as this font makes the heading stand out and grabs the users attention.
+I have used Open Sans font throughout the website as it has a simplistic style.
+I have used Raleway font for the headings as this font makes the heading stand out and grabs the users attention.
 
 ### Wireframes
 
 ### Features to implement
-Future features will include a sign up and log in section where a user could then add their favourite bands to track in their local city.
-Once the band has scheduled a gig in that city the user could then receive an email or text notification.
+Future features will include additonal skills and more showcase projects as I build more websites.
 
 ### Technologies used
 1. HTML
@@ -120,15 +117,13 @@ Once the band has scheduled a gig in that city the user could then receive an em
 7. [Auto Prefixer](https://autoprefixer.github.io/)
 8. [JQuery](https://jquery.com/)
 9. [Popper.js](https://popper.js.org/)
-10. [Google API](https://developers.google.com/)
-11. [YouTube API](https://developers.google.com/youtube/v3)
-12. [Songkick API](https://www.songkick.com/developer)
-13. [Bootstrap datepicker](https://github.com/uxsolutions/bootstrap-datepicker)
-14. [Bootstrap table](https://bootstrap-table.com/)
-15. [Google Fonts](https://fonts.google.com/)
+10. [Python](https://www.python.org/)
+11. [MongoDB](https://www.mongodb.com/)
+12. [Circle Progress Bar](https://cdnjs.com/libraries/jquery-circle-progress)
+13. [EmailJS](https://www.emailjs.com/)
 
 ## Testing
-Please see the TEST.md file at this link [TEST.md](TEST.md) to understand how the **Go2Gigs** website was tested.
+Please see the TEST.md file at this link [TEST.md](TEST.md) to understand how the Portfolio website was tested.
 
 ## Deployment
 This project was developed using the GitPod IDE, version controlled by committing to git and pushing to GitHub via the GitPod IDE.
