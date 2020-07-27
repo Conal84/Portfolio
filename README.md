@@ -2,66 +2,82 @@
 
 This website will allow users to see my portfolio with information about me, my skills and my projects.
 The website will provide a simple to use facility where users can click on any project to be taken to a project page with a higher level of detail.
-User will also have links to view a specific web page and the associated GitHub page for that project.
+Users will also have links to view a specific web page and the associated GitHub page for that project.
 Skills and project information will be stored in a NoSQL database.
 The Portfolio webpage will contain an admin login section which will allow the admin user access to the project and skills information stored in the database.
 The admin user will be able to perform CRUD (Create, Read, Update, Delete) operations on the data to easily change the data presented in the Portfolio website.
 
-The **Go2Gigs** website displays search results in a data table with an accompanying **Google map** where users can find specific gig location information.
-Users can interact with the information by selecting a button in the data table which will zoom the **Google** map to the location of that gig.
-User can select another button which will open a **Youtube** playlist for that specific artist.
-In this way the **Go2Gigs** website can be used to find new music which is of interest to the user by allowing users to find music in their area and to 
-listen to a playlist to see if they would like to go to that gig.
-
 ## UX
 ### User Stories
-As a user I want to easily search for local gigs in my city.
-When I enter my city I want to be presented with concise information related to gigs in my city with artist name,
-gig specific location and gig date.
+As a user I want to easily search through the portfolio website to get a concise overview of the background, skills and projects completed by the portfolio administrator.
 
-As a user I want to search for my favourite artist and be presented with gig specific location and dates for that artist. 
+As a user I want to be presented with introductory project information without being overwhelmed with details.
 
-As a user once I find a specific gig to attend I want to easily purchase tickets to that gig.
+As a user once I find a perticular project of interest I want to be able to click on that project link to be taken to a webpage with more detailed information.
 
-As a user if my favourite artist is not currently arranged to play in my city then I would like to setup an alert.
-This alert will notify me via mobile phone when my favourite artist has arranged a gig in my city.
+As a user I would like to have easy access to project webpage links and specific project GitHub links.
 
-As a target user in the age range of 18 to 50 I expect that gig information is presented to me in a simple but exciting and
-eye catching way. I want to feel a sample of the high energy and excitement of being at a gig while using the website.
+As an admin user I should be able to login to gain access to and to modify the backend database information.
+
+Once logged in the admin user should be able to easily add, edit and delete both skills information and project information.
+
+Forms used to submit data to the database should contain validation to ensure that the data entered is correct.
 
 ### Strategy
-The Go 2 Gigs website will provide users with an easy to use way of searching for events either by searching for their favourite artist or by searching in their city.
+The Portfolio website will provide users with an easy to access skills and project information about the site adminstrator.
 
-Users will be presented with gig information in a table ordered by date. Users can filter the data in the table for more specific information by using the table search bar.
+Users will be presented with a strong hero section which will showcase skills in web design and javascript.
 
-Users will also be presented with a **Google** map with markers at the position of each event in the results table.
+Users will also be presented with an animated skills section with eye catching progress bars.
 
-For each search result the user will also have 2 buttons in the table which will provide a way for the user to interact with the data and provides a more user led experience;
+Users will find projects displayed in tiles with an image of each particular webpage. Each tile will contain a link to another webpage with greater project detail.
 
-* Find button; once clicked the **Google** map will zoom into the exact location of that event
-* Play button; once clicked a modal will open which contains a **YouTube** playlist for that event artist
-
-This website will be aimed at a range of demographics from junior music fans aged 12 to 18, senior music fans 18 to 50. 
+This portfolio website will be aimed at a range of demographics from the field of web development and potential clients interested in working on new projects. 
 As a result of this wide range of users the site must be simple to use and laid out in a concise manner.
 
 ### Scope
 Website key features include the following;
 
-* Gig search form - provides users with a means of searching for gigs
-    * Drop down menu to allow users to search by city or search by artist
-    * User input element where users will input the artist name or city
-    * User input element will use **Google autocomplete API** to autocomplete the city name as the user inputs this information
-    * Date from element where users will select the beginning search date range
-    * Date to element where users will select the ending search date range
+* Hero section - provides users with an eye catching introduction to the portfolio wewbsite
+    * An animated image to grab the attention of the user
+    * Inaugural text to give the user an initial idea of who I admin
+    * Navigation bar to allow simple website exploration
 
-* Results Section - provides the user with search results in a data table and **Google map**
-    * Data table which displays gig information
-    * Gig information displayed is; event date, artist name, city, venue, find button and play button
-    * Find button which zooms the **Google map** to that specific location
-    * Play button which plays a **YouTube** playlist for that artist in a modal
-    * **Google map** which displays event locations with **Google markers**
+* Skills Section - provides the user with a more detailed explanation of my skills with progress bars
+    * Text section with detail regarding my skills
+    * Skills progress circles with progress bars and percentages representing my competencies in each field
+    * Admin users can Add, Edit or Delete a skill
 
-* Footer Section - provides links to **Go2Gigs** social media pages and the songkick affiliate page
+* Projects Section - provides the user with a brief overview of my projects
+    * Tiled project images with brief project introductions
+    * Links to more detailed project webpages
+    * Admin users can Add, Edit or Delete a project
+
+* Detailed Project Webpages - provides the user with detailed overview of my projects
+    * Project images in carousel format
+    * Detailed explanation of the project
+    * Links to the specific project webpage and GitHub page
+
+* Login Section - provides the admin user with log in functionality
+    * Admin user can enter username and password
+
+* Edit Skill Section - provides the admin user with read and update functionality
+    * Admin user can modify a specific skill and update
+
+* Add Skill Section - provides the admin user with create functionality
+    * Admin user can add a new skill
+
+* Edit Project Section - provides the admin user with read and update functionality
+    * Admin user can modify a specific project and update
+
+* Add Project Section - provides the admin user with create functionality
+    * Admin user can add a new project
+
+* Contact Section - provides the user with the ability to email me about a project
+    * Users can complete the contact form to send me an email
+    * Form is validated to ensure correct entries
+
+* Footer Section - provides links to Linkedin and GitHub pages
 
 ### Structure
 I want to keep the site as minimalist and clutter free as possible so that it is easy to use for the wide ranging demographic and so users are not overwhelmed with information.
@@ -70,10 +86,11 @@ Information will be provided to users in a concise, straight forward manner.
 The mobile first design will arrange information in single full width columns to allow content to be read easily.
 On larger tablet and desktop display information will be arranged in additional columns using Bootstraps responsive grid design.
 
-Information will be grouped in 3 key areas;
-* Home - provides an eye catching background gig image with a simple, clutter free search form
-* Results table - provides key gig information regarding dates, artist name, location, find and play features
-* Results map - provides a **Google map** with gig venue locations at specific markers
+Information will be grouped in 4 key areas;
+* Hero - provides an eye catching background image with a introductory information about me
+* Skills - provides key skills information via progress bars
+* Projects - provides initial, concise project information with links to more detailed views
+* Contact - provides an easy method to send me a direct email
 
 ### Surface
 I want the colors used on the site to mimic the colors of the gig background image and to provide the user with the feel of being at a gig venue.
