@@ -127,26 +127,51 @@ Please see the TEST.md file at this link [TEST.md](TEST.md) to understand how th
 
 ## Deployment
 This project was developed using the GitPod IDE, version controlled by committing to git and pushing to GitHub via the GitPod IDE.
-To deploy this page to GitHub pages from its specific [GitHub repository](https://github.com/Conal84/Go2gigs) the steps followed were;
-
-1. Scroll to the top of this GitHub page
-2. In the Repositories list select **Go2gigs**
-3. From the menu select **Settings**
-4. Scroll down to the **GitHub Pages** section
-5. Under Source select **Master branch**
-6. On selecting Master branch the page is automatically refreshed, the website is now deployed
-7. The link to the webpage can be found at the top of the GitHub Pages section
+Thw deployment instructions have been written for a macOS specifically, therefore the commands and installation may differ slightly for your machine.
 
 ### How to run this project locally
-To clone this project from GitHub:
+The following must be installed on your machine;
+* PIP
+* Python 3
+* GitHub
+* A [MongoDB](https://www.mongodb.com/) account or MongoDB running locally on your machine.
+    * See how to signup for a MongoDB account [here](https://www.mongodb.com/cloud/atlas/signup)
 
-1. Follow this link to the Project [GitHub repository](https://github.com/Conal84/Go2gigs)
-2. Under the repository name, click **Clone or download**
-3. In the Clone with HTTPs section, copy the clone URL for the repository
-4. In your local IDE open the terminal
-5. Change the current working directory to the location where you want the cloned directory to be made
-6. Type git clone, and then paste the URL you copied in Step 3
-7. Press **Enter** your local clone will be created
+#### instructions
+1. Open the repository located at [https://github.com/Conal84/Portfolio](https://github.com/Conal84/Portfolio)
+2. Click on **Clone or Download** and copy the URL
+3. In your IDE enter the command git clone https://github.com/Conal84/Portfolio
+4. A virtual environment is recommended for the Python interpreter, I recommend using Pythons built in virtual environment. To do this enter the command python3 -m .venv venv
+5. Activate the virtual environment with the command .venv\Scripts\Activate
+6. If required upgrade pip locally; pip install --upgrade pip
+7. Install all required packages from the requirements file; pip -r requirements.txt
+8. In your local IDE create a file called env.py
+9. Inside this file create a SECRET_KEY variable, a MONGO_URI and an EMAILJS_KEY.
+10. In MongoDB create a database called Portfolio, with 2 collections called Skills and Projects. You will find example JSON structures for these collections in the data/schemas folder
+11. You can now run the application with the command python3 app.py
+12. The project can be viewed at **Insert http link**
+
+### Heroku Deployment
+1. Create a new app on the [Heroku website](https://www.heroku.com/#)
+2. Link your local git repo to the Heroku app
+    * Go to the Heroku app settings , find the Heroku GIt URL and copy it
+    * In your IDE use command git remote add heroku * paste heroku git url here*
+3. In your IDE create a requirements.txt file using the command pip3 freeze --local > requirements.txt
+4. Create a Procfile the the command echo web: python app.py > Procfile
+5. git add and git commit the new requirements and Procfile, then git push to GitHub
+6. git push -u heroku master command then pushes code to the Heroku app
+7. Set the config variables in the Heroku app by clicking Settings > Reveal Config Vars
+8. Add the following config vars
+
+KEY | VALUE
+----|------
+IP | 0.0.0.0
+PORT | 5000
+MONGO_URI | <mongo_uri>
+SECRET_KEY | <your_secret_key>
+
+9. Start a web process with the IDE command heroku ps:scale web=1
+10. The site is now successfully deployed
 
 ## Acknowledgements
 I would like to thank my mentor Simen for his valuable advice and guidance throughout the project.
