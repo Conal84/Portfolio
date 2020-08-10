@@ -1,0 +1,13 @@
+{% extends 'layout/base.html' %}{% block content %}
+<div class="row skill-row no-gutters">
+	<div class="col editadd-col">
+		<div class="card text-center form-text mx-auto editadd-card">
+			<div class="card-body">
+				<h2 class="card-title sub-head">404 - Page not found</h2>
+                <p class="card-text">Oops! Something has gone wrong</p>
+                <a class="btn btn-submit link-btn" href="{{ url_for('index') }}">Home</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% include 'layout/footer.html' %} {% endblock %}
