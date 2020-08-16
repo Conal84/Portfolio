@@ -17,7 +17,6 @@ body{
 
 /* Canvas */
 #hero{
-    background-image: radial-gradient(#f5f5f5 5%,#ffcd24 15%,#191d1e 80%);
     width: 100%;
     /* filter: blur(2px); */
 }
