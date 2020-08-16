@@ -18,94 +18,78 @@ $(document).ready(function () {
   canv.width = window.innerWidth;
   canv.height = window.innerHeight - $(".navbar").height();
   let c = canv.getContext("2d");
-  c.globalAlpha = 0.4;
+//   c.globalAlpha = 0.4;
 
-  // A class to create particles on the canvas
-  class Particle {
-    constructor(minRadius, maxRadius) {
-      this.dx = Math.random() - 0.5;
-      this.dy = Math.random() - 0.5;
-      this.dr = 0.05;
-      this.minRadius = minRadius;
-      this.maxRadius = maxRadius;
-      this.radius = Math.round(
-        Math.random() * (this.maxRadius - this.minRadius + 1) + this.minRadius
-      );
-      this.deltaOpacity = 1 / (this.maxRadius - this.minRadius);
-      this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
-      this.x = Math.random() * (canv.width - this.radius * 2) + this.radius;
-      this.y = Math.random() * (canv.height - this.radius * 2) + this.radius;
-    }
-    // Method to draw a circle
-    draw() {
-      c.beginPath();
-      c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-      c.fillStyle = `rgba(245, 245, 245, ${this.currentOpacity})`;
-      c.fill();
-    }
-    // Method to update the circle
-    update() {
-      this.draw();
-      if (this.x + this.radius > canv.width || this.x - this.radius < 0) {
-        this.dx = -this.dx;
+  class DrawLine {
+      constructor(startX, startY, endX, endY, width, color) {
+          this.startX = startX;
+          this.startY = startY;
+          this.endX = endX;
+          this.endY = endY;
+          this.delta = 50;
+          this.slope = (endY - startY) / (endX - startX);
+          this.width = width;
+          this.color = color;
       }
 
-      if (this.y + this.radius > canv.height || this.y - this.radius < 0) {
-        this.dy = -this.dy;
+      draw() {
+          c.beginPath();
+          c.moveTo(this.startX, this.startY);
+          c.lineTo((this.startX + this.delta), (this.startY + (this.slope * this.delta)));
+          c.lineWidth = this.width;
+          c.strokeStyle = this.color;
+          c.stroke();
       }
 
-      if (this.radius > this.maxRadius || this.radius < this.minRadius) {
-        this.dr = -this.dr;
+      update() {
+          
       }
-
-      this.x += this.dx;
-      this.y += this.dy;
-      this.radius += this.dr;
-      this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
-    }
   }
 
-//   function Particle(minRadius, maxRadius) {
-//     this.dx = Math.random() - 0.5;
-//     this.dy = Math.random() - 0.5;
-//     this.dr = 0.05;
-//     this.minRadius = minRadius;
-//     this.maxRadius = maxRadius;
-//     this.radius = Math.round(
-//       Math.random() * (this.maxRadius - this.minRadius + 1) + this.minRadius
-//     );
-//     this.deltaOpacity = 1 / (this.maxRadius - this.minRadius);
-//     this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
-//     this.x = Math.random() * (canv.width - this.radius * 2) + this.radius;
-//     this.y = Math.random() * (canv.height - this.radius * 2) + this.radius;
+  // A class to create particles on the canvas
+//   class Particle {
+//     constructor(minRadius, maxRadius) {
+//       this.dx = Math.random() - 0.5;
+//       this.dy = Math.random() - 0.5;
+//       this.dr = 0.05;
+//       this.minRadius = minRadius;
+//       this.maxRadius = maxRadius;
+//       this.radius = Math.round(
+//         Math.random() * (this.maxRadius - this.minRadius + 1) + this.minRadius
+//       );
+//       this.deltaOpacity = 1 / (this.maxRadius - this.minRadius);
+//       this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
+//       this.x = Math.random() * (canv.width - this.radius * 2) + this.radius;
+//       this.y = Math.random() * (canv.height - this.radius * 2) + this.radius;
+//     }
+//     // Method to draw a circle
+//     draw() {
+//       c.beginPath();
+//       c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+//       c.fillStyle = `rgba(245, 245, 245, ${this.currentOpacity})`;
+//       c.fill();
+//     }
+//     // Method to update the circle
+//     update() {
+//       this.draw();
+//       if (this.x + this.radius > canv.width || this.x - this.radius < 0) {
+//         this.dx = -this.dx;
+//       }
+
+//       if (this.y + this.radius > canv.height || this.y - this.radius < 0) {
+//         this.dy = -this.dy;
+//       }
+
+//       if (this.radius > this.maxRadius || this.radius < this.minRadius) {
+//         this.dr = -this.dr;
+//       }
+
+//       this.x += this.dx;
+//       this.y += this.dy;
+//       this.radius += this.dr;
+//       this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
+//     }
 //   }
-
-//   Particle.prototype.draw = function () {
-//     c.beginPath();
-//     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-//     c.fillStyle = `rgba(245, 245, 245, ${this.currentOpacity})`;
-//     c.fill();
-//   };
-
-//   Particle.prototype.update = function () {
-//     this.draw();
-//     if (this.x + this.radius > canv.width || this.x - this.radius < 0) {
-//       this.dx = -this.dx;
-//     }
-
-//     if (this.y + this.radius > canv.height || this.y - this.radius < 0) {
-//       this.dy = -this.dy;
-//     }
-
-//     if (this.radius > this.maxRadius || this.radius < this.minRadius) {
-//       this.dr = -this.dr;
-//     }
-
-//     this.x += this.dx;
-//     this.y += this.dy;
-//     this.radius += this.dr;
-//     this.currentOpacity = (this.radius - this.minRadius) * this.deltaOpacity;
-//   };
 
   // A class to create small particles on the canvas
   class SmallParticle {
