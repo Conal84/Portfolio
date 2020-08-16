@@ -35,7 +35,7 @@ $(document).ready(function () {
     // Method to calculate points on the line
     calcpoints() {
       let interval = 10;
-      this.points.push({x: this.startX, y: this.startY});
+      this.points.push({ x: this.startX, y: this.startY });
       for (let i = 1; i <= interval; i++) {
         let x = (this.endX / interval) * i;
         let y = this.slope * x + this.startY;
@@ -43,24 +43,26 @@ $(document).ready(function () {
       }
       console.log(this.points);
     }
+  }
 
-    animate() {
-      if (this.num < this.points.length - 1) {
-        requestAnimationFrame(this.animate);
-        c.beginPath();
-        c.moveTo(this.points[this.num - 1].x, this.points[this.num - 1].y);
-        c.lineTo(this.points[this.num].x, this.points[this.num].y);
-        c.strokeStyle = this.color;
-        c.lineWidth = this.width;
-        c.stroke();
-        this.num++;
-      }
+  let num = 1;
+
+  function animate() {
+    if (num < line1.points.length - 1) {
+      requestAnimationFrame(animate);
+      c.beginPath();
+      c.moveTo(line1.points[num - 1].x, line1.points[num - 1].y);
+      c.lineTo(line1.points[num].x, line1.points[num].y);
+      c.strokeStyle = line1.color;
+      c.lineWidth = line1.width;
+      c.stroke();
+      num++;
     }
   }
 
-  let line1 = new DrawLine(0, 100, 200, 0, 10, "#FF0000")
+  let line1 = new DrawLine(0, 400, 1500, 300, 10, "#FF0000");
   line1.calcpoints();
-  line1.animate();
+  animate();
 
   // Initialise emailjs
   (function () {
