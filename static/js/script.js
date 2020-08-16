@@ -46,10 +46,12 @@ $(document).ready(function () {
 
     animate() {
       if (this.num < this.points.length - 1) {
-        requestAnimationFrame(animate);
+        requestAnimationFrame(this.animate);
         c.beginPath();
-        c.moveTo(this.points[num - 1].x, this.points[num - 1].y);
+        c.moveTo(this.points[this.num - 1].x, this.points[this.num - 1].y);
         c.lineTo(this.points[this.num].x, this.points[this.num].y);
+        c.strokeStyle = this.color;
+        c.lineWidth = this.width;
         c.stroke();
         this.num++;
       }
@@ -58,7 +60,7 @@ $(document).ready(function () {
 
   let line1 = new DrawLine(0, 100, 200, 0, 10, "#FF0000")
   line1.calcpoints();
-//   line1.animate();
+  line1.animate();
 
   // Initialise emailjs
   (function () {
