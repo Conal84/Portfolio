@@ -25,7 +25,6 @@ $(document).ready(function () {
       this.startY = startY;
       this.endX = endX;
       this.endY = endY;
-      this.num = 1;
       this.slope = (endY - startY) / (endX - startX);
       this.width = width;
       this.color = color;
@@ -47,14 +46,14 @@ $(document).ready(function () {
 
   let num = 1;
 
-  function animate() {
-    if (num < line1.points.length - 1) {
+  function animate(line) {
+    if (num < 10) {
       requestAnimationFrame(animate);
       c.beginPath();
-      c.moveTo(line1.points[num - 1].x, line1.points[num - 1].y);
-      c.lineTo(line1.points[num].x, line1.points[num].y);
-      c.strokeStyle = line1.color;
-      c.lineWidth = line1.width;
+      c.moveTo(line.points[num - 1].x, line.points[num - 1].y);
+      c.lineTo(line.points[num].x, line.points[num].y);
+      c.strokeStyle = line.color;
+      c.lineWidth = line.width;
       c.stroke();
       num++;
     }
@@ -62,7 +61,7 @@ $(document).ready(function () {
 
   let line1 = new DrawLine(0, 400, 1500, 300, 10, "#FF0000");
   line1.calcpoints();
-  animate();
+  animate(line1);
 
   // Initialise emailjs
   (function () {
