@@ -46,22 +46,30 @@ $(document).ready(function () {
 
   let num = 1;
 
-  function animate(line) {
+  function animate() {
     if (num < 10) {
       requestAnimationFrame(animate);
       c.beginPath();
-      c.moveTo(line.points[num - 1].x, line.points[num - 1].y);
-      c.lineTo(line.points[num].x, line.points[num].y);
-      c.strokeStyle = line.color;
-      c.lineWidth = line.width;
+      c.moveTo(line1.points[num - 1].x, line1.points[num - 1].y);
+      c.lineTo(line1.points[num].x, line1.points[num].y);
+      c.strokeStyle = line1.color;
+      c.lineWidth = line1.width;
+      c.stroke();
+      c.beginPath();
+      c.moveTo(line2.points[num - 1].x, line2.points[num - 1].y);
+      c.lineTo(line2.points[num].x, line2.points[num].y);
+      c.strokeStyle = line2.color;
+      c.lineWidth = line2.width;
       c.stroke();
       num++;
     }
   }
 
-  let line1 = new DrawLine(0, 400, 1500, 300, 10, "#FF0000");
+  let line1 = new DrawLine(0, 400, 1500, 300, 8, "#ffcd24");
+  let line2 = new DrawLine(0, 600, 1400, 200, 3, "#1478a3");
   line1.calcpoints();
-  animate(line1);
+  line2.calcpoints();
+  animate();
 
   // Initialise emailjs
   (function () {

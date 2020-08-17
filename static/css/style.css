@@ -17,8 +17,8 @@ body{
 
 /* Canvas */
 #hero{
+    background-color: #33393d;
     width: 100%;
-    /* filter: blur(2px); */
 }
 
 /* Text */
