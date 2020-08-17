@@ -33,7 +33,7 @@ $(document).ready(function () {
 
     // Method to calculate points on the line
     calcpoints() {
-      let interval = 10;
+      let interval = 20;
       this.points.push({ x: this.startX, y: this.startY });
       for (let i = 1; i <= interval; i++) {
         let x = (this.endX / interval) * i;
@@ -46,30 +46,57 @@ $(document).ready(function () {
 
   let num = 1;
 
-  function animate() {
-    if (num < 10) {
-      requestAnimationFrame(animate);
-      c.beginPath();
-      c.moveTo(line1.points[num - 1].x, line1.points[num - 1].y);
-      c.lineTo(line1.points[num].x, line1.points[num].y);
-      c.strokeStyle = line1.color;
-      c.lineWidth = line1.width;
-      c.stroke();
-      c.beginPath();
-      c.moveTo(line2.points[num - 1].x, line2.points[num - 1].y);
-      c.lineTo(line2.points[num].x, line2.points[num].y);
-      c.strokeStyle = line2.color;
-      c.lineWidth = line2.width;
-      c.stroke();
-      num++;
-    }
-  }
+  //   function animate() {
+  //     if (num < 10) {
+  //       requestAnimationFrame(animate);
+  //       c.beginPath();
+  //       c.moveTo(line1.points[num - 1].x, line1.points[num - 1].y);
+  //       c.lineTo(line1.points[num].x, line1.points[num].y);
+  //       c.strokeStyle = line1.color;
+  //       c.lineWidth = line1.width;
+  //       c.stroke();
+  //       c.beginPath();
+  //       c.moveTo(line2.points[num - 1].x, line2.points[num - 1].y);
+  //       c.lineTo(line2.points[num].x, line2.points[num].y);
+  //       c.strokeStyle = line2.color;
+  //       c.lineWidth = line2.width;
+  //       c.stroke();
+  //       num++;
+  //     }
+  //   }
 
   let line1 = new DrawLine(0, 400, 1500, 300, 8, "#ffcd24");
   let line2 = new DrawLine(0, 600, 1400, 200, 3, "#1478a3");
   line1.calcpoints();
   line2.calcpoints();
-  animate();
+  //   animate();
+
+  inter1 = setInterval(function () {
+    c.beginPath();
+    c.moveTo(line1.points[num - 1].x, line1.points[num - 1].y);
+    c.lineTo(line1.points[num].x, line1.points[num].y);
+    c.strokeStyle = line1.color;
+    c.lineWidth = line1.width;
+    c.stroke();
+    num++;
+    if (num >= 19) {
+      clearInterval(inter1);
+    }
+  }, 10);
+
+  let num2 = 1
+  inter2 = setInterval(function () {
+    c.beginPath();
+    c.moveTo(line2.points[num2 - 1].x, line2.points[num2 - 1].y);
+    c.lineTo(line2.points[num2].x, line2.points[num2].y);
+    c.strokeStyle = line2.color;
+    c.lineWidth = line2.width;
+    c.stroke();
+    num2++;
+    if (num2 >= 19) {
+      clearInterval(inter2);
+    }
+  }, 40);
 
   // Initialise emailjs
   (function () {
