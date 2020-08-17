@@ -20,7 +20,7 @@ $(document).ready(function () {
   let c = canv.getContext("2d");
 
   class DrawLine {
-    constructor(startX, startY, endX, endY, width, color) {
+    constructor(startX, startY, endX, endY, width, color, speed, segments) {
       this.startX = startX;
       this.startY = startY;
       this.endX = endX;
@@ -28,6 +28,9 @@ $(document).ready(function () {
       this.slope = (endY - startY) / (endX - startX);
       this.width = width;
       this.color = color;
+      this.speed = speed;
+      this.segments = segments;
+      this.num = 1;
       this.points = [];
     }
 
@@ -42,61 +45,58 @@ $(document).ready(function () {
       }
       console.log(this.points);
     }
+
+    animate() {
+      let inter = setInterval(function () {
+        c.beginPath();
+        c.moveTo(this.points[this.num - 1].x, this.points[this.num - 1].y);
+        c.lineTo(this.points[this.num].x, this.points[this.num].y);
+        c.strokeStyle = this.color;
+        c.lineWidth = this.width;
+        c.stroke();
+        this.num++;
+        if (this.num >= (this.segments - 5)) {
+          clearInterval(inter);
+        }
+      }, this.speed);
+    }
   }
 
   let num = 1;
 
-  //   function animate() {
-  //     if (num < 10) {
-  //       requestAnimationFrame(animate);
-  //       c.beginPath();
-  //       c.moveTo(line1.points[num - 1].x, line1.points[num - 1].y);
-  //       c.lineTo(line1.points[num].x, line1.points[num].y);
-  //       c.strokeStyle = line1.color;
-  //       c.lineWidth = line1.width;
-  //       c.stroke();
-  //       c.beginPath();
-  //       c.moveTo(line2.points[num - 1].x, line2.points[num - 1].y);
-  //       c.lineTo(line2.points[num].x, line2.points[num].y);
-  //       c.strokeStyle = line2.color;
-  //       c.lineWidth = line2.width;
-  //       c.stroke();
-  //       num++;
-  //     }
-  //   }
-
-  let line1 = new DrawLine(0, 400, 1500, 300, 8, "#ffcd24");
-  let line2 = new DrawLine(0, 600, 1400, 200, 3, "#1478a3");
+  let line1 = new DrawLine(0, 400, 1500, 300, 8, "#ffcd24", 10, 20);
+//   let line2 = new DrawLine(0, 600, 1400, 200, 3, "#1478a3");
   line1.calcpoints();
-  line2.calcpoints();
+  line1.animate();
+//   line2.calcpoints();
   //   animate();
 
-  inter1 = setInterval(function () {
-    c.beginPath();
-    c.moveTo(line1.points[num - 1].x, line1.points[num - 1].y);
-    c.lineTo(line1.points[num].x, line1.points[num].y);
-    c.strokeStyle = line1.color;
-    c.lineWidth = line1.width;
-    c.stroke();
-    num++;
-    if (num >= 19) {
-      clearInterval(inter1);
-    }
-  }, 10);
+//   inter1 = setInterval(function () {
+//     c.beginPath();
+//     c.moveTo(line1.points[num - 1].x, line1.points[num - 1].y);
+//     c.lineTo(line1.points[num].x, line1.points[num].y);
+//     c.strokeStyle = line1.color;
+//     c.lineWidth = line1.width;
+//     c.stroke();
+//     num++;
+//     if (num >= 19) {
+//       clearInterval(inter1);
+//     }
+//   }, 10);
 
-  let num2 = 1
-  inter2 = setInterval(function () {
-    c.beginPath();
-    c.moveTo(line2.points[num2 - 1].x, line2.points[num2 - 1].y);
-    c.lineTo(line2.points[num2].x, line2.points[num2].y);
-    c.strokeStyle = line2.color;
-    c.lineWidth = line2.width;
-    c.stroke();
-    num2++;
-    if (num2 >= 19) {
-      clearInterval(inter2);
-    }
-  }, 40);
+  //   let num2 = 1
+  //   inter2 = setInterval(function () {
+  //     c.beginPath();
+  //     c.moveTo(line2.points[num2 - 1].x, line2.points[num2 - 1].y);
+  //     c.lineTo(line2.points[num2].x, line2.points[num2].y);
+  //     c.strokeStyle = line2.color;
+  //     c.lineWidth = line2.width;
+  //     c.stroke();
+  //     num2++;
+  //     if (num2 >= 19) {
+  //       clearInterval(inter2);
+  //     }
+  //   }, 40);
 
   // Initialise emailjs
   (function () {
