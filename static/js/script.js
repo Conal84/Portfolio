@@ -50,19 +50,16 @@ $(document).ready(function () {
 
   function draw(coords, color, width, speed) {
     let num = 1;
-    inter = setInterval(change, 100);
+    inter = setInterval(change, speed);
 
     function change() {
       if (num === 19) {
-        console.log("hello");
         clearInterval(inter);
       } else {
         c.beginPath();
         c.moveTo(coords[num - 1].x, coords[num - 1].y);
         c.lineTo(coords[num].x, coords[num].y);
-        console.log(color);
         c.strokeStyle = color;
-        console.log(width);
         c.lineWidth = width;
         c.stroke();
         num++;
@@ -71,35 +68,6 @@ $(document).ready(function () {
   }
 
   draw(line1.points, "#FF0000", 10, 20);
-
-  //   let num = 1;
-
-  //   inter1 = setInterval(function () {
-  //     c.beginPath();
-  //     c.moveTo(line1.points[num - 1].x, line1.points[num - 1].y);
-  //     c.lineTo(line1.points[num].x, line1.points[num].y);
-  //     c.strokeStyle = line1.color;
-  //     c.lineWidth = line1.width;
-  //     c.stroke();
-  //     num++;
-  //     if (num >= 19) {
-  //       clearInterval(inter1);
-  //     }
-  //   }, 10);
-
-  //   let num2 = 1;
-  //   inter2 = setInterval(function () {
-  //     c.beginPath();
-  //     c.moveTo(line2.points[num2 - 1].x, line2.points[num2 - 1].y);
-  //     c.lineTo(line2.points[num2].x, line2.points[num2].y);
-  //     c.strokeStyle = line2.color;
-  //     c.lineWidth = line2.width;
-  //     c.stroke();
-  //     num2++;
-  //     if (num2 >= 19) {
-  //       clearInterval(inter2);
-  //     }
-  //   }, 40);
 
   // Initialise emailjs
   (function () {
