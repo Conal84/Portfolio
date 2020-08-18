@@ -20,17 +20,13 @@ $(document).ready(function () {
   let c = canv.getContext("2d");
 
   class DrawLine {
-    constructor(startX, startY, endX, endY, width, color, speed, segments) {
+    constructor(startX, startY, endX, endY, segments) {
       this.startX = startX;
       this.startY = startY;
       this.endX = endX;
       this.endY = endY;
       this.slope = (endY - startY) / (endX - startX);
-      this.width = width;
-      this.color = color;
-      this.speed = speed;
       this.segments = segments;
-      this.num = 1;
       this.points = [];
     }
 
@@ -45,46 +41,53 @@ $(document).ready(function () {
       }
       console.log(this.points);
     }
+  }
 
-    animate() {
-      let inter = setInterval(function () {
+  let line1 = new DrawLine(0, 400, 1500, 300, 20);
+  //   let line2 = new DrawLine(0, 600, 1400, 200, 3, "#1478a3");
+  line1.calcpoints();
+  //   line2.calcpoints();
+
+  function draw(coords, color, width, speed) {
+    let num = 1;
+    inter = setInterval(change, 100);
+
+    function change() {
+      if (num === 19) {
+        console.log("hello");
+        clearInterval(inter);
+      } else {
         c.beginPath();
-        c.moveTo(this.points[this.num - 1].x, this.points[this.num - 1].y);
-        c.lineTo(this.points[this.num].x, this.points[this.num].y);
-        c.strokeStyle = this.color;
-        c.lineWidth = this.width;
+        c.moveTo(coords[num - 1].x, coords[num - 1].y);
+        c.lineTo(coords[num].x, coords[num].y);
+        console.log(color);
+        c.strokeStyle = color;
+        console.log(width);
+        c.lineWidth = width;
         c.stroke();
-        this.num++;
-        if (this.num >= (this.segments - 5)) {
-          clearInterval(inter);
-        }
-      }, this.speed);
+        num++;
+      }
     }
   }
 
-  let num = 1;
+  draw(line1.points, "#FF0000", 10, 20);
 
-  let line1 = new DrawLine(0, 400, 1500, 300, 8, "#ffcd24", 10, 20);
-//   let line2 = new DrawLine(0, 600, 1400, 200, 3, "#1478a3");
-  line1.calcpoints();
-  line1.animate();
-//   line2.calcpoints();
-  //   animate();
+  //   let num = 1;
 
-//   inter1 = setInterval(function () {
-//     c.beginPath();
-//     c.moveTo(line1.points[num - 1].x, line1.points[num - 1].y);
-//     c.lineTo(line1.points[num].x, line1.points[num].y);
-//     c.strokeStyle = line1.color;
-//     c.lineWidth = line1.width;
-//     c.stroke();
-//     num++;
-//     if (num >= 19) {
-//       clearInterval(inter1);
-//     }
-//   }, 10);
+  //   inter1 = setInterval(function () {
+  //     c.beginPath();
+  //     c.moveTo(line1.points[num - 1].x, line1.points[num - 1].y);
+  //     c.lineTo(line1.points[num].x, line1.points[num].y);
+  //     c.strokeStyle = line1.color;
+  //     c.lineWidth = line1.width;
+  //     c.stroke();
+  //     num++;
+  //     if (num >= 19) {
+  //       clearInterval(inter1);
+  //     }
+  //   }, 10);
 
-  //   let num2 = 1
+  //   let num2 = 1;
   //   inter2 = setInterval(function () {
   //     c.beginPath();
   //     c.moveTo(line2.points[num2 - 1].x, line2.points[num2 - 1].y);
