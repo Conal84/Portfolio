@@ -20,13 +20,12 @@ $(document).ready(function () {
   let c = canv.getContext("2d");
 
   class DrawLine {
-    constructor(startX, startY, endX, endY, segments) {
+    constructor(startX, startY, endX, endY) {
       this.startX = startX;
       this.startY = startY;
       this.endX = endX;
       this.endY = endY;
       this.slope = (endY - startY) / (endX - startX);
-      this.segments = segments;
       this.points = [];
     }
 
@@ -43,17 +42,17 @@ $(document).ready(function () {
     }
   }
 
-  let line1 = new DrawLine(0, 400, 1500, 300, 20);
-  //   let line2 = new DrawLine(0, 600, 1400, 200, 3, "#1478a3");
+  let line1 = new DrawLine(0, 400, 1500, 300);
+  let line2 = new DrawLine(0, 600, 1400, 200);
   line1.calcpoints();
-  //   line2.calcpoints();
+  line2.calcpoints();
 
-  function draw(coords, color, width, speed) {
+  function draw(coords, color, width, speed, segments) {
     let num = 1;
     inter = setInterval(change, speed);
 
     function change() {
-      if (num === 19) {
+      if (num === segments) {
         clearInterval(inter);
       } else {
         c.beginPath();
@@ -67,7 +66,8 @@ $(document).ready(function () {
     }
   }
 
-  draw(line1.points, "#FF0000", 10, 20);
+  draw(line1.points, "#FF0000", 8, 20, 20);
+  draw(line2.points, "#FFFFFF", 5, 10, 30);
 
   // Initialise emailjs
   (function () {
