@@ -66,11 +66,19 @@ $(document).ready(function () {
     }
   }
 
-  let typed = new Typed(".element", {
-    strings: ["Hi, I'm Conal", "I'm a Designer", "I'm an Engineer", "I'm a Developer"],
+    let typed = new Typed(".first-element", {
+    strings: ["Hi, I'm Conal"],
     smartBackspace: true,
-    // typespeed: 60,
-    // backspeed: 60,
+    typespeed: 200,
+    backspeed: 200,
+    loop: false
+  });
+
+  let typed1 = new Typed(".second-element", {
+    strings: ["I'm a Designer", "I'm an Engineer", "I'm a Developer"],
+    smartBackspace: true,
+    typespeed: 500,
+    backspeed: 100,
     loop: false
   });
 
