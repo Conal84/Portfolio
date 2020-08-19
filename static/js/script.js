@@ -67,9 +67,10 @@ $(document).ready(function () {
   }
 
   let typed = new Typed(".element", {
-    strings: ["n Engineer", " Designer", " Developer"],
-    typespeed: 60,
-    backspeed: 60,
+    strings: ["Hi, I'm Conal", "I'm a Designer", "I'm an Engineer", "I'm a Developer"],
+    smartBackspace: true,
+    // typespeed: 60,
+    // backspeed: 60,
     loop: false
   });
 
