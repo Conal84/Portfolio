@@ -52,7 +52,7 @@ $(document).ready(function () {
     inter = setInterval(change, speed);
 
     function change() {
-      if (num === (segments - 2)) {
+      if (num === segments - 2) {
         clearInterval(inter);
       } else {
         c.beginPath();
@@ -65,6 +65,13 @@ $(document).ready(function () {
       }
     }
   }
+
+  let typed = new Typed(".element", {
+    strings: ["n Engineer", " Designer", " Developer"],
+    typespeed: 60,
+    backspeed: 60,
+    loop: false
+  });
 
   draw(line1.points, "#FF0000", 8, 20, 20);
   draw(line2.points, "#FFFFFF", 5, 5, 30);
