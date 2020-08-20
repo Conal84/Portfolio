@@ -66,20 +66,10 @@ $(document).ready(function () {
     }
   }
 
-    let typed = new Typed(".first-element", {
-    strings: ["Hi, I'm Conal"],
-    smartBackspace: true,
-    typespeed: 200,
-    backspeed: 200,
-    loop: false
-  });
-
-  let typed1 = new Typed(".second-element", {
-    strings: ["I'm a Designer", "I'm an Engineer", "I'm a Developer"],
-    smartBackspace: true,
-    typespeed: 500,
-    backspeed: 100,
-    loop: false
+  let typed = new Typed("#typed", {
+    strings: ["First sentence", "Second sentence"],
+    backSpeed: 40,
+    typeSpeed: 40
   });
 
   draw(line1.points, "#FF0000", 8, 20, 20);
