@@ -8,20 +8,20 @@
             {{ form.hidden_tag() }}
             <p>
               {{ form.skill_name.label }}<br />
-              {{ form.skill_name(size=50) }} {% for error in
+              {{ form.skill_name(size=40) }} {% for error in
               form.skill_name.errors %}
               <span class="form-error">{{ error }}</span>
               {% endfor %}
             </p>
             <p>
               {{ form.percent.label }}<br />
-              {{ form.percent(size=50) }} {% for error in form.percent.errors %}
+              {{ form.percent(size=40) }} {% for error in form.percent.errors %}
               <span class="form-error">{{ error }}</span>
               {% endfor %}
             </p>
             <p>
               {{ form.skill_icon.label }}<br />
-              {{ form.skill_icon(size=50) }} {% for error in
+              {{ form.skill_icon(size=40) }} {% for error in
               form.skill_icon.errors %}
               <span class="form-error">{{ error }}</span>
               {% endfor %}
