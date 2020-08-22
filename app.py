@@ -168,6 +168,12 @@ def edit_project(project_id):
     form.project_name.data = the_project['project_name']
     form.short_text.data = the_project['short_text']
     form.long_text.data = the_project['long_text']
+    form.image1.data = the_project['images'][0]
+    form.image2.data = the_project['images'][1]
+    form.image3.data = the_project['images'][2]
+    form.image4.data = the_project['images'][3]
+    form.website_link.data = the_project['website_link']
+    form.git_link.data = the_project["git_link"]
 
     # If project form is validated update the database with form data
     if form.validate_on_submit():

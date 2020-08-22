@@ -67,9 +67,9 @@ $(document).ready(function () {
   }
 
   let typed = new Typed("#typed", {
-    strings: ["First sentence", "Second sentence"],
-    backSpeed: 40,
-    typeSpeed: 40
+    stringsElement: "#typed-strings",
+    typeSpeed: 60,
+    showCursor: false
   });
 
   draw(line1.points, "#FF0000", 8, 20, 20);
