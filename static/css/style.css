@@ -444,7 +444,7 @@ body{
 
 .editadd-card{
     border-color: #ffcd24;
-    width: 35vw;
+    width: 75vw;
 }
 
 .pr-card{
@@ -453,5 +453,13 @@ body{
 
 .form-error{
     color: #dc3545;
+}
+
+/* Media queries */
+@media screen and (min-width: 940px){
+.editadd-card{
+    border-color: #ffcd24;
+    width: 35vw;
+}
 }
 
