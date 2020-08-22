@@ -1,43 +1,45 @@
 <section class="container-fluid" id="skills-section">
   <a id="skills-scroll"></a>
   <div class="row no-gutters">
-    <div class="col-12 col-md-3">
+    <div class="col-12">
       <h1 class="main-head">About Me</h1>
+      <div>About me text goes in here</div>
     </div>
-    <div class="col-12 col-md-9">
-      {% for skill in skills %}
-      <div class="col-4">
-        <div
-          class="round"
-          data-value="{{skill.percent}}"
-          data-size="100"
-          data-thickness="12"
-        >
-          <strong></strong>
-          <div class="circle-info">
-            <i class="{{skill.skill_icon}}"></i>
-            <span>{{skill.skill_name}}</span>
-          </div>
-          {% if 'username' in session %}
-          <div>
-            <a
-              type="button"
-              class="btn btn-secondary"
-              href="{{url_for('edit_skill', skill_id=skill._id)}}"
-            >
-              Edit
-            </a>
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-toggle="modal"
-              data-target="#deleteSkillModal{{skill._id}}"
-            >
-              Delete
-            </button>
-          </div>
-          {% endif %}
+    <div class="col-12">
+      <h1 class="main-head">Skills</h1>
+    </div>
+    {% for skill in skills %}
+    <div class="col-4">
+      <div
+        class="round"
+        data-value="{{skill.percent}}"
+        data-size="100"
+        data-thickness="12"
+      >
+        <strong></strong>
+        <div class="circle-info">
+          <i class="{{skill.skill_icon}}"></i>
+          <span>{{skill.skill_name}}</span>
         </div>
+        {% if 'username' in session %}
+        <div>
+          <a
+            type="button"
+            class="btn btn-secondary"
+            href="{{url_for('edit_skill', skill_id=skill._id)}}"
+          >
+            Edit
+          </a>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-toggle="modal"
+            data-target="#deleteSkillModal{{skill._id}}"
+          >
+            Delete
+          </button>
+        </div>
+        {% endif %}
       </div>
     </div>
     <!-- Delete Skill Modal -->
