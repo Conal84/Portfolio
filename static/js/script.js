@@ -32,18 +32,22 @@ $(document).ready(function () {
     // Method to calculate points on the line
     calcpoints() {
       let interval = 20;
-      this.points.push({ x: this.startX, y: this.startY });
-      for (let i = 1; i <= interval; i++) {
-        let x = (this.endX / interval) * i;
-        let y = this.slope * x + this.startY;
+    //   this.points.push({ x: this.startX, y: this.startY });
+      for (let i = 0; i <= interval; i++) {
+        // let x = ((this.endX - this.startX) / interval) * i;
+        // let y = this.slope * x + this.startY;
+        let x = this.startX + (((this.endX - this.startX) / interval) * i);
+        let y = this.startY+ (((this.endY - this.startY) / interval) * i);
         this.points.push({ x: x, y: y });
       }
       console.log(this.points);
     }
   }
 
-  let line1 = new DrawLine(0, 400, 1500, 300);
-  let line2 = new DrawLine(0, 600, 1400, 200);
+  let maxHeight = window.innerHeight;
+  let maxWidth = window.innerWidth;
+  let line1 = new DrawLine(0, maxHeight*0.7, maxWidth, maxHeight*0.4);
+  let line2 = new DrawLine(maxWidth*0.3, 0, maxWidth*0.8, maxWidth);
   line1.calcpoints();
   line2.calcpoints();
 
@@ -52,7 +56,7 @@ $(document).ready(function () {
     inter = setInterval(change, speed);
 
     function change() {
-      if (num === segments - 2) {
+      if (num === segments + 1) {
         clearInterval(inter);
       } else {
         c.beginPath();
@@ -73,7 +77,7 @@ $(document).ready(function () {
   });
 
   draw(line1.points, "#FF0000", 8, 20, 20);
-  draw(line2.points, "#FFFFFF", 5, 5, 30);
+  draw(line2.points, "#FFFFFF", 5, 20, 20);
 
   // Initialise emailjs
   (function () {
