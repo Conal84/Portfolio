@@ -26,18 +26,16 @@ $(document).ready(function () {
       this.endX = endX;
       this.endY = endY;
       this.slope = (endY - startY) / (endX - startX);
+      this.intercept = startY - this.slope * startX;
       this.points = [];
     }
 
     // Method to calculate points on the line
     calcpoints() {
       let interval = 20;
-    //   this.points.push({ x: this.startX, y: this.startY });
       for (let i = 0; i <= interval; i++) {
-        // let x = ((this.endX - this.startX) / interval) * i;
-        // let y = this.slope * x + this.startY;
-        let x = this.startX + (((this.endX - this.startX) / interval) * i);
-        let y = this.startY+ (((this.endY - this.startY) / interval) * i);
+        let x = this.startX + ((this.endX - this.startX) / interval) * i;
+        let y = this.startY + ((this.endY - this.startY) / interval) * i;
         this.points.push({ x: x, y: y });
       }
       console.log(this.points);
@@ -46,8 +44,8 @@ $(document).ready(function () {
 
   let maxHeight = window.innerHeight;
   let maxWidth = window.innerWidth;
-  let line1 = new DrawLine(0, maxHeight*0.7, maxWidth, maxHeight*0.4);
-  let line2 = new DrawLine(maxWidth*0.3, 0, maxWidth*0.8, maxWidth);
+  let line1 = new DrawLine(0, maxHeight * 0.7, maxWidth, maxHeight * 0.4);
+  let line2 = new DrawLine(maxWidth * 0.3, 0, maxWidth * 0.8, maxWidth);
   line1.calcpoints();
   line2.calcpoints();
 
@@ -70,10 +68,40 @@ $(document).ready(function () {
     }
   }
 
+  function findIntercept(slope1, slope2, c1, c2) {
+    let point = [];
+    let x = (c2 - c1) / (slope1 - slope2);
+    let y = slope1 * x + c1;
+    point.push({x: x, y: y});
+    return point;
+  }
+
+  function drawPoly(point1, point2, point3, point4, color) {
+    c.fillStyle = color;
+    c.beginPath();
+    console.log(point1)
+    console.log(point2)
+    console.log(point3)
+    console.log(point4)
+    c.moveTo(point1.x, point1.y);
+    c.lineTo(point2.x, point2.y);
+    c.lineTo(point3.x, point3.y);
+    c.lineTo(point4.x, point4.y);
+    c.closePath();
+    c.fill();
+  }
+
+  let interPoint = findIntercept(line1.slope, line2.slope, line1.intercept, line2.intercept);
+  console.log(interPoint);
+
+  let canvCorners = [{x: 0, y: maxHeight}, {x: maxWidth, y: maxHeight}, {x: maxWidth, y: 0}];
+
+  drawPoly(line1.points[0], canvCorners[0], line2.points[line2.points.length - 1], interPoint[0], "#FFF");
+
   let typed = new Typed("#typed", {
     stringsElement: "#typed-strings",
     typeSpeed: 60,
-    showCursor: false
+    showCursor: false,
   });
 
   draw(line1.points, "#FF0000", 8, 20, 20);
