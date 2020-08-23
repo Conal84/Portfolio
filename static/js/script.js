@@ -79,10 +79,6 @@ $(document).ready(function () {
   function drawPoly(point1, point2, point3, point4, color) {
     c.fillStyle = color;
     c.beginPath();
-    console.log(point1)
-    console.log(point2)
-    console.log(point3)
-    console.log(point4)
     c.moveTo(point1.x, point1.y);
     c.lineTo(point2.x, point2.y);
     c.lineTo(point3.x, point3.y);
@@ -96,7 +92,7 @@ $(document).ready(function () {
 
   let canvCorners = [{x: 0, y: maxHeight}, {x: maxWidth, y: maxHeight}, {x: maxWidth, y: 0}];
 
-  drawPoly(line1.points[0], canvCorners[0], line2.points[line2.points.length - 1], interPoint[0], "#FFF");
+  drawPoly(line1.points[0], canvCorners[0], line2.points[line2.points.length - 1], interPoint[0], "rgba(255, 205, 36, 0.7)");
 
   let typed = new Typed("#typed", {
     stringsElement: "#typed-strings",
