@@ -49,11 +49,6 @@ body{
     font-size: 1.5rem;
 }
 
-.hero-topright span{
-    display: block;
-    /* text-align: left; */
-}
-
 /* Text */
 .std-text{
     font-family: 'Open Sans', sans-serif;
@@ -326,7 +321,7 @@ body{
 
 /* Contact-section */
 #contact-section{
-    background-color: #1478a3;
+    background-color: #ffd95c;
 }
 
 #contact-scroll {
