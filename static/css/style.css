@@ -216,7 +216,7 @@ body {
 }
 
 .nav-link:hover {
-  color: #ffcd24;
+  color: #1478a3;
 }
 
 /* Skills-section */
@@ -361,7 +361,7 @@ body {
 
 /* Contact-section */
 #contact-section {
-  background-color: #ffd95c;
+  background-color: #fff;
 }
 
 #contact-scroll {
@@ -375,8 +375,12 @@ body {
   padding-bottom: 4rem;
 }
 
-.contact-heading {
-  color: #fff;
+.contact-card {
+    background-color: #1478a3;
+}
+
+.contact-text{
+    color: #fff;
 }
 
 /* Modal */
