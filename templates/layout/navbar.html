@@ -1,4 +1,7 @@
 <nav class="navbar sticky-top navbar-expand-lg">
+  <a class="navbar-brand" href="#">
+    <img src="static/images/CW_logo.png" alt="" />
+  </a>
   <button
     class="navbar-toggler"
     type="button"
@@ -8,7 +11,9 @@
     aria-expanded="false"
     aria-label="Toggle navigation"
   >
-    <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#ffcd24; font-size:28px;"></i></span>
+    <span class="navbar-toggler-icon"
+      ><i class="fas fa-bars" style="color: #ffcd24; font-size: 28px;"></i
+    ></span>
   </button>
   <div class="collapse navbar-collapse" id="portfolioNav">
     <div class="navbar-nav ml-auto">
@@ -17,9 +22,21 @@
       <a class="nav-item nav-link" href="{{ url_for('logout') }}">Log Out</a>
       {% else %}
       <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
-      <a class="nav-item nav-link" href="{{ url_for('index', _anchor='skills-scroll') }}">About</a>
-      <a class="nav-item nav-link" href="{{ url_for('index', _anchor='portfolio-scroll') }}">Portfolio</a>
-      <a class="nav-item nav-link" href="{{ url_for('index', _anchor='contact-scroll') }}">Contact</a>
+      <a
+        class="nav-item nav-link"
+        href="{{ url_for('index', _anchor='skills-scroll') }}"
+        >About</a
+      >
+      <a
+        class="nav-item nav-link"
+        href="{{ url_for('index', _anchor='portfolio-scroll') }}"
+        >Portfolio</a
+      >
+      <a
+        class="nav-item nav-link"
+        href="{{ url_for('index', _anchor='contact-scroll') }}"
+        >Contact</a
+      >
       <a class="nav-item nav-link" href="{{ url_for('login')}}">Log In</a>
       {% endif %}
     </div>
