@@ -38,18 +38,32 @@ body {
   position: absolute;
   top: 10vh;
   right: 40vw;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-name: fadein;
+  animation-duration: 2s;
 }
 
 .hero-bottomleft {
   position: absolute;
   top: 70vh;
   left: 20vw;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-delay: 2s;
 }
 
 .hero-bottomright {
   position: absolute;
   top: 60vh;
   right: 10vw;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-delay: 4s;
 }
 
 .hero-ul {
@@ -99,10 +113,16 @@ body {
   top: 80vh;
   right: 49vw;
   text-align: center;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-delay: 6s;
 }
 
 .fa-angle-double-down {
   font-size: 4rem;
+  opacity: 0.5;
   color: #1478a3;
 }
 
@@ -526,5 +546,15 @@ body {
   .editadd-card {
     border-color: #ffcd24;
     width: 35vw;
+  }
+}
+
+/* Keyframes */
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
