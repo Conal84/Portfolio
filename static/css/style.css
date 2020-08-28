@@ -94,6 +94,18 @@ body {
   text-indent: 30px;
 }
 
+#scroll-down {
+  position: absolute;
+  top: 80vh;
+  right: 49vw;
+  text-align: center;
+}
+
+.fa-angle-double-down {
+  font-size: 4rem;
+  color: #1478a3;
+}
+
 /* Text */
 .std-text {
   font-family: "Open Sans", sans-serif;
@@ -376,11 +388,11 @@ body {
 }
 
 .contact-card {
-    background-color: #1478a3;
+  background-color: #1478a3;
 }
 
-.contact-text{
-    color: #fff;
+.contact-text {
+  color: #fff;
 }
 
 /* Modal */
