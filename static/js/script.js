@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
   /** @function Circle
    * @param {string} el - HTML class where progress circle will be placed
    */
@@ -140,7 +140,6 @@ $(document).ready(function () {
   );
 
   /** An array to hold the corners of the canvas */
-
   let canvCorners = [
     { x: 0, y: 0 },
     { x: maxWidth, y: 0 },
@@ -190,7 +189,6 @@ $(document).ready(function () {
   })();
 
   /** On form submit send email via emailjs */
-
   window.onload = function () {
     document
       .getElementById("contact-form")
@@ -201,7 +199,6 @@ $(document).ready(function () {
   };
 
   /** On successful form submit remove hide-me class to show email confirmation, wait 3 secs, then close modal */
-
   $("#contact-form").submit(function () {
     $("#thumb-confirm").show();
     setTimeout(function () {

@@ -217,6 +217,7 @@ def add_project():
     return render_template('pages/add-project.html', form=form)
 
 
+# Route to error 404 page
 @app.errorhandler(404)
 def not_found_error(error):
     return render_template('pages/404.html'), 404
