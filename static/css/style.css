@@ -542,6 +542,12 @@ body {
 }
 
 /* Media queries */
+/*Tablet and above Portrait View*/
+@media screen and (min-width: 768px) {
+    
+}
+
+/*Tablet and above Landscape View*/
 @media screen and (min-width: 940px) {
   .editadd-card {
     border-color: #ffcd24;
