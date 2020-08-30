@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-lg">
+<nav class="navbar sticky-top navbar-expand-md">
   <a class="navbar-brand" href="{{ url_for('index') }}">
     <img src="../static/images/CW_logo.png" alt="" />
   </a>
@@ -15,30 +15,44 @@
       ><i class="fas fa-bars" style="color: #ffcd24; font-size: 28px;"></i
     ></span>
   </button>
-  <div class="collapse navbar-collapse" id="portfolioNav">
-    <div class="navbar-nav ml-auto">
+  <div class="collapse navbar-collapse justify-content-end" id="portfolioNav">
+    <ul class="navbar-nav align-items-end">
       {% if 'username' in session %}
-      <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
-      <a class="nav-item nav-link" href="{{ url_for('logout') }}">Log Out</a>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+      </li>
       {% else %}
-      <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
-      <a
-        class="nav-item nav-link"
-        href="{{ url_for('index', _anchor='skills-scroll') }}"
-        >About</a
-      >
-      <a
-        class="nav-item nav-link"
-        href="{{ url_for('index', _anchor='portfolio-scroll') }}"
-        >Portfolio</a
-      >
-      <a
-        class="nav-item nav-link"
-        href="{{ url_for('index', _anchor='contact-scroll') }}"
-        >Contact</a
-      >
-      <a class="nav-item nav-link" href="{{ url_for('login')}}">Log In</a>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="{{ url_for('index', _anchor='skills-scroll') }}"
+          >About</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="{{ url_for('index', _anchor='portfolio-scroll') }}"
+          >Portfolio</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="{{ url_for('index', _anchor='contact-scroll') }}"
+          >Contact</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('login')}}">Log In</a>
+      </li>
       {% endif %}
-    </div>
+    </ul>
   </div>
 </nav>
