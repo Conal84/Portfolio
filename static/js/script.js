@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
   /** @function Circle
    * @param {string} el - HTML class where progress circle will be placed
    */
@@ -16,13 +15,30 @@ $(document).ready(function () {
   /** Circle function call */
   Circle(".round");
 
-/**
- * Assign hero section to canvas element and set canvas width and height
- */
-  let canv = document.getElementById("hero");
-  canv.width = window.innerWidth;
-  canv.height = window.innerHeight - $(".navbar").height();
-  let c = canv.getContext("2d");
+  /**
+   * Assign hero section to canvas element and set canvas width and height
+   */
+  function initCanvas(view) {
+    if (view.matches) {
+      let canv = document.getElementById("hero");
+      canv.width = window.innerWidth;
+      canv.height = canv.width;
+      let c = canv.getContext("2d");
+    } else {
+      let canv = document.getElementById("hero");
+      canv.width = window.innerWidth;
+      canv.height = window.innerHeight - $(".navbar").height();
+      let c = canv.getContext("2d");
+    }
+  }
+
+  let viewMatch = window.matchMedia("(max-width: 420px)");
+  initCanvas(viewMatch);
+  viewMatch.addListener(initCanvas);
+//   let canv = document.getElementById("hero");
+//   canv.width = window.innerWidth;
+//   canv.height = window.innerHeight - $(".navbar").height();
+//   let c = canv.getContext("2d");
 
   /** JS Class to take line start and end arguments
    * calculates slope, y-intercept and points on the line
