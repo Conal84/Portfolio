@@ -62,7 +62,7 @@ $(document).ready(function () {
 
   /** Create 2 lines and call their calcpoints methods */
   let line1 = new DrawLine(0, maxHeight * 0.7, maxWidth, maxHeight * 0.4);
-  let line2 = new DrawLine(maxWidth * 0.3, 0, maxWidth * 0.8, maxWidth);
+  let line2 = new DrawLine(maxWidth * 0.3, 0, maxWidth * 0.8, maxHeight);
   line1.calcpoints();
   line2.calcpoints();
 

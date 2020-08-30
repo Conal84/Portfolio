@@ -37,7 +37,7 @@ body {
 .hero-topright {
   position: absolute;
   top: 10vh;
-  right: 40vw;
+  right: 30vw;
   opacity: 0;
   animation-fill-mode: forwards;
   animation-name: fadein;
@@ -57,7 +57,7 @@ body {
 
 .hero-bottomright {
   position: absolute;
-  top: 60vh;
+  top: 50vh;
   right: 10vw;
   opacity: 0;
   animation-fill-mode: forwards;
@@ -273,7 +273,7 @@ body {
 #skills-section .round strong {
   position: absolute;
   top: 50%;
-  right: 35%;
+  right: 5%;
   margin-top: -35px;
   transform: translate(-50%);
   font-size: 2.5rem;
@@ -544,7 +544,9 @@ body {
 /* Media queries */
 /*Tablet and above Portrait View*/
 @media screen and (min-width: 768px) {
-    
+  #skills-section .round strong {
+    right: 30%;
+  }
 }
 
 /*Tablet and above Landscape View*/
@@ -552,6 +554,17 @@ body {
   .editadd-card {
     border-color: #ffcd24;
     width: 35vw;
+  }
+
+  #skills-section .round strong {
+    right: 35%;
+  }
+}
+
+/*IPad Pro and above Landscape View*/
+@media screen and (min-width: 1366px) {
+    #skills-section .round strong {
+    right: 38%;
   }
 }
 
