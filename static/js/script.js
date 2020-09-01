@@ -18,8 +18,8 @@ $(document).ready(function () {
   /** Circle function call */
   Circle(".round");
 
-  /**
-   * Assign hero section to canvas element and set canvas width and height
+  /** @function initCanvas - A function to resize the canvas if the window is less than or equal to view parameter
+   * @param {string} - the size of the view
    */
   function initCanvas(view) {
     if (view.matches) {
@@ -36,6 +36,9 @@ $(document).ready(function () {
   let viewMatch = window.matchMedia("(max-width: 420px)");
   initCanvas(viewMatch);
   viewMatch.addListener(initCanvas);
+
+  /** On window resize run initCanvas */
+  window.addEventListener("resize", initCanvas(viewMatch));
 
   /** JS Class to take line start and end arguments
    * calculates slope, y-intercept and points on the line

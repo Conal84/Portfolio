@@ -256,6 +256,16 @@ body {
   visibility: hidden;
 }
 
+.about-container{
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.about-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+}
+
 /* Skills-section */
 #skills-section {
   background-color: #fff;
@@ -547,53 +557,54 @@ body {
   }
 
   .hero-topleft {
-  top: 30vh;
-  left: 10vw;
-  font-size: 3rem;
-}
+    top: 30vh;
+    left: 10vw;
+    font-size: 3rem;
+  }
 
-.hero-topright {
-  top: 10vh;
-  right: 30vw;
-}
+  .hero-topright {
+    top: 10vh;
+    right: 30vw;
+  }
 
-.hero-bottomleft {
-  top: 65vh;
-  left: 30vw;
-}
+  .hero-bottomleft {
+    top: 65vh;
+    left: 30vw;
+  }
 
-.hero-bottomright {
-  top: 50vh;
-  right: 10vw;
-}
+  .hero-bottomright {
+    top: 50vh;
+    right: 10vw;
+  }
 
-.fake-code {
-  font-size: 1.5rem;
-}
+  .fake-code {
+    font-size: 1.5rem;
+  }
 
-.fake-text {
-  font-size: 2.5rem;
-}
+  .fake-text {
+    font-size: 2.5rem;
+  }
 
-.fake-text2 {
-  font-size: 2.5rem;
-}
+  .fake-text2 {
+    font-size: 2.5rem;
+  }
 
-.fake-text3 {
-  font-size: 2.5rem;
-}
+  .fake-text3 {
+    font-size: 2.5rem;
+  }
 
-#scroll-down {
-  position: absolute;
-  top: 80vh;
-  right: 49vw;
-  text-align: center;
-  opacity: 0;
-  animation-fill-mode: forwards;
-  animation-name: fadein;
-  animation-duration: 1s;
-  animation-delay: 4s;
-}
+  #scroll-down {
+    position: absolute;
+    display: block;
+    top: 80vh;
+    right: 49vw;
+    text-align: center;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-name: fadein;
+    animation-duration: 1s;
+    animation-delay: 4s;
+  }
 }
 
 /*Tablet and above Landscape View*/
@@ -610,7 +621,7 @@ body {
 
 /*IPad Pro and above Landscape View*/
 @media screen and (min-width: 1366px) {
-    #skills-section .round strong {
+  #skills-section .round strong {
     right: 38%;
   }
 }
