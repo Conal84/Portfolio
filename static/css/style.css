@@ -27,17 +27,17 @@ body {
 
 .hero-topleft {
   position: absolute;
-  top: 30vh;
-  left: 10vw;
+  top: 20vh;
+  left: 5vw;
   font-family: "Raleway", sans-serif;
   color: #fff;
-  font-size: 40px;
+  font-size: 3rem;
 }
 
 .hero-topright {
   position: absolute;
-  top: 10vh;
-  right: 30vw;
+  top: 3vh;
+  right: 10vw;
   opacity: 0;
   animation-fill-mode: forwards;
   animation-name: fadein;
@@ -46,8 +46,8 @@ body {
 
 .hero-bottomleft {
   position: absolute;
-  top: 70vh;
-  left: 20vw;
+  top: 35vh;
+  left: 15vw;
   opacity: 0;
   animation-fill-mode: forwards;
   animation-name: fadein;
@@ -57,8 +57,8 @@ body {
 
 .hero-bottomright {
   position: absolute;
-  top: 50vh;
-  right: 10vw;
+  top: 25vh;
+  right: 5vw;
   opacity: 0;
   animation-fill-mode: forwards;
   animation-name: fadein;
@@ -74,50 +74,42 @@ body {
 
 .fake-code {
   font-family: "Inconsolata", sans-serif;
-  font-size: 15px;
+  font-size: 5px;
   color: #696969;
 }
 
 .fake-text {
   font-family: "Open Sans", sans-serif;
-  font-size: 25px;
+  font-size: 1.5rem;
   color: #fff;
 }
 
 .fake-text2 {
   font-family: "Open Sans", sans-serif;
-  font-size: 25px;
-  color: #ffcd24;
+  font-size: 1.5rem;
+  color: #1478a3;
 }
 
 .fake-text3 {
   font-family: "Open Sans", sans-serif;
-  font-size: 25px;
-  color: #1478a3;
+  font-size: 1.5rem;
+  color: #ffcd24;
 }
 
 .indent1 {
-  text-indent: 10px;
+  text-indent: 1rem;
 }
 
 .indent2 {
-  text-indent: 20px;
+  text-indent: 2rem;
 }
 
 .indent3 {
-  text-indent: 30px;
+  text-indent: 3rem;
 }
 
 #scroll-down {
-  position: absolute;
-  top: 80vh;
-  right: 49vw;
-  text-align: center;
-  opacity: 0;
-  animation-fill-mode: forwards;
-  animation-name: fadein;
-  animation-duration: 1s;
-  animation-delay: 4s;
+  display: none;
 }
 
 .fa-angle-double-down {
@@ -143,6 +135,7 @@ body {
   text-decoration: underline;
   text-align: center;
   padding: 2rem 0;
+  margin: 0;
 }
 
 .sub-head {
@@ -251,16 +244,21 @@ body {
   color: #1478a3;
 }
 
-/* Skills-section */
-#skills-section {
-  background-color: #fff;
+/* About-section */
+#about-section {
+  background-color: #eaecec;
 }
 
-#skills-scroll {
+#about-scroll {
   display: block;
   position: relative;
   top: -45px;
   visibility: hidden;
+}
+
+/* Skills-section */
+#skills-section {
+  background-color: #fff;
 }
 
 #skills-section .round {
@@ -547,6 +545,55 @@ body {
   #skills-section .round strong {
     right: 30%;
   }
+
+  .hero-topleft {
+  top: 30vh;
+  left: 10vw;
+  font-size: 3rem;
+}
+
+.hero-topright {
+  top: 10vh;
+  right: 30vw;
+}
+
+.hero-bottomleft {
+  top: 65vh;
+  left: 30vw;
+}
+
+.hero-bottomright {
+  top: 50vh;
+  right: 10vw;
+}
+
+.fake-code {
+  font-size: 1.5rem;
+}
+
+.fake-text {
+  font-size: 2.5rem;
+}
+
+.fake-text2 {
+  font-size: 2.5rem;
+}
+
+.fake-text3 {
+  font-size: 2.5rem;
+}
+
+#scroll-down {
+  position: absolute;
+  top: 80vh;
+  right: 49vw;
+  text-align: center;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-name: fadein;
+  animation-duration: 1s;
+  animation-delay: 4s;
+}
 }
 
 /*Tablet and above Landscape View*/

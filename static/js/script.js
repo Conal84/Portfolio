@@ -36,10 +36,6 @@ $(document).ready(function () {
   let viewMatch = window.matchMedia("(max-width: 420px)");
   initCanvas(viewMatch);
   viewMatch.addListener(initCanvas);
-  //   let canv = document.getElementById("hero");
-  //   canv.width = window.innerWidth;
-  //   canv.height = window.innerHeight - $(".navbar").height();
-  //   let c = canv.getContext("2d");
 
   /** JS Class to take line start and end arguments
    * calculates slope, y-intercept and points on the line
@@ -74,12 +70,9 @@ $(document).ready(function () {
     }
   }
 
-  let maxHeight = window.innerHeight;
-  let maxWidth = window.innerWidth;
-
   /** Create 2 lines and call their calcpoints methods */
-  let line1 = new DrawLine(0, maxHeight * 0.7, maxWidth, maxHeight * 0.4);
-  let line2 = new DrawLine(maxWidth * 0.3, 0, maxWidth * 0.8, maxHeight);
+  let line1 = new DrawLine(0, canv.height * 0.7, canv.width, canv.height * 0.4);
+  let line2 = new DrawLine(canv.width * 0.3, 0, canv.width * 0.8, canv.height);
   line1.calcpoints();
   line2.calcpoints();
 
@@ -159,9 +152,9 @@ $(document).ready(function () {
   /** An array to hold the corners of the canvas */
   let canvCorners = [
     { x: 0, y: 0 },
-    { x: maxWidth, y: 0 },
-    { x: maxWidth, y: maxHeight },
-    { x: 0, y: maxHeight },
+    { x: canv.width, y: 0 },
+    { x: canv.width, y: canv.height },
+    { x: 0, y: canv.height },
   ];
 
   /** Top left Poly Rich Black */
