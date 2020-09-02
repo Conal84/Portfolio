@@ -18,7 +18,8 @@ $(document).ready(function () {
   /** Circle function call */
   Circle(".round");
 
-  /** @function initCanvas - A function to resize the canvas if the window is less than or equal to view parameter
+  /** @function initCanvas - A media query function to resize the canvas
+   * if the window is less than or equal to view parameter
    * @param {string} - the size of the view
    */
   function initCanvas(view) {
@@ -49,11 +50,12 @@ $(document).ready(function () {
    * @param {number} endY - line end y coordinate
    */
   class DrawLine {
-    constructor(startX, startY, endX, endY) {
+    constructor(startX, startY, endX, endY, segments) {
       this.startX = startX;
       this.startY = startY;
       this.endX = endX;
       this.endY = endY;
+      this.segments = segments;
       this.slope = (endY - startY) / (endX - startX);
       this.intercept = startY - this.slope * startX;
       this.points = [];
@@ -63,10 +65,10 @@ $(document).ready(function () {
      * and store them in an array
      */
     calcpoints() {
-      let interval = 20;
-      for (let i = 0; i <= interval; i++) {
-        let x = this.startX + ((this.endX - this.startX) / interval) * i;
-        let y = this.startY + ((this.endY - this.startY) / interval) * i;
+      //   let interval = 20;
+      for (let i = 0; i <= this.segments; i++) {
+        let x = this.startX + ((this.endX - this.startX) / this.segments) * i;
+        let y = this.startY + ((this.endY - this.startY) / this.segments) * i;
         this.points.push({ x: x, y: y });
       }
       console.log(this.points);
@@ -74,8 +76,20 @@ $(document).ready(function () {
   }
 
   /** Create 2 lines and call their calcpoints methods */
-  let line1 = new DrawLine(0, canv.height * 0.7, canv.width, canv.height * 0.4);
-  let line2 = new DrawLine(canv.width * 0.3, 0, canv.width * 0.8, canv.height);
+  let line1 = new DrawLine(
+    0,
+    canv.height * 0.7,
+    canv.width,
+    canv.height * 0.4,
+    20
+  );
+  let line2 = new DrawLine(
+    canv.width * 0.3,
+    0,
+    canv.width * 0.8,
+    canv.height,
+    30
+  );
   line1.calcpoints();
   line2.calcpoints();
 
@@ -84,7 +98,8 @@ $(document).ready(function () {
    * @param {array} coords - array of line coordinates
    * @param {string} color - hex line stroke color
    * @param {number} width - line width
-   * @param {number} speed - the interval in milliseconds to execute change function
+   * @param {number} speed - the interval in milliseconds to execute change function,
+   * the higher the speed value the slower the line is drawn
    * @param {number} segments - the number of segments in the line
    */
   function draw(coords, color, width, speed, segments) {
@@ -96,6 +111,7 @@ $(document).ready(function () {
       if (num === segments + 1) {
         clearInterval(inter);
       } else {
+        console.log(coords[num - 1].x, coords[num - 1].y);
         c.beginPath();
         c.moveTo(coords[num - 1].x, coords[num - 1].y);
         c.lineTo(coords[num].x, coords[num].y);
@@ -108,8 +124,8 @@ $(document).ready(function () {
   }
 
   /** Draw 2 lines on the canvas */
-  draw(line1.points, "#ffcd24", 8, 20, 20);
-  draw(line2.points, "#ffcd24", 10, 20, 20);
+  draw(line1.points, "#000000", 4, 20, line1.segments);
+  draw(line2.points, "#fff", 5, 20, line2.segments);
 
   /** @function findIntercept - find the intersecting point of 2 lines
    * @param {number} slope1 - the slope of line 1
