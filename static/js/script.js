@@ -81,7 +81,7 @@ $(document).ready(function () {
     canv.height * 0.7,
     canv.width,
     canv.height * 0.4,
-    20
+    30
   );
   let line2 = new DrawLine(
     canv.width * 0.3,
@@ -126,7 +126,7 @@ $(document).ready(function () {
 
   /** Draw 2 lines on the canvas */
   draw(line1.points, "#000", 8, 20, line1.segments);
-  draw(line2.points, "#000", 5, 20, line2.segments);
+  draw(line2.points, "#fff", 5, 20, line2.segments);
 
   /** @function findIntercept - find the intersecting point of 2 lines
    * @param {number} slope1 - the slope of line 1
@@ -178,40 +178,40 @@ $(document).ready(function () {
   ];
 
   /** Top left Poly Rich Black */
-//   drawPoly(
-//     canvCorners[0],
-//     line2.points[0],
-//     interPoint[0],
-//     line1.points[0],
-//     "rgba(11, 10, 7, 1)"
-//   );
+  drawPoly(
+    canvCorners[0],
+    line2.points[0],
+    interPoint[0],
+    line1.points[0],
+    "rgba(11, 10, 7, 1)"
+  );
 
   /** Bottom Left Poly Platinum Grey */
-//   drawPoly(
-//     line1.points[0],
-//     canvCorners[3],
-//     line2.points[line2.points.length - 1],
-//     interPoint[0],
-//     "rgba(234, 236, 236, 1)"
-//   );
+  drawPoly(
+    line1.points[0],
+    canvCorners[3],
+    line2.points[line2.points.length - 1],
+    interPoint[0],
+    "rgba(234, 236, 236, 1)"
+  );
 
   /** Top Right Poly Mustard */
-//   drawPoly(
-//     line2.points[0],
-//     canvCorners[1],
-//     line1.points[line1.points.length - 1],
-//     interPoint[0],
-//     "rgba(255, 217, 92, 1)"
-//   );
+  drawPoly(
+    line2.points[0],
+    canvCorners[1],
+    line1.points[line1.points.length - 1],
+    interPoint[0],
+    "rgba(255, 217, 92, 1)"
+  );
 
   /** Bottom Right Poly Sunglow */
-//   drawPoly(
-//     line1.points[line1.points.length - 1],
-//     canvCorners[2],
-//     line2.points[line2.points.length - 1],
-//     interPoint[0],
-//     "rgba(255, 205, 36, 1)"
-//   );
+  drawPoly(
+    line1.points[line1.points.length - 1],
+    canvCorners[2],
+    line2.points[line2.points.length - 1],
+    interPoint[0],
+    "rgba(255, 205, 36, 1)"
+  );
 
   /** A function to initialise EmailJS */
   (function () {
