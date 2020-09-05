@@ -40,7 +40,7 @@ def login():
     form.find_details(users)
 
     # If login form is validated set the username as session variable
-    if form.validate_on_submit():
+    if request.method == 'POST' and form.validate_on_submit():
         session['username'] = request.form['username']
         return redirect(url_for('index'))
     return render_template('pages/login.html', title='Log In', form=form)
@@ -70,7 +70,7 @@ def edit_skill(skill_id):
     form.skill_icon.data = the_skill['skill_icon']
 
     # If skill form is validated update the database with form data
-    if form.validate_on_submit():
+    if request.method == 'POST' and form.validate_on_submit():
         skills.update({'_id': ObjectId(skill_id)},
                       {
             'skill_name': request.form.get('skill_name'),
@@ -88,7 +88,7 @@ def add_skill():
     form = SkillForm()
 
     # If skill form is validated add form data to database
-    if form.validate_on_submit():
+    if request.method == 'POST' and form.validate_on_submit():
         skills.insert(
             {
                 'skill_name': request.form.get('skill_name'),
@@ -123,7 +123,7 @@ def edit_project(project_id):
     form.git_link.data = the_project["git_link"]
 
     # If project form is validated update the database with form data
-    if form.validate_on_submit():
+    if request.method == 'POST' and form.validate_on_submit():
         projects.update({'_id': ObjectId(project_id)},
                         {
             'project_name': request.form.get('project_name'),
@@ -147,7 +147,7 @@ def add_project():
     form = ProjectForm()
 
     # If project form is validated add form data to the database
-    if form.validate_on_submit():
+    if request.method == 'POST' and form.validate_on_submit():
         projects.insert(
             {
                 'project_name': request.form.get('project_name'),
