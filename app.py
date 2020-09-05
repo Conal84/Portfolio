@@ -54,14 +54,14 @@ def logout():
 
 
 # Route to delete a skill from database and redirect to index page
-@app.route('/delete_skill/<skill_id>')
+@app.route('/deleteskill/<skill_id>')
 def delete_skill(skill_id):
     mongo.db.Skills.remove({'_id': ObjectId(skill_id)})
     return redirect(url_for('index'))
 
 
 # Route to edit skill in database and redirect to index page
-@app.route('/edit_skill/<skill_id>', methods=['GET', 'POST'])
+@app.route('/editskill/<skill_id>', methods=['GET', 'POST'])
 def edit_skill(skill_id):
     skills = mongo.db.Skills
     the_skill = mongo.db.Skills.find_one({'_id': ObjectId(skill_id)})
@@ -78,11 +78,11 @@ def edit_skill(skill_id):
             'skill_icon': request.form.get('skill_icon')
         })
         return redirect(url_for('index'))
-    return render_template('pages/edit-skill.html', skill=the_skill, form=form)
+    return render_template('pages/edit/skill.html', skill=the_skill, form=form)
 
 
 # Route to add skill to database and redirect to index page
-@app.route('/add_skill', methods=['GET', 'POST'])
+@app.route('/addskill', methods=['GET', 'POST'])
 def add_skill():
     skills = mongo.db.Skills
     form = SkillForm()
@@ -96,18 +96,18 @@ def add_skill():
                 'skill_icon': request.form.get('skill_icon')
             })
         return redirect(url_for('index'))
-    return render_template('pages/add-skill.html', form=form)
+    return render_template('pages/add/skill.html', form=form)
 
 
 # Route to delete a project from the database and redirect to index page
-@app.route('/delete_project/<project_id>')
+@app.route('/deleteproject/<project_id>')
 def delete_project(project_id):
     mongo.db.Projects.remove({'_id': ObjectId(project_id)})
     return redirect(url_for('index'))
 
 
 # Route to edit a project in the database and redirect to index page
-@app.route('/edit_project/<project_id>', methods=['GET', 'POST'])
+@app.route('/editproject/<project_id>', methods=['GET', 'POST'])
 def edit_project(project_id):
     projects = mongo.db.Projects
     the_project = mongo.db.Projects.find_one({'_id': ObjectId(project_id)})
@@ -137,11 +137,11 @@ def edit_project(project_id):
             'git_link': request.form.get('git_link')
         })
         return redirect(url_for('index'))
-    return render_template('pages/edit-project.html', project=the_project, form=form)
+    return render_template('pages/edit/project.html', project=the_project, form=form)
 
 
 # Route to add a project to the database and redirect to index page
-@app.route('/add_project', methods=['GET', 'POST'])
+@app.route('/addproject', methods=['GET', 'POST'])
 def add_project():
     projects = mongo.db.Projects
     form = ProjectForm()
@@ -161,7 +161,7 @@ def add_project():
                 'git_link': request.form.get('git_link')
             })
         return redirect(url_for('index'))
-    return render_template('pages/add-project.html', form=form)
+    return render_template('pages/add/project.html', form=form)
 
 
 # Route to error 404 page
