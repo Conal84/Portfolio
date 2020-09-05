@@ -1,8 +1,5 @@
 /* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
-/* font-family: 'Open Sans', sans-serif;
-font-family: 'Raleway', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,400;0,700;1,400;1,700&family=Inconsolata&display=swap");
 
 /* Html */
 html {
@@ -12,6 +9,8 @@ html {
 
 /* Body */
 body {
+  font-size: 1.6rem;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
 
@@ -79,19 +78,16 @@ body {
 }
 
 .fake-text {
-  font-family: "Open Sans", sans-serif;
   font-size: 1.5rem;
   color: #fff;
 }
 
 .fake-text2 {
-  font-family: "Open Sans", sans-serif;
   font-size: 1.5rem;
   color: #1478a3;
 }
 
 .fake-text3 {
-  font-family: "Open Sans", sans-serif;
   font-size: 1.5rem;
   color: #ffcd24;
 }
@@ -120,12 +116,10 @@ body {
 
 /* Text */
 .std-text {
-  font-family: "Open Sans", sans-serif;
   font-size: 1.5rem;
 }
 
 .form-text {
-  font-family: "Open Sans", sans-serif;
   font-size: 1.25rem;
 }
 
@@ -179,7 +173,6 @@ body {
 
 .btn-submit {
   font-size: 1.25rem;
-  font-family: "Open Sans", sans-serif;
   color: #fff;
   padding: 5px 1rem;
   border-radius: 5px;
@@ -256,14 +249,9 @@ body {
   visibility: hidden;
 }
 
-.about-container{
-    text-align: center;
-    padding-bottom: 2rem;
-}
-
-.about-text {
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.5rem;
+.about-container {
+  text-align: center;
+  padding-bottom: 2rem;
 }
 
 /* Skills-section */
@@ -430,13 +418,11 @@ body {
 }
 
 .modal-title {
-  font-family: "Open Sans", sans-serif;
   font-size: 1.5rem;
   color: #fff;
 }
 
 .modal-body {
-  font-family: "Open Sans", sans-serif;
   font-size: 1.25rem;
 }
 
@@ -578,7 +564,7 @@ body {
   }
 
   .fake-code {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .fake-text {
