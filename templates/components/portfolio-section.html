@@ -35,7 +35,6 @@
           {% else %}
           <a
             href="{{url_for('project', project_id=project._id)}}"
-            target="_blank"
             rel="noopener"
             class="btn btn-submit project-btn btn-lg"
             >See More</a
@@ -56,9 +55,9 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="deleteProjectModalTitle">
+            <h2 class="modal-title" id="deleteProjectModalTitle">
               Delete Project
-            </h5>
+            </h2>
           </div>
           <div class="modal-body">
             Are you sure you want to delete this project?
