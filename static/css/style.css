@@ -160,8 +160,8 @@ body {
 }
 
 .btn-submit {
-  font-size: 1.25rem;
   color: #fff;
+  font-size: 1.6rem;
   padding: 5px 1rem;
   border-radius: 5px;
   border-style: none;
@@ -178,7 +178,7 @@ body {
 }
 
 .modal-btn-close {
-  font-size: 1.25rem;
+font-size: 1.6rem;
   color: #fff;
   padding: 5px 1rem;
   border-radius: 5px;
@@ -194,7 +194,6 @@ body {
 }
 
 .modal-btn-delete {
-  font-size: 1.25rem;
   color: #fff;
   padding: 5px 1rem;
   border-radius: 5px;
