@@ -1,6 +1,8 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, DecimalField, TextAreaField
-from wtforms.validators import InputRequired, ValidationError, NumberRange, Length
+from wtforms import (StringField, PasswordField, SubmitField,
+                     DecimalField, TextAreaField)
+from wtforms.validators import (InputRequired, ValidationError,
+                                NumberRange, Length)
 
 
 class LoginForm(FlaskForm):
@@ -30,7 +32,7 @@ class SkillForm(FlaskForm):
     """Form class to be used on add-skill and edit-skill pages"""
     skill_name = StringField('Skill Name', [InputRequired()])
     percent = DecimalField('Skill Percentage', [
-                           InputRequired(), NumberRange(min=0.01, max=1.0)])
+                           InputRequired(), NumberRange(min=1, max=100)])
     skill_icon = StringField('Skill Icon', [InputRequired()])
     submit = SubmitField('Submit')
 

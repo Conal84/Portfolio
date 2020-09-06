@@ -1,11 +1,11 @@
-from os import path
-from bson.objectid import ObjectId
+# from os import path
 import os
+from bson.objectid import ObjectId
 from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from forms import LoginForm, SkillForm, ProjectForm
-if path.exists("env.py"):
-    import env
+# if path.exists("env.py"):
+#     import env
 
 
 app = Flask(__name__)
@@ -136,7 +136,8 @@ def edit_project(project_id):
             'git_link': request.form.get('git_link')
         })
         return redirect(url_for('index'))
-    return render_template('pages/edit/project.html', project=the_project, form=form)
+    return render_template('pages/edit/project.html',
+                           project=the_project, form=form)
 
 
 @app.route('/addproject', methods=['GET', 'POST'])
