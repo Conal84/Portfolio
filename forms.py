@@ -3,33 +3,31 @@ from wtforms import StringField, PasswordField, SubmitField, DecimalField, TextA
 from wtforms.validators import InputRequired, ValidationError, NumberRange, Length
 
 
-# Form class to be used on Login page
 class LoginForm(FlaskForm):
-    # Form field definitions
+    """Form class to be used on Login page"""
     username = StringField('Username', [InputRequired()])
     password = PasswordField('Password', [InputRequired()])
     submit = SubmitField('Sign In')
 
-    # A method to obtain username and passowrd from the database
     def find_details(self, users):
+        """A method to obtain username and passowrd from the database"""
         for user in users:
             self.req_username = user['username']
             self.req_password = user['password']
 
-    # Custom username validation
     def validate_username(self, field):
+        """Custom username validation"""
         if field.data != self.req_username:
             raise ValidationError('Incorrect username')
 
-    # Custom password validation
     def validate_password(self, field):
+        """Custom password validation"""
         if field.data != self.req_password:
             raise ValidationError('Incorrect password')
 
 
-# Form class to be used on add-skill and edit-skill pages
 class SkillForm(FlaskForm):
-    # Form field definitions
+    """Form class to be used on add-skill and edit-skill pages"""
     skill_name = StringField('Skill Name', [InputRequired()])
     percent = DecimalField('Skill Percentage', [
                            InputRequired(), NumberRange(min=0.01, max=1.0)])
@@ -37,9 +35,8 @@ class SkillForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
-# Form class to be used on add-project and edit-project pages
 class ProjectForm(FlaskForm):
-    # Form field definitions
+    """Form class to be used on add-project and edit-project pages"""
     project_name = StringField('Project Name', [InputRequired()])
     short_text = StringField('Short text', [InputRequired(), Length(max=50)])
     long_text = TextAreaField('Long Text', [InputRequired(), Length(max=400)])
