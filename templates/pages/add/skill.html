@@ -10,21 +10,21 @@
 						{{ form.skill_name.label }}<br>
                     {{ form.skill_name(size=40) }}
                     {% for error in form.skill_name.errors %}
-						<span class="form-error">{{ error }}</span>
+						<p class="form-error">{{ error }}</p>
 						{% endfor %}
 					</p>
 					<p>
 						{{ form.percent.label }}<br>
                     {{ form.percent(size=40) }}
                     {% for error in form.percent.errors %}
-						<span class="form-error">{{ error }}</span>
+						<p class="form-error">{{ error }}</p>
 						{% endfor %}
 					</p>
 					<p>
 						{{ form.skill_icon.label }}<br>
                     {{ form.skill_icon(size=40) }}
                     {% for error in form.skill_icon.errors %}
-						<span class="form-error">{{ error }}</span>
+						<p class="form-error">{{ error }}</p>
 						{% endfor %}
 					</p>
 					<button type="submit" class="btn btn-submit">Submit</button>
