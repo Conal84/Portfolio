@@ -10,7 +10,7 @@ html {
 /* Body */
 body {
   font-size: 1.6rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin: 0;
 }
 
@@ -130,7 +130,7 @@ body {
 
 /* Buttons */
 .btn-secondary {
-font-size: 1.3rem;
+  font-size: 1.3rem;
   background-color: #1478a3;
   border: 1px solid #1478a3;
 }
@@ -156,10 +156,6 @@ font-size: 1.3rem;
   top: 5rem;
 }
 
-#add-skill-btn {
-  margin-top: 3rem;
-}
-
 .btn-submit {
   color: #fff;
   font-size: 1.3rem;
@@ -179,7 +175,7 @@ font-size: 1.3rem;
 }
 
 .modal-btn-close {
-font-size: 1.3rem;
+  font-size: 1.3rem;
   color: #fff;
   padding: 5px 1rem;
   border-radius: 5px;
@@ -195,7 +191,7 @@ font-size: 1.3rem;
 }
 
 .modal-btn-delete {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
   color: #fff;
   padding: 5px 1rem;
   border-radius: 5px;
@@ -249,23 +245,24 @@ font-size: 1.3rem;
 }
 
 .progress-group {
-    padding: 5px 0;
-    width: 75vw;
+  padding: 5px 0;
+  width: 80vw;
+  margin: auto;
 }
 
 .progress {
-    height: 3rem;
-    font-size: 1.6rem;
+  height: 3rem;
+  font-size: 1.6rem;
 }
 
 .progress-bar {
-    text-align: left;
-    padding: 5px;
+  text-align: left;
+  padding: 5px;
+  background-color: #1478a3;
 }
 
-#skill-name {
-  font-size: 1.8rem;
-  margin-top: 1rem;
+.skill-btns {
+  padding-top: 5px;
 }
 
 #skills-section i {
@@ -275,9 +272,13 @@ font-size: 1.3rem;
 }
 
 #add-skill.fas.fa-plus-circle {
-  font-size: 10rem;
-  margin-top: 2rem;
   color: #ffcd24;
+  font-size: 2.5rem;
+  padding: 3px;
+}
+
+.add-bar {
+    background-color: #ffcd24;
 }
 
 /* Projects-section */
@@ -407,7 +408,7 @@ font-size: 1.3rem;
 }
 
 #emailAddress {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 #thumb-confirm {
