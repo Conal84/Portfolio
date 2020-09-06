@@ -2,9 +2,8 @@ $(document).ready(function () {
   let canv = document.getElementById("hero");
   let c = canv.getContext("2d");
 
-
-
-  /** @function initCanvas - A media query function to resize the canvas
+  /**
+   * A media query function to resize the canvas
    * if the window is less than or equal to view parameter
    * @param {string} - the size of the view
    */
@@ -27,9 +26,9 @@ $(document).ready(function () {
   /** On window resize run initCanvas */
   window.addEventListener("resize", initCanvas(viewMatch));
 
-  /** JS Class to take line start and end arguments
+  /**
+   * Class to take line start and end arguments
    * calculates slope, y-intercept and points on the line
-   * @class Drawline
    * @param {number} startX - line start x coordinate
    * @param {number} startY - line start y coordinate
    * @param {number} endX - line end x coordinate
@@ -47,11 +46,11 @@ $(document).ready(function () {
       this.points = [];
     }
 
-    /** Method to calculate points on the line
+    /**
+     * Method to calculate points on the line
      * and store them in an array
      */
     calcpoints() {
-      //   let interval = 20;
       for (let i = 0; i <= this.segments; i++) {
         let x = this.startX + ((this.endX - this.startX) / this.segments) * i;
         let y = this.startY + ((this.endY - this.startY) / this.segments) * i;
@@ -61,7 +60,6 @@ $(document).ready(function () {
     }
   }
 
-  /** Create 2 lines and call their calcpoints methods */
   let line1 = new DrawLine(
     0,
     canv.height * 0.7,
@@ -79,7 +77,8 @@ $(document).ready(function () {
   line1.calcpoints();
   line2.calcpoints();
 
-  /** @function draw - draw a line at a specified speed across the canvas
+  /** 
+   * Draw a line at a specified speed across the canvas
    * setInterval used as requestAnimationFrame cannot contol line draw speed
    * @param {array} coords - array of line coordinates
    * @param {string} color - hex line stroke color
@@ -92,7 +91,9 @@ $(document).ready(function () {
     let num = 1;
     inter = setInterval(change, speed);
 
-    /** Function to cycle thru line coordinates and draw a line */
+    /** 
+     * Function to cycle thru line coordinates and draw a line
+     */
     function change() {
       if (num === segments + 1) {
         clearInterval(inter);
@@ -110,11 +111,14 @@ $(document).ready(function () {
     }
   }
 
-  /** Draw 2 lines on the canvas */
+  /** 
+   * Draw 2 lines on the canvas 
+   */
   draw(line1.points, "#000", 8, 20, line1.segments);
   draw(line2.points, "#fff", 5, 20, line2.segments);
 
-  /** @function findIntercept - find the intersecting point of 2 lines
+  /** 
+   * Find the intersecting point of 2 lines
    * @param {number} slope1 - the slope of line 1
    * @param {number} slope2 - the slope of line 2
    * @param {number} c1 - the y intercept of line 1
@@ -129,7 +133,8 @@ $(document).ready(function () {
     return point;
   }
 
-  /** @function drawPoly - Draws polygons on the canvas
+  /**
+   * Draws polygons on the canvas
    * @param {number} point1 - corner 1 of polygon
    * @param {number} point2 - corner 2 of polygon
    * @param {number} point3 - corner 3 of polygon
@@ -147,7 +152,9 @@ $(document).ready(function () {
     c.fill();
   }
 
-  /** Call findIntercept with slopes and y intercepts of line1 and line2 to find x, y intercept */
+  /** 
+   * Call findIntercept with slopes and y intercepts of line1 and line2 to find x, y intercept 
+   */
   let interPoint = findIntercept(
     line1.slope,
     line2.slope,
@@ -155,7 +162,9 @@ $(document).ready(function () {
     line2.intercept
   );
 
-  /** An array to hold the corners of the canvas */
+  /** 
+   * An array to hold the corners of the canvas 
+   */
   let canvCorners = [
     { x: 0, y: 0 },
     { x: canv.width, y: 0 },
@@ -163,7 +172,9 @@ $(document).ready(function () {
     { x: 0, y: canv.height },
   ];
 
-  /** Top left Poly Rich Black */
+  /** 
+   * Top left Poly Rich Black 
+   */
   drawPoly(
     canvCorners[0],
     line2.points[0],
@@ -172,7 +183,9 @@ $(document).ready(function () {
     "rgba(11, 10, 7, 1)"
   );
 
-  /** Bottom Left Poly Platinum Grey */
+  /** 
+   * Bottom Left Poly Platinum Grey 
+   */
   drawPoly(
     line1.points[0],
     canvCorners[3],
@@ -181,7 +194,9 @@ $(document).ready(function () {
     "rgba(234, 236, 236, 1)"
   );
 
-  /** Top Right Poly Mustard */
+  /** 
+   * Top Right Poly Mustard 
+   */
   drawPoly(
     line2.points[0],
     canvCorners[1],
@@ -190,7 +205,9 @@ $(document).ready(function () {
     "rgba(255, 217, 92, 1)"
   );
 
-  /** Bottom Right Poly Sunglow */
+  /** 
+   * Bottom Right Poly Sunglow 
+   */
   drawPoly(
     line1.points[line1.points.length - 1],
     canvCorners[2],
@@ -199,12 +216,16 @@ $(document).ready(function () {
     "rgba(255, 205, 36, 1)"
   );
 
-  /** A function to initialise EmailJS */
+  /** 
+   * A function to initialise EmailJS 
+   */
   (function () {
     emailjs.init("user_E43Rn5N9bcNkea4Jd11HC");
   })();
 
-  /** On form submit send email via emailjs */
+  /** 
+   * On form submit send email via emailjs 
+   */
   window.onload = function () {
     document
       .getElementById("contact-form")
@@ -214,7 +235,10 @@ $(document).ready(function () {
       });
   };
 
-  /** On successful form submit remove hide-me class to show email confirmation, wait 3 secs, then close modal */
+  /** 
+   * On successful form submit remove hide-me class to show email confirmation
+   * wait 3 secs, then close modal 
+   */
   $("#contact-form").submit(function () {
     $("#thumb-confirm").show();
     setTimeout(function () {
