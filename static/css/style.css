@@ -248,26 +248,19 @@ font-size: 1.3rem;
   background-color: #fff;
 }
 
-#skills-section .round {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  position: relative;
-  text-align: center;
+.progress-group {
+    padding: 5px 0;
+    width: 75vw;
 }
 
-#skills-section .round strong {
-  position: absolute;
-  top: 50%;
-  right: 5%;
-  margin-top: -35px;
-  transform: translate(-50%);
-  font-size: 2.5rem;
-  font-family: sans-serif;
-  font-weight: 400;
+.progress {
+    height: 3rem;
+    font-size: 1.6rem;
 }
 
-#circle-info {
-  margin-top: 20px;
+.progress-bar {
+    text-align: left;
+    padding: 5px;
 }
 
 #skill-name {
@@ -278,7 +271,7 @@ font-size: 1.3rem;
 #skills-section i {
   color: #1478a3;
   font-size: 2.5rem;
-  margin-right: 7px;
+  padding: 3px;
 }
 
 #add-skill.fas.fa-plus-circle {

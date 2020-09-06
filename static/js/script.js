@@ -2,21 +2,7 @@ $(document).ready(function () {
   let canv = document.getElementById("hero");
   let c = canv.getContext("2d");
 
-  /** @function Circle
-   * @param {string} el - HTML class where progress circle will be placed
-   */
-  function Circle(el) {
-    $(el)
-      .circleProgress({ fill: { color: "#ffd447" } })
-      .on("circle-animation-progress", function (event, progress, stepValue) {
-        $(this)
-          .find("strong")
-          .text(String(stepValue.toFixed(2)).substr(2) + "%");
-      });
-  }
 
-  /** Circle function call */
-  Circle(".round");
 
   /** @function initCanvas - A media query function to resize the canvas
    * if the window is less than or equal to view parameter

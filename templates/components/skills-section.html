@@ -5,20 +5,15 @@
       <h1 class="main-head">Skills</h1>
     </div>
     {% for skill in skills %}
-    <div class="col-4">
-      <div
-        class="round"
-        data-value="{{skill.percent}}"
-        data-size="100"
-        data-thickness="12"
-      >
-        <strong></strong>
-        <div class="circle-info">
-          <i class="{{skill.skill_icon}}"></i>
-          <span id="skill-name">{{skill.skill_name}}</span>
-        </div>
+    <div class="col-12">
+    <div class="progress-group">
+    <div class="progress">
+       <i class="{{skill.skill_icon}}"></i>
+  <div class="progress-bar" role="progressbar" style="width: {{skill.percent}}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">{{skill.skill_name}}</div>
+</div>
+</div>
         {% if 'username' in session %}
-        <div>
+        <span>
           <a
             type="button"
             class="btn btn-secondary"
@@ -34,7 +29,7 @@
           >
             Delete
           </button>
-        </div>
+        </span>
         {% endif %}
       </div>
     </div>
