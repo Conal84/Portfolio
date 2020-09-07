@@ -1,11 +1,11 @@
-# from os import path
+from os import path
 import os
 from bson.objectid import ObjectId
 from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
 from forms import LoginForm, SkillForm, ProjectForm
-# if path.exists("env.py"):
-#     import env
+if path.exists("env.py"):
+    import env
 
 
 app = Flask(__name__)

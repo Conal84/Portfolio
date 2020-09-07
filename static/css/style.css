@@ -224,7 +224,18 @@ body {
 
 /* About-section */
 #about-section {
+  background-color: #fff;
+  padding: 5px 1rem 1rem 1rem;
+}
+
+#about-col {
   background-color: #eaecec;
+  padding: 1rem;
+  text-align: center;
+}
+
+#skills-col {
+    padding: 1rem 2rem;
 }
 
 #about-scroll {
@@ -234,20 +245,8 @@ body {
   visibility: hidden;
 }
 
-.about-container {
-  text-align: center;
-  padding-bottom: 2rem;
-}
-
-/* Skills-section */
-#skills-section {
-  background-color: #fff;
-}
-
 .progress-group {
   padding: 5px 0;
-  width: 80vw;
-  margin: auto;
 }
 
 .progress {
@@ -265,7 +264,7 @@ body {
   padding-top: 5px;
 }
 
-#skills-section i {
+#about-section i {
   color: #1478a3;
   font-size: 2.5rem;
   padding: 3px;
