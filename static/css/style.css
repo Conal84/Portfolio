@@ -30,7 +30,7 @@ body {
   left: 5vw;
   font-family: "Raleway", sans-serif;
   color: #fff;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .hero-topright {
@@ -235,7 +235,7 @@ body {
 }
 
 #skills-col {
-    padding: 1rem 2rem;
+  padding: 1rem 2rem;
 }
 
 #about-scroll {
@@ -277,7 +277,7 @@ body {
 }
 
 .add-bar {
-    background-color: #ffcd24;
+  background-color: #ffcd24;
 }
 
 /* Projects-section */
@@ -518,10 +518,6 @@ body {
 /* Media queries */
 /*Tablet and above Portrait View*/
 @media screen and (min-width: 768px) {
-  #skills-section .round strong {
-    right: 30%;
-  }
-
   .hero-topleft {
     top: 30vh;
     left: 10vw;
@@ -534,13 +530,13 @@ body {
   }
 
   .hero-bottomleft {
-    top: 60vh;
+    top: 70vh;
     left: 25vw;
   }
 
   .hero-bottomright {
     top: 50vh;
-    right: 10vw;
+    right: 5vw;
   }
 
   .fake-code {
@@ -562,7 +558,7 @@ body {
   #scroll-down {
     position: absolute;
     display: block;
-    top: 80vh;
+    top: 85vh;
     right: 49vw;
     text-align: center;
     opacity: 0;
@@ -580,15 +576,14 @@ body {
     width: 35vw;
   }
 
-  #skills-section .round strong {
-    right: 37%;
+  .hero-bottomleft {
+    top: 65vh;
+    left: 25vw;
   }
-}
 
-/*IPad Pro and above Landscape View*/
-@media screen and (min-width: 1366px) {
-  #skills-section .round strong {
-    right: 38%;
+  .hero-bottomright {
+    top: 50vh;
+    right: 8vw;
   }
 }
 

@@ -56,7 +56,6 @@ $(document).ready(function () {
         let y = this.startY + ((this.endY - this.startY) / this.segments) * i;
         this.points.push({ x: x, y: y });
       }
-      console.log(this.points);
     }
   }
 
@@ -98,8 +97,6 @@ $(document).ready(function () {
       if (num === segments + 1) {
         clearInterval(inter);
       } else {
-        console.log(coords[num - 1].x, coords[num - 1].y);
-        console.log("num is:" + num)
         c.beginPath();
         c.moveTo(coords[num - 1].x, coords[num - 1].y);
         c.lineTo(coords[num].x, coords[num].y);

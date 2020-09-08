@@ -71,7 +71,7 @@ def edit_skill(skill_id):
         skills.update({'_id': ObjectId(skill_id)},
                       {
             'skill_name': request.form.get('skill_name'),
-            'percent': float(request.form.get('percent')),
+            'percent': int(request.form.get('percent')),
             'skill_icon': request.form.get('skill_icon')
         })
         return redirect(url_for('index'))
@@ -88,7 +88,7 @@ def add_skill():
         skills.insert(
             {
                 'skill_name': request.form.get('skill_name'),
-                'percent': float(request.form.get('percent')),
+                'percent': int(request.form.get('percent')),
                 'skill_icon': request.form.get('skill_icon')
             })
         return redirect(url_for('index'))
