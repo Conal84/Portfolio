@@ -129,10 +129,28 @@ body {
 }
 
 /* Buttons */
+.btn-submit {
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 5px 1rem;
+  border-radius: 5px;
+  border: 1px solid #ffcd24;
+  background-color: #ffcd24;
+  transition: opacity 0.3s;
+}
+
+.btn-submit:hover {
+  opacity: 0.8;
+  color: #fff;
+}
+
 .btn-secondary {
   font-size: 1.3rem;
+  padding: 5px 1rem;
+  border-radius: 5px;
   background-color: #1478a3;
   border: 1px solid #1478a3;
+  transition: opacity 0.3s;
 }
 
 .btn-secondary:hover {
@@ -147,31 +165,8 @@ body {
   transition: top 1s, opacity 0.5s;
 }
 
-.project-btn:hover {
-  color: #fff;
-  opacity: 0.8;
-}
-
 .project-card:hover .project-btn {
   top: 5rem;
-}
-
-.btn-submit {
-  color: #fff;
-  font-size: 1.3rem;
-  padding: 5px 1rem;
-  border-radius: 5px;
-  border-style: none;
-  border: 1px solid #ffcd24;
-  background-color: #ffcd24;
-  transition: opacity 0.5s, background-color 0.5s, border 1px solid #ffcd24;
-}
-
-.btn-submit:hover {
-  opacity: 0.8;
-  color: #fff;
-  background-color: #ffcd24;
-  border: 1px solid #ffcd24;
 }
 
 .modal-btn-close {
@@ -180,13 +175,12 @@ body {
   padding: 5px 1rem;
   border-radius: 5px;
   background-color: #33393d;
-  transition: opacity 0.5s, background-color 0.5s, border 1px solid #33393d;
+  transition: opacity 0.3s;
 }
 
 .modal-btn-close:hover {
   opacity: 0.8;
   color: #fff;
-  background-color: #33393d;
   border: 1px solid #33393d;
 }
 
@@ -196,13 +190,12 @@ body {
   padding: 5px 1rem;
   border-radius: 5px;
   background-color: #dc3545;
-  transition: opacity 0.5s, background-color 0.5s, border 1px solid #dc3545;
+  transition: opacity 0.3s;
 }
 
 .modal-btn-delete:hover {
   opacity: 0.8;
   color: #fff;
-  background-color: #dc3545;
   border: 1px solid #dc3545;
 }
 
