@@ -144,7 +144,7 @@ body {
 .project-btn {
   position: relative;
   top: 10rem;
-  transition: top 1s, opactiy 0.5s;
+  transition: top 1s, opacity 0.5s;
 }
 
 .project-btn:hover {
