@@ -4,25 +4,21 @@
     <div class="col-12">
       <h1 class="main-head contact-heading">Let's Work Together</h1>
     </div>
-    <div class="col-4">
-      <div class="card text-center">
-        <div class="card-body contact-card">
-          <p class="contact-text">
-            Have a project you'd like to discuss?
-          </p>
-          <!-- Button trigger modal -->
-          <div class="text-center">
-            <button
-              type="button"
-              class="btn btn-submit"
-              data-toggle="modal"
-              data-target="#contactModal"
-              id="contact-btn"
-            >
-              Get in Touch
-            </button>
-          </div>
-        </div>
+    <div class="contact-container">
+      <p class="contact-text">
+        Have a project you'd like to discuss?
+      </p>
+      <!-- Button trigger modal -->
+      <div class="text-center">
+        <button
+          type="button"
+          class="btn btn-submit"
+          data-toggle="modal"
+          data-target="#contactModal"
+          id="contact-btn"
+        >
+          Get in Touch
+        </button>
       </div>
     </div>
     <div class="col-12">
@@ -35,7 +31,10 @@
         aria-labelledby="contactModal"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div
+          class="modal-dialog modal-dialog-centered modal-lg"
+          role="document"
+        >
           <div class="modal-content">
             <div class="modal-header">
               <h2 class="modal-title">
@@ -107,7 +106,9 @@
                 >
                   Close
                 </button>
-                <i class="far fa-thumbs-up" id="thumb-confirm">Your email has been sent!</i>
+                <i class="far fa-thumbs-up" id="thumb-confirm"
+                  >Your email has been sent!</i
+                >
               </form>
             </div>
           </div>

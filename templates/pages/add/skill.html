@@ -15,14 +15,14 @@
 					</p>
 					<p>
 						{{ form.percent.label }}<br>
-                    {{ form.percent(size=40) }}
+{{ form.percent(size=40) }}
                     {% for error in form.percent.errors %}
 						<p class="form-error">{{ error }}</p>
 						{% endfor %}
 					</p>
 					<p>
 						{{ form.skill_icon.label }}<br>
-                    {{ form.skill_icon(size=40) }}
+                    {{ form.skill_icon(size=40, placeholder="fab fa-html5 fa-fw") }}
                     {% for error in form.skill_icon.errors %}
 						<p class="form-error">{{ error }}</p>
 						{% endfor %}

@@ -12,6 +12,7 @@ app = Flask(__name__)
 app.config['MONGO_DBNAME'] = os.environ.get('MONGO_DBNAME')
 app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
 app.secret_key = os.environ.get('SECRET_KEY')
+debug_string = os.environ.get('debug_string')
 mongo = PyMongo(app)
 
 
@@ -65,6 +66,7 @@ def edit_skill(skill_id):
     the_skill = mongo.db.Skills.find_one({'_id': ObjectId(skill_id)})
     form = SkillForm()
     form.skill_name.data = the_skill['skill_name']
+    form.percent.data = the_skill['percent']
     form.skill_icon.data = the_skill['skill_icon']
 
     if request.method == 'POST' and form.validate_on_submit():
@@ -174,4 +176,4 @@ def not_found_error(error):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', "0.0.0.0"),
             port=int(os.environ.get('PORT', "5000")),
-            debug=True)
+            debug=debug_string)

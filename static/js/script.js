@@ -76,7 +76,7 @@ $(document).ready(function () {
   line1.calcpoints();
   line2.calcpoints();
 
-  /** 
+  /**
    * Draw a line at a specified speed across the canvas
    * setInterval used as requestAnimationFrame cannot contol line draw speed
    * @param {array} coords - array of line coordinates
@@ -90,7 +90,7 @@ $(document).ready(function () {
     let num = 1;
     inter = setInterval(change, speed);
 
-    /** 
+    /**
      * Function to cycle thru line coordinates and draw a line
      */
     function change() {
@@ -108,13 +108,13 @@ $(document).ready(function () {
     }
   }
 
-  /** 
-   * Draw 2 lines on the canvas 
+  /**
+   * Draw 2 lines on the canvas
    */
   draw(line1.points, "#000", 8, 20, line1.segments);
   draw(line2.points, "#fff", 5, 20, line2.segments);
 
-  /** 
+  /**
    * Find the intersecting point of 2 lines
    * @param {number} slope1 - the slope of line 1
    * @param {number} slope2 - the slope of line 2
@@ -149,8 +149,8 @@ $(document).ready(function () {
     c.fill();
   }
 
-  /** 
-   * Call findIntercept with slopes and y intercepts of line1 and line2 to find x, y intercept 
+  /**
+   * Call findIntercept with slopes and y intercepts of line1 and line2 to find x, y intercept
    */
   let interPoint = findIntercept(
     line1.slope,
@@ -159,8 +159,8 @@ $(document).ready(function () {
     line2.intercept
   );
 
-  /** 
-   * An array to hold the corners of the canvas 
+  /**
+   * An array to hold the corners of the canvas
    */
   let canvCorners = [
     { x: 0, y: 0 },
@@ -169,8 +169,8 @@ $(document).ready(function () {
     { x: 0, y: canv.height },
   ];
 
-  /** 
-   * Top left Poly Rich Black 
+  /**
+   * Top left Poly Rich Black
    */
   drawPoly(
     canvCorners[0],
@@ -180,8 +180,8 @@ $(document).ready(function () {
     "rgba(11, 10, 7, 1)"
   );
 
-  /** 
-   * Bottom Left Poly Platinum Grey 
+  /**
+   * Bottom Left Poly Platinum Grey
    */
   drawPoly(
     line1.points[0],
@@ -191,8 +191,8 @@ $(document).ready(function () {
     "rgba(234, 236, 236, 1)"
   );
 
-  /** 
-   * Top Right Poly Mustard 
+  /**
+   * Top Right Poly Mustard
    */
   drawPoly(
     line2.points[0],
@@ -202,8 +202,8 @@ $(document).ready(function () {
     "rgba(255, 217, 92, 1)"
   );
 
-  /** 
-   * Bottom Right Poly Sunglow 
+  /**
+   * Bottom Right Poly Sunglow
    */
   drawPoly(
     line1.points[line1.points.length - 1],
@@ -213,15 +213,15 @@ $(document).ready(function () {
     "rgba(255, 205, 36, 1)"
   );
 
-  /** 
-   * A function to initialise EmailJS 
+  /**
+   * A function to initialise EmailJS
    */
   (function () {
     emailjs.init("user_E43Rn5N9bcNkea4Jd11HC");
   })();
 
-  /** 
-   * On form submit send email via emailjs 
+  /**
+   * On form submit send email via emailjs
    */
   window.onload = function () {
     document
@@ -232,9 +232,9 @@ $(document).ready(function () {
       });
   };
 
-  /** 
+  /**
    * On successful form submit remove hide-me class to show email confirmation
-   * wait 3 secs, then close modal 
+   * wait 3 secs, then close modal
    */
   $("#contact-form").submit(function () {
     $("#thumb-confirm").show();

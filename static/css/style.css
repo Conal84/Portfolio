@@ -24,7 +24,7 @@ body {
   position: relative;
 }
 
-.hero-topleft {
+#hero-topleft {
   position: absolute;
   top: 20vh;
   left: 5vw;
@@ -33,7 +33,7 @@ body {
   font-size: 2.5rem;
 }
 
-.hero-topright {
+#hero-topright {
   position: absolute;
   top: 3vh;
   right: 10vw;
@@ -43,7 +43,7 @@ body {
   animation-duration: 1s;
 }
 
-.hero-bottomleft {
+#hero-bottomleft {
   position: absolute;
   top: 35vh;
   left: 15vw;
@@ -54,7 +54,7 @@ body {
   animation-delay: 2s;
 }
 
-.hero-bottomright {
+#hero-bottomright {
   position: absolute;
   top: 25vh;
   right: 5vw;
@@ -89,15 +89,15 @@ body {
   color: #ffcd24;
 }
 
-.indent1 {
+.indent-1rem {
   text-indent: 1rem;
 }
 
-.indent2 {
+.indent-2rem {
   text-indent: 2rem;
 }
 
-.indent3 {
+.indent-3rem {
   text-indent: 3rem;
 }
 
@@ -377,7 +377,8 @@ body {
   padding-bottom: 4rem;
 }
 
-.contact-card {
+.contact-container {
+  padding: 2rem;
   background-color: #1478a3;
 }
 
@@ -455,13 +456,17 @@ body {
   height: 100%;
   object-fit: cover;
 }
-/* Change the modal buttons to custom colors */
+
 .carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffcd24' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+  background-image: none;
+  font-size: 5rem;
+  color: #ffcd24;
 }
-/* Change the modal buttons to custom colors */
+
 .carousel-control-next-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffcd24' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+  background-image: none;
+  font-size: 5rem;
+  color: #ffcd24;
 }
 
 .links-col {
@@ -511,23 +516,23 @@ body {
 /* Media queries */
 /*Tablet and above Portrait View*/
 @media screen and (min-width: 768px) {
-  .hero-topleft {
+  #hero-topleft {
     top: 30vh;
     left: 10vw;
     font-size: 3rem;
   }
 
-  .hero-topright {
+  #hero-topright {
     top: 10vh;
     right: 30vw;
   }
 
-  .hero-bottomleft {
+  #hero-bottomleft {
     top: 70vh;
     left: 25vw;
   }
 
-  .hero-bottomright {
+  #hero-bottomright {
     top: 50vh;
     right: 5vw;
   }
@@ -569,12 +574,12 @@ body {
     width: 35vw;
   }
 
-  .hero-bottomleft {
+  #hero-bottomleft {
     top: 65vh;
     left: 25vw;
   }
 
-  .hero-bottomright {
+  #hero-bottomright {
     top: 50vh;
     right: 8vw;
   }
