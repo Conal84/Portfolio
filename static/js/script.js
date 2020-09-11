@@ -2,6 +2,17 @@ $(document).ready(function () {
   let canv = document.getElementById("hero");
   let c = canv.getContext("2d");
 
+  jQuery(".skill").each(function () {
+    jQuery(this)
+      .find(".skillbar")
+      .animate(
+        {
+          width: jQuery(this).attr("data-percent"),
+        },
+        6000
+      );
+  });
+
   /**
    * A media query function to resize the canvas
    * if the window is less than or equal to view parameter

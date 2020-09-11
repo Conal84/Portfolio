@@ -273,6 +273,53 @@ body {
   background-color: #ffcd24;
 }
 
+.skill {
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+    width: 100%;
+    background: #eee;
+    height: 35px;
+    border-radius: 3px;
+    transition: 0.4s linear;
+}
+
+.skill-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #ffffff;
+    background: #6adcfa;
+}
+
+.skill-title span {
+    display: block;
+    padding: 0 20px;
+    height: 35px;
+    line-height: 35px;
+}
+
+.skillbar {
+    height: 35px;
+    width: 0px;
+    background: #6adcfa;
+    border-radius: 3px;
+}
+
+.skillbar-percent {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 11px;
+    height: 35px;
+    line-height: 35px;
+    color: #000;
+    opacity: 0.4;
+}
+
 /* Projects-section */
 #portfolio-section {
   background-color: #eaecec;

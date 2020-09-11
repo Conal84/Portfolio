@@ -18,13 +18,23 @@
 			<h1 class="main-head">Skills</h1>
 			{% for skill in skills %}
 			<div class="progress-group">
-				<div class="progress">
+				<div class="skill" data-percent="{{skill.percent}}%">
+					<div class="skill-title">
+						<span>HTML</span>
+					</div>
+					<div class="skillbar">
+					</div>
+					<div class="skillbar-percent">
+						{{skill.percent}}%
+					</div>
+				</div>
+				<!-- <div class="progress">
 					<span><i class="{{skill.skill_icon}}"></i></span>
 					<div class="progress-bar" role="progressbar" style="width: {{skill.percent}}%"
 						aria-valuenow="{{skill.percent}}%" aria-valuemin="0" aria-valuemax="100">
 						{{skill.skill_name}} {{skill.percent}}%
 					</div>
-				</div>
+				</div> -->
 				{% if 'username' in session %}
 				<div class="skill-btns">
 					<a type="button" class="btn btn-secondary" href="{{url_for('edit_skill', skill_id=skill._id)}}">
