@@ -17,10 +17,10 @@
 		<div class="col-12 col-md-8" id="skills-col">
 			<h1 class="main-head">Skills</h1>
 			{% for skill in skills %}
-			<div class="progress-group">
+			<div class="skill-group">
 				<div class="skill" data-percent="{{skill.percent}}%">
 					<div class="skill-title">
-						<span>HTML</span>
+						<span>{{skill.skill_name}}</span>
 					</div>
 					<div class="skillbar">
 					</div>
@@ -78,10 +78,10 @@
 					</div>
 				</div>
 				{% endfor %} {% if 'username' in session %}
-				<div class="progress-group">
-					<div class="progress">
+				<div class="skill-group">
+					<div class="skill">
 						<i class="fas fa-plus-circle" id="add-skill"></i>
-						<div class="progress-bar add-bar" role="progressbar" style="width: 100%" aria-valuenow="100%"
+						<div class="skill-bar add-bar" role="progressbar" style="width: 100%" aria-valuenow="100%"
 							aria-valuemin="0" aria-valuemax="100">
 							Add a new skill here
 						</div>

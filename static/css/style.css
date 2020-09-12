@@ -238,19 +238,56 @@ body {
   visibility: hidden;
 }
 
-.progress-group {
+.skill-group {
   padding: 5px 0;
 }
 
-.progress {
-  height: 3rem;
-  font-size: 1.6rem;
+.skill {
+    position: relative;
+    display: block;
+    margin-bottom: 3px;
+    width: 100%;
+    background: #eaecec;
+    height: 3rem;
+    border-radius: 3px;
+    transition: 0.4s linear;
 }
 
-.progress-bar {
-  text-align: left;
-  padding: 5px;
-  background-color: #1478a3;
+.skill-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10rem;
+    font-size: 1.4rem;
+    color: #ffffff;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background: #1478a3;
+}
+
+.skill-title span {
+    display: block;
+    padding: 0 1rem;
+    height: 3rem;
+    line-height: 3rem;
+}
+
+.skillbar {
+    height: 3rem;
+    width: 0px;
+    background: #1a99d0;
+    border-radius: 3px;
+}
+
+.skillbar-percent {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 1rem;
+    height: 3rem;
+    line-height: 3rem;
+    color: #000;
+    opacity: 0.6;
 }
 
 .skill-btns {
@@ -271,53 +308,6 @@ body {
 
 .add-bar {
   background-color: #ffcd24;
-}
-
-.skill {
-    position: relative;
-    display: block;
-    margin-bottom: 15px;
-    width: 100%;
-    background: #eee;
-    height: 35px;
-    border-radius: 3px;
-    transition: 0.4s linear;
-}
-
-.skill-title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 110px;
-    font-weight: bold;
-    font-size: 13px;
-    color: #ffffff;
-    background: #6adcfa;
-}
-
-.skill-title span {
-    display: block;
-    padding: 0 20px;
-    height: 35px;
-    line-height: 35px;
-}
-
-.skillbar {
-    height: 35px;
-    width: 0px;
-    background: #6adcfa;
-    border-radius: 3px;
-}
-
-.skillbar-percent {
-    position: absolute;
-    right: 10px;
-    top: 0;
-    font-size: 11px;
-    height: 35px;
-    line-height: 35px;
-    color: #000;
-    opacity: 0.4;
 }
 
 /* Projects-section */
@@ -603,7 +593,7 @@ body {
   #scroll-down {
     position: absolute;
     display: block;
-    top: 85vh;
+    top: 80vh;
     right: 49vw;
     text-align: center;
     opacity: 0;
