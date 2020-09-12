@@ -2,21 +2,10 @@ $(document).ready(function () {
   let canv = document.getElementById("hero");
   let c = canv.getContext("2d");
 
-  jQuery(".skill").each(function () {
-    jQuery(this)
-      .find(".skillbar")
-      .animate(
-        {
-          width: jQuery(this).attr("data-percent"),
-        },
-        6000
-      );
-  });
-
   /**
    * A media query function to resize the canvas
    * if the window is less than or equal to view parameter
-   * @param {string} - the size of the view
+   * @param {string} - the size of the view ex: (max-width: 420px)
    */
   function initCanvas(view) {
     if (view.matches) {
@@ -223,35 +212,5 @@ $(document).ready(function () {
     interPoint[0],
     "rgba(255, 205, 36, 1)"
   );
-
-  /**
-   * A function to initialise EmailJS
-   */
-  (function () {
-    emailjs.init("user_E43Rn5N9bcNkea4Jd11HC");
-  })();
-
-  /**
-   * On form submit send email via emailjs
-   */
-  window.onload = function () {
-    document
-      .getElementById("contact-form")
-      .addEventListener("submit", function (event) {
-        event.preventDefault();
-        emailjs.sendForm("contact_service", "contact_form", this);
-      });
-  };
-
-  /**
-   * On successful form submit remove hide-me class to show email confirmation
-   * wait 3 secs, then close modal
-   */
-  $("#contact-form").submit(function () {
-    $("#thumb-confirm").show();
-    setTimeout(function () {
-      $("#contactModal").modal("hide");
-      $("#thumb-confirm").hide();
-    }, 3000);
   });
-});
+

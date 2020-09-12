@@ -21,7 +21,9 @@ def index():
     """Route to main page"""
     return render_template("pages/index.html",
                            skills=mongo.db.Skills.find(),
-                           projects=mongo.db.Projects.find())
+                           projects=mongo.db.Projects.find(),
+                           canvas=True,
+                           contact=True)
 
 
 @app.route('/project/<project_id>')
@@ -29,7 +31,8 @@ def project(project_id):
     """Route to individual project page"""
     the_project = mongo.db.Projects.find_one({"_id": ObjectId(project_id)})
     return render_template("pages/project.html",
-                           project=the_project, images=the_project["images"])
+                           project=the_project, 
+                           images=the_project["images"])
 
 
 @app.route('/login', methods=['GET', 'POST'])
