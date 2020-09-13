@@ -31,7 +31,7 @@ def project(project_id):
     """Route to individual project page"""
     the_project = mongo.db.Projects.find_one({"_id": ObjectId(project_id)})
     return render_template("pages/project.html",
-                           project=the_project, 
+                           project=the_project,
                            images=the_project["images"])
 
 
@@ -130,15 +130,20 @@ def edit_project(project_id):
     if request.method == 'POST' and form.validate_on_submit():
         projects.update({'_id': ObjectId(project_id)},
                         {
-            'project_name': request.form.get('project_name'),
-            'short_text': request.form.get('short_text'),
-            'long_text': request.form.get('long_text'),
-            'images[0]': request.form.get('image1'),
-            'images[1]': request.form.get('image2'),
-            'images[2]': request.form.get('image3'),
-            'images[3]': request.form.get('image4'),
-            'website_link': request.form.get('website_link'),
-            'git_link': request.form.get('git_link')
+            '$set':
+                {
+                    'project_name': request.form.get('project_name'),
+                    'short_text': request.form.get('short_text'),
+                    'long_text': request.form.get('long_text'),
+                    'images': {
+                                '0': request.form.get('image1'),
+                                '1': request.form.get('image2'),
+                                '2': request.form.get('image3'),
+                                '3': request.form.get('image4')
+                               },
+                    'website_link': request.form.get('website_link'),
+                    'git_link': request.form.get('git_link')
+                }
         })
         return redirect(url_for('index'))
     return render_template('pages/edit/project.html',
