@@ -45,8 +45,8 @@ class ProjectForm(FlaskForm):
     image1 = StringField(
         'Portfolio image & Carousel image 1', [InputRequired()])
     image2 = StringField('Carousel image 2', [InputRequired()])
-    image3 = StringField('Carousel image 3')
-    image4 = StringField('Carousel image 4')
+    image3 = StringField('Carousel image 3', [InputRequired()])
+    image4 = StringField('Carousel image 4', [InputRequired()])
     website_link = StringField('Website link', [InputRequired()])
     git_link = StringField('Github link', [InputRequired()])
     submit = SubmitField('Submit')

@@ -30,9 +30,13 @@ def index():
 def project(project_id):
     """Route to individual project page"""
     the_project = mongo.db.Projects.find_one({"_id": ObjectId(project_id)})
+    img0 = the_project['image0']
+    img1 = the_project['image1']
+    img2 = the_project['image2']
+    img3 = the_project['image3']
     return render_template("pages/project.html",
                            project=the_project,
-                           images=the_project["images"])
+                           images=[img0, img1, img2, img3])
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -120,30 +124,25 @@ def edit_project(project_id):
     form.project_name.data = the_project['project_name']
     form.short_text.data = the_project['short_text']
     form.long_text.data = the_project['long_text']
-    form.image1.data = the_project['images'][0]
-    form.image2.data = the_project['images'][1]
-    form.image3.data = the_project['images'][2]
-    form.image4.data = the_project['images'][3]
+    form.image1.data = the_project['image0']
+    form.image2.data = the_project['image1']
+    form.image3.data = the_project['image2']
+    form.image4.data = the_project['image3']
     form.website_link.data = the_project['website_link']
     form.git_link.data = the_project["git_link"]
 
     if request.method == 'POST' and form.validate_on_submit():
         projects.update({'_id': ObjectId(project_id)},
                         {
-            '$set':
-                {
-                    'project_name': request.form.get('project_name'),
-                    'short_text': request.form.get('short_text'),
-                    'long_text': request.form.get('long_text'),
-                    'images': {
-                                '0': request.form.get('image1'),
-                                '1': request.form.get('image2'),
-                                '2': request.form.get('image3'),
-                                '3': request.form.get('image4')
-                               },
-                    'website_link': request.form.get('website_link'),
-                    'git_link': request.form.get('git_link')
-                }
+            'project_name': request.form.get('project_name'),
+            'short_text': request.form.get('short_text'),
+            'long_text': request.form.get('long_text'),
+            'image0': request.form.get('image1'),
+            'image1': request.form.get('image2'),
+            'image2': request.form.get('image3'),
+            'image3': request.form.get('image4'),
+            'website_link': request.form.get('website_link'),
+            'git_link': request.form.get('git_link')
         })
         return redirect(url_for('index'))
     return render_template('pages/edit/project.html',
@@ -164,10 +163,10 @@ def add_project():
                 'project_name': request.form.get('project_name'),
                 'short_text': request.form.get('short_text'),
                 'long_text': request.form.get('long_text'),
-                'images[0]': request.form.get('image1'),
-                'images[1]': request.form.get('image2'),
-                'images[2]': request.form.get('image3'),
-                'images[3]': request.form.get('image4'),
+                'image0': request.form.get('image1'),
+                'image1': request.form.get('image2'),
+                'image2': request.form.get('image3'),
+                'image3': request.form.get('image4'),
                 'website_link': request.form.get('website_link'),
                 'git_link': request.form.get('git_link')
             })
