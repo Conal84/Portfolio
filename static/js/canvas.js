@@ -212,5 +212,4 @@ $(document).ready(function () {
     interPoint[0],
     "rgba(255, 205, 36, 1)"
   );
-  });
-
+});

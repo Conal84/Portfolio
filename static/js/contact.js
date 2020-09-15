@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
   /**
    * A function to initialise EmailJS
    */
