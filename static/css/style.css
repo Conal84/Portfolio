@@ -555,15 +555,9 @@ body {
 }
 
 /* Editadd pages */
-.skill-row {
+.editadd-row {
   background-color: #eaecec;
   height: calc(100vh - 10rem);
-  justify-content: center;
-  align-items: center;
-}
-
-.pr-row {
-  background-color: #eaecec;
   justify-content: center;
   align-items: center;
 }
