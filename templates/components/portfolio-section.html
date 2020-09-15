@@ -81,9 +81,13 @@
       </div>
     </div>
     {% endfor %} {% if 'username' in session %}
-    <div class="col-12 col-md-4 image-col">
+    <div class="col-12 col-md-4" id="project-add">
       <div class="card text-center project-card">
-        <i class="fas fa-plus card-img" id="add-project" alt="Add a new project"></i>
+        <i
+          class="fas fa-plus card-img"
+          id="project-plus"
+          alt="Add a new project"
+        ></i>
         <div class="card-img-overlay">
           <h5 class="card-title project-card-title">
             Add a new project
