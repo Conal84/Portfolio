@@ -4,8 +4,12 @@
     <div class="card text-center mx-auto editadd-card pr-card">
       <div class="card-body">
         <h2 class="card-title sub-head">Edit Project</h2>
-        <form action="" method="post" novalidate>
+        <form class="wtform" action="" method="post" novalidate>
           {{ form.hidden_tag() }}
+          <div class="form-group">
+          <label for="project_name">Project Name</label>
+          <input type="text" class="form-control" name="project_name" placeholder="{{form.project_name}}">
+          </div>
           <p>
             {{ form.project_name.label }}<br />
             {{ form.project_name(size=40) }} {% for error in
