@@ -9,13 +9,13 @@ The admin user will be able to perform CRUD (Create, Read, Update, Delete) opera
 
 ## UX
 ### User Stories
-As a user I want to easily search through the portfolio website to get a concise overview of the background, skills and projects completed by the portfolio administrator.
+As a visitor I want to easily search through the portfolio website to get a concise overview of the background, skills and projects completed by the portfolio administrator.
 
-As a user I want to be presented with introductory project information without being overwhelmed with details.
+As a visitor I want to be presented with introductory project information without being overwhelmed with details.
 
-As a user once I find a perticular project of interest I want to be able to click on that project link to be taken to a webpage with more detailed information.
+As a visitor once I find a perticular project of interest I want to be able to click on that project link to be taken to a webpage with more detailed information.
 
-As a user I would like to have easy access to project webpage links and specific project GitHub links.
+As a visitor I would like to have easy access to project webpage links and specific project GitHub links.
 
 As an admin user I should be able to login to gain access to and to modify the backend database information.
 
@@ -87,7 +87,7 @@ The mobile first design will arrange information in single full width columns to
 On larger tablet and desktop display information will be arranged in additional columns using Bootstraps responsive grid design.
 
 Information will be grouped in 4 key areas;
-* Hero - provides an eye catching background image with a introductory information about me
+* Hero - provides an eye catching background image with introductory information about me
 * Skills - provides key skills information via progress bars
 * Projects - provides initial, concise project information with links to more detailed views
 * Contact - provides an easy method to send me a direct email
@@ -95,14 +95,38 @@ Information will be grouped in 4 key areas;
 ### Surface
 I want the colors used on the site to grab the users attention without being too acute.
 
-The primary colours for the website are black and a contrasting white to dispay information in the results section.
-A secondary blue highlight color #0066cc has then been used to make key elements stand out on the page and to grab the attention of the user.
-These primary and secondary colors mirror the colors of the gig full background image.
+The primary colours for the website are black #0b0a07, yellow #ffcd24 used to grab the attention of visitors.
+Contrasting white #fff and grey #eaecec are used to display text information and to provide background segregation between key areas.
+A secondary softer blue highlight color #1478a3 has then been used to make key elements stand out on the page and to grab the attention of the user without overwhelming.
 
 I have used Open Sans font throughout the website as it has a simplistic style.
 I have used Raleway font for the headings as this font makes the heading stand out and grabs the users attention.
+I have also used an Inconsolata font as it mimics a faux coding style font in the hero section.
 
 ### Wireframes
+![Home Desktop](/wireframes/Home.png)
+![Home Tablet](/wireframes/Home Tablet.png)
+![Home Mobile](/wireframes/Home Mobile.png)
+![Contact Desktop](/wireframes/Contact.png)
+![Contact Tablet](/wireframes/Contact Tablet.png)
+![Contact Mobile](/wireframes/Contact Mobile.png)
+![Admin Desktop](/wireframes/Admin.png)
+![Admin Tablet](/wireframes/Admin Tablet.png)
+![Admin Mobile](/wireframes/Admin Mobile.png)
+![Logged in Desktop](/wireframes/Logged In.png)
+![Logged in Tablet](/wireframes/Logged In Tablet.png)
+![Logged in Mobile](/wireframes/Logged in Mobile.png)
+![Skills delete Desktop](/wireframes/Skills Delete.png)
+![Skills delete Tablet](/wireframes/Skills Delete Tablet.png)
+![Skills delete Mobile](/wireframes/Skills Delete Mobile.png)
+![Skills edit Desktop](/wireframes/Skills Edit.png)
+![Skills edit Tablet](/wireframes/Skills Edit Tablet.png)
+![Skills edit Mobile](/wireframes/Skills Edit Mobile.png)
+![Skills add Desktop](/wireframes/Skills Add.png)
+![Skills add Tablet](/wireframes/Skills Add Tablet.png)
+![Skills add Mobile](/wireframes/Skills Add Mobile.png)
+![Portfolio delete Desktop](/wireframes/Portfolio Delete.png)
+
 
 ### Features to implement
 Future features will include additonal skills and more showcase projects as I build more websites.
@@ -119,15 +143,14 @@ Future features will include additonal skills and more showcase projects as I bu
 9. [Popper.js](https://popper.js.org/)
 10. [Python](https://www.python.org/)
 11. [MongoDB](https://www.mongodb.com/)
-12. [Circle Progress Bar](https://cdnjs.com/libraries/jquery-circle-progress)
-13. [EmailJS](https://www.emailjs.com/)
+12. [EmailJS](https://www.emailjs.com/)
 
 ## Testing
 Please see the TEST.md file at this link [TEST.md](TEST.md) to understand how the Portfolio website was tested.
 
 ## Deployment
 This project was developed using the GitPod IDE, version controlled by committing to git and pushing to GitHub via the GitPod IDE.
-Thw deployment instructions have been written for a macOS specifically, therefore the commands and installation may differ slightly for your machine.
+The deployment instructions have been written for a macOS specifically, therefore the commands and installation may differ slightly for your machine.
 
 ### How to run this project locally
 The following must be installed on your machine;
@@ -154,8 +177,8 @@ The following must be installed on your machine;
 ### Heroku Deployment
 1. Create a new app on the [Heroku website](https://www.heroku.com/#)
 2. Link your local git repo to the Heroku app
-    * Go to the Heroku app settings , find the Heroku GIt URL and copy it
-    * In your IDE use command git remote add heroku * paste heroku git url here*
+    * Go to the Heroku app settings , find the Heroku Git URL and copy it
+    * In your IDE use command git remote add heroku *paste heroku git url here*
 3. In your IDE create a requirements.txt file using the command pip3 freeze --local > requirements.txt
 4. Create a Procfile the the command echo web: python app.py > Procfile
 5. git add and git commit the new requirements and Procfile, then git push to GitHub
