@@ -103,6 +103,8 @@ I have used Open Sans font throughout the website as it has a simplistic style.
 I have used Raleway font for the headings as this font makes the heading stand out and grabs the users attention.
 I have also used an Inconsolata font as it mimics a faux coding style font in the hero section.
 
+I have used Inkscape to design an svg image which I used for my portfolio logo and favicon.
+
 ### Wireframes
 ![Home Desktop](/wireframes/Home.png)
 ![Home Tablet](/wireframes/Home-tablet.png)
@@ -138,9 +140,6 @@ I have also used an Inconsolata font as it mimics a faux coding style font in th
 ![Portfolio see more Tablet](/wireframes/Portfolio-see-more-tablet.png)
 ![Portfolio see more Mobile](/wireframes/Portfolio-see-more-mobile.png)
 
-### Features to implement
-Future features will include additonal skills and more showcase projects as I build more websites.
-
 ### Technologies used
 1. HTML
 2. CSS
@@ -154,6 +153,15 @@ Future features will include additonal skills and more showcase projects as I bu
 10. [Python](https://www.python.org/)
 11. [MongoDB](https://www.mongodb.com/)
 12. [EmailJS](https://www.emailjs.com/)
+13. [Inkscape](https://inkscape.org/)
+
+## Features
+### Existing features
+* Home page with navbar, hero section, skills section, contact section and footer
+    * Navbar has links with 
+
+### Features to implement
+Future features will include additonal skills and more showcase projects as I build more websites.
 
 ## Testing
 Please see the TEST.md file at this link [TEST.md](TEST.md) to understand how the Portfolio website was tested.
