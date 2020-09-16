@@ -8,21 +8,21 @@
 					{{ form.hidden_tag() }}
 					<p>
 						{{ form.skill_name.label }}<br>
-                    {{ form.skill_name(size=40) }}
+                    {{ form.skill_name(class_="form-control") }}
                     {% for error in form.skill_name.errors %}
 						<p class="form-error">{{ error }}</p>
 						{% endfor %}
 					</p>
 					<p>
 						{{ form.percent.label }}<br>
-{{ form.percent(size=40) }}
+{{ form.percent(class_="form-control") }}
                     {% for error in form.percent.errors %}
 						<p class="form-error">{{ error }}</p>
 						{% endfor %}
 					</p>
 					<p>
 						{{ form.skill_icon.label }}<br>
-                    {{ form.skill_icon(size=40, placeholder="fab fa-html5 fa-fw") }}
+                    {{ form.skill_icon(class_="form-control", placeholder="fab fa-html5 fa-fw") }}
                     {% for error in form.skill_icon.errors %}
 						<p class="form-error">{{ error }}</p>
 						{% endfor %}

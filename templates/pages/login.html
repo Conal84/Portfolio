@@ -1,5 +1,5 @@
 {% extends 'layout/base.html' %}{% block content %}
-<div class="row skill-row no-gutters">
+<div class="row editadd-row no-gutters">
 	<div class="col editadd-col">
 		<div class="card text-center mx-auto editadd-card">
 			<div class="card-body">
@@ -8,14 +8,14 @@
 					{{ form.hidden_tag() }}
 					<p>
 						{{ form.username.label }}<br>
-                    {{ form.username(size=30) }}
+                    {{ form.username(class_="form-control") }}
                     {% for error in form.username.errors %}
 						<p class="form-error">{{ error }}</p>
 						{% endfor %}
 					</p>
 					<p>
 						{{ form.password.label }}<br>
-                    {{ form.password(size=30) }}
+                    {{ form.password(class_="form-control") }}
                     {% for error in form.password.errors %}
 						<p class="form-error">{{ error }}</p>
 						{% endfor %}
