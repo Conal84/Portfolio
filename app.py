@@ -22,8 +22,7 @@ def index():
     return render_template("pages/index.html",
                            skills=mongo.db.Skills.find(),
                            projects=mongo.db.Projects.find(),
-                           canvas=True,
-                           contact=True)
+                           canvas=True)
 
 
 @app.route('/project/<project_id>')
