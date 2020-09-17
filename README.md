@@ -204,12 +204,12 @@ I have used Inkscape to design an svg image which I used for my portfolio logo a
 This project uses the NoSQL database MongoDB with the following database design structure and variables
 
 ### Project collection
-![Information architecture](/data/schemas/Database-design.pdf)
+![Information architecture](/data/schemas/Database-design.png)
 
 Prior to beginning work on the project the below file structure was laid out to understand how the various webpages would link together
 
 ### File structure
-![File structure](/data/schemas/File-structure.pdf)
+![File structure](/data/schemas/File-structure.png)
 
 ### Features to implement
 Future features will include additonal skills and more showcase projects as I build more websites.
