@@ -157,8 +157,59 @@ I have used Inkscape to design an svg image which I used for my portfolio logo a
 
 ## Features
 ### Existing features
-* Home page with navbar, hero section, skills section, contact section and footer
-    * Navbar has links with 
+* Home page with navbar, hero section, skills section, portfolio section, contact section and footer
+    * Navbar has links with Home, About, Portfolio, Contact and a logo for my portfolio page made in inkscape with a link to the home page
+    * Hero section is a animated canvas. The animation sweeps 2 colored lines across the page and contains colored polygons which are seperated by those lines. The hero section also contains faux code sections which detail some of my coding skills.
+    * About/Skills section contains a paragraph with some of my background information and interests and an animated skills progress bar
+    * Portfolio section contains links to my websites with brief descriptions
+    * Contact section contains a message and a Get in touch button which brings up a form modal, this form sends an email to my personal email address
+    * Footer has links to my Github and a dummy Linkedin page
+
+* Portfolio Section - See more
+    * When a visitor clicks on a project see more button they are taken to a project specific page with a link to the Github and dedicated page for that website
+    * The visitor can also see some further images of the project in a carousel
+
+* Contact Section - Get in touch
+    * A visitor can send me a personal email to discuss my work or future projects by completing this contact form and pressing the send button
+
+* Admin page
+    * A page where the admin user can submit username and password
+
+* Home page - Logged in
+    * At the page the admin user can perform CRUD operations on the skills section and portfolio section of the webpage
+    * The admin user can Create, Update or Delete skills or projects from the webpage
+    * Deleting skills or projects displays a modal which ask for user confirmation prior to deleting information
+
+* Edit skill
+    * Displays a form which is prepopulated with the skill data
+    * Skill data can be updated and submitted
+    * Upon submission the user is returned to the Home page where they can see the changes made
+
+* Add skill
+    * Displays a form which contains a placeholder for the skill icon so the user can see the format required for the skill icon
+    * The skill name, skill percentage and skill icon can be added
+
+* Edit project
+    * Displays a form which is prepopulated with the project information
+    * Project information can be updated and submitted
+    * Upon submission the user is returned to the Home page where they can see the changes made
+
+* Add project
+    * Displays a form with empty fields where the user can add new project information and submit
+
+* 404 page
+    * An error 404 page with a link to the home page
+
+### Information Architecture
+This project uses the NoSQL database MongoDB with the following database design structure and variables
+
+## Project collection
+![Information architecture](/data/Database-design.pdf)
+
+Prior to beginning work on the project the below file structure was laid out to understand how the various webpages would link together
+
+# File structure
+![File structure](/data/File-structure.pdf)
 
 ### Features to implement
 Future features will include additonal skills and more showcase projects as I build more websites.
@@ -213,6 +264,13 @@ SECRET_KEY | <your_secret_key>
 
 9. Start a web process with the IDE command heroku ps:scale web=1
 10. The site is now successfully deployed
+
+## Note for the assessor
+To test the CRUD functionality of this project
+
+URL | Username | Password
+----|----------|---------
+https://conal-walsh-portfolio.herokuapp.com/ | Admin | Admin1234
 
 ## Acknowledgements
 I would like to thank my mentor Simen for his valuable advice and guidance throughout the project.
