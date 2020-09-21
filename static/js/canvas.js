@@ -2,6 +2,10 @@ $(document).ready(function () {
   let canv = document.getElementById("hero");
   let c = canv.getContext("2d");
 
+  window.onorientationchange = function () {
+    window.location.reload();
+  };
+
   /**
    * A media query function to resize the canvas
    * if the window is less than or equal to view parameter
@@ -25,9 +29,6 @@ $(document).ready(function () {
 
   /** On window resize run initCanvas */
   window.addEventListener("resize", initCanvas(viewMatch));
-
-  /** On orientation change run initCanvas */
-   window.addEventListener("orientationchange", initCanvas(viewMatch));
 
   /**
    * Class to take line start and end arguments
