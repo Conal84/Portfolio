@@ -74,21 +74,10 @@ Bug: On contact form submission the modal closed directly after clicking send le
 Fix: I included a javascript delay to keep the modal open for 3 seconds after submit and after submit the user is shown a font awesome icon and text to confirm the email has been sent.
 Verdict: This bug has been fixed.
 
-Bug: 
-Fix: I have included a javascript event handler to close the **Youtube** player when modal is closed
-Verdict: This solution works
+Bug: Fake code sections on canvas do not move automatically if different values for line1 and line2 are entered and hence different lines and polygons are drawn on the canvas.
+Fix: These fake code divs need to be manually moved using css if different canvas lines are drawn
+Verdict: This bug still exists
 
-Bug: The Bootstrap data table last row was overflowing the table but only when the first search is performed
-Fix: In style.css I have overloaded the data table properties to overcome these display issues
-Verdict: The table data now display properly when first search is performed.
-
-Bug: If a user searches for gigs in their area some smaller, relatively unknown artists can sometimes be diplayed in the list.
-If the user then clicks on the Play button for this smaller artist **Youtube** does not always have a playlist for this artist and instead can display
-another artist or track with a similar name.
-Fix: I have investigated the **YouTube** playlist object returned by the API fetch call to see if there is a popularity rating for the playlist or some other
-way of filtering the playlist to ensure that the correct playlist is found but this data does not exist in the playlist object.
-Verdict: This bug still exists.
-
-Bug: When the user performs an artist search the autocomplete city is not required. A clear instance listener is included in the script file to diable this autocomplete functionality
-when searching by artist. This clear instance throws an error to the console.
-Verdict: THis bug still exists.
+Bug: When logged in and on small devices, Bootstrap breakpoint col-12, the id project-add requires a height in order to take a position on the page.
+Fix: This height has been estimated at 25rem but it does not exactly match the heights of the project cards which contain project images.
+Verdict: This bug still exists

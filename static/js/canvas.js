@@ -91,7 +91,7 @@ $(document).ready(function () {
    */
   function draw(coords, color, width, speed, segments) {
     let num = 1;
-    inter = setInterval(change, speed);
+    let inter = setInterval(change, speed);
 
     /**
      * Function to cycle thru line coordinates and draw a line
