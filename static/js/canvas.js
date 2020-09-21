@@ -26,6 +26,9 @@ $(document).ready(function () {
   /** On window resize run initCanvas */
   window.addEventListener("resize", initCanvas(viewMatch));
 
+  /** On orientation change run initCanvas */
+   window.addEventListener("orientationchange", initCanvas(viewMatch));
+
   /**
    * Class to take line start and end arguments
    * calculates slope, y-intercept and points on the line
