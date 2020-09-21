@@ -9,10 +9,10 @@
       <div class="card text-center project-card">
         <img src="{{project.image0}}" class="card-img"/>
         <div class="card-img-overlay">
-          <h5 class="card-title project-card-title">
+          <h5 class="card-title project-card-title d-none d-lg-block">
             {{project.project_name}}
           </h5>
-          <p class="card-text project-card-text">
+          <p class="card-text project-card-text d-none d-lg-block">
             {{project.short_text}}
           </p>
           {% if 'username' in session %}
