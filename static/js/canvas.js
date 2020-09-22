@@ -2,9 +2,9 @@ $(document).ready(function () {
   let canv = document.getElementById("hero");
   let c = canv.getContext("2d");
 
-  window.onorientationchange = function () {
-    window.location.reload();
-  };
+//   window.onorientationchange = function () {
+//     window.location.reload();
+//   };
 
   /**
    * A media query function to resize the canvas

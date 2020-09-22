@@ -16,16 +16,16 @@
             {{project.short_text}}
           </p>
           {% if 'username' in session %}
-          <div>
+          <div class="project-btn">
             <a
-              class="btn btn-secondary project-btn"
+              class="btn btn-secondary"
               href="{{url_for('edit_project', project_id=project._id)}}"
               role="button"
               >Edit</a
             >
             <button
               type="button"
-              class="btn btn-secondary project-btn"
+              class="btn btn-secondary"
               data-toggle="modal"
               data-target="#deleteProjectModal{{project._id}}"
             >
