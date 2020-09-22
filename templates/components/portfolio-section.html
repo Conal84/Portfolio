@@ -9,12 +9,12 @@
       <div class="card text-center project-card">
         <img src="{{project.image0}}" class="card-img"/>
         <div class="card-img-overlay">
-          <h5 class="card-title project-card-title d-none d-lg-block">
+          <h4 class="card-title project-card-title">
             {{project.project_name}}
-          </h5>
-          <p class="card-text project-card-text d-none d-lg-block">
+          </h4>
+          <h5 class="card-text project-card-text">
             {{project.short_text}}
-          </p>
+          </h5>
           {% if 'username' in session %}
           <div class="project-btn">
             <a
@@ -89,7 +89,7 @@
           alt="Add a new project"
         ></i>
         <div class="card-img-overlay">
-          <h5 class="card-title project-card-title">
+          <h5 class="card-title project-card-addtitle">
             Add a new project
           </h5>
           <a

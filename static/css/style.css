@@ -396,6 +396,18 @@ body {
   left: 0px;
 }
 
+.project-card-title {
+  visibility: hidden;
+}
+
+.project-card-text {
+  visibility: hidden;
+}
+
+.project-card-addtitle {
+  visibility: hidden;
+}
+
 #project-add {
   position: relative;
   top: 0px;
@@ -597,6 +609,7 @@ body {
   }
 
   .project-card-title {
+    visibility: visible;
     position: absolute;
     top: 0;
     left: 50%;
@@ -614,7 +627,27 @@ body {
     top: 20%;
   }
 
+  .project-card-addtitle {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transition: top ease 1s;
+    -o-transition: top ease 1s;
+    transition: top ease 1s;
+    font-family: "Raleway", sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1478a3;
+  }
+
+  .project-card:hover .project-card-addtitle {
+    top: 40%;
+  }
+
   .project-card-text {
+    visibility: visible;
     position: absolute;
     top: 0;
     left: 50%;
